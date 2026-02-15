@@ -1,77 +1,59 @@
-# Agent Naming Conventions - Phase 1 (Code Only)
+# Agent Names - Pick Your Favorites
 
-## Current Names
-
-| Role | Current | Description |
-|------|---------|-------------|
-| Coordinator | Foreman | Orchestrates pipeline |
-| Architect | Blueprint | System design |
-| Engineer | Forge | Code generation |
-| Reviewer | Critic | Code review |
-| Tester | Prover | Tests |
-| Docs | DocSmith | Documentation |
-| Product | Product | Scope |
-| UI/UX | Muse | Design |
-| Analyst | Analyst | Requirements |
-
----
-
-## Option 1: Greek Mythology
-
-| Role | Greek Name | Origin |
-|------|-------------|--------|
-| Coordinator | **Hermes** | Messenger, orchestrator |
-| Architect | **Daedalus** | Master craftsman, architect |
-| Engineer | **Hephaestus** | God of forge & craftsmen |
-| Reviewer | **Athena** | Wisdom, strategy |
-| Tester | **Cassandra** | Truth-seeker, validator |
-| Docs | **Calliope** | Muse of literature |
-| Product | **Apollo** | Planning, prophecy |
-| UI/UX | **Aphrodite** | Beauty, design |
-| Analyst | **Oracle** | Seer, truth-teller |
+| Role | Greek Mythology | Sanskrit/Vedic | American Hero |
+|------|-----------------|----------------|---------------|
+| **Coordinator** | **Hermes** - Messenger, orchestrator | **Sanjaya** - Divine charioteer (Mahabharata) | **Cap** - Captain America, leader |
+| | Hades - Realm keeper | **Vishnu** - Preserver, organizer | **Nick** - Nick Fury, coordinator |
+| | Iris - Rainbow messenger | **Surya** - Sun, illuminator | **Oracle** - All-knowing |
+| | | | |
+| **Architect** | **Daedalus** - Master craftsman | **Vishvakarma** - Divine architect | **Vision** - The Avenger, thinker |
+| | Prometheus - Creator | **Brahma** - Creator god | **Architect** - The profession |
+| | Zeus - King, decision maker | ** Maya** - Illusion, design | **Bruce** - Bruce Wayne, strategist |
+| | | | |
+| **Engineer** | **Hephaestus** - God of forge | **Karmayogi** - Worker through action | **Tony** - Iron Man, builder |
+| | Cyclops - Maker | **Rishi** - Wise sage | **Forge** - The profession |
+| | Titan - Great builder | **Dhanvantari** - Divine craftsman | **Wrench** - Tool master |
+| | | | |
+| **Reviewer** | **Athena** - Wisdom, strategy | **Dharma** - Righteousness, justice | **Sherlock** - Detective, investigator |
+| | Themis - Justice | **Yama** - Judge of moral | **Judge** - The role |
+| | Apollo - Truth, prophecy | **Kala** - Time, examiner | **Eye** - All-seeing |
+| | | | |
+| **Tester** | **Cassandra** - Truth-seer | **Satya** - Truth | **Labrador** - Retriever, loyal tester |
+| | Pandora - First tester | **Ananta** - Endless validator | **Testor** - The profession |
+| | Nemesis - Reckoner | **Mrityu** - Death, eliminator | **Q** - James Bond tester |
+| | | | |
+| **Docs** | **Calliope** - Muse of literature | **Smriti** - Memory, tradition | **Wiki** - Knowledge base |
+| | Clio - History keeper | **Veda** - Knowledge | **Doc** - The profession |
+| | Mnemosyne - Memory | **Puranas** - Ancient docs | **Pedia** - Encyclopedia |
 
 ---
 
-## Option 2: Sanskrit/Vedic
+## How to Choose
 
-| Role | Sanskrit Name | Origin |
-|------|---------------|--------|
-| Coordinator | **Sanjaya** | Divine charioteer, coordinator (Mahabharata) |
-| Architect | **Vishvakarma** | Divine architect (all-seeing maker) |
-| Engineer | **Karmayogi** | One who works through action |
-| Reviewer | **Dharma** | Righteousness, justice |
-| Tester | **Satya** | Truth, validator |
-| Docs | **Smriti** | Memory, documentation |
-| Product | **Rishi** | Seer, wise one |
-| UI/UX | **Kalasha** | Design of perfection |
-| Analyst | **Buddhi** | Intellect, analyzer |
+Pick ONE name per role. For example:
 
----
-
-## Option 3: Contemporary American Hero
-
-| Role | Hero Name | Origin |
-|------|-----------|--------|
-| Coordinator | **Cap** | Captain America - leader |
-| Architect | **Vision** | The Avengers - thinker |
-| Engineer | **Tony** | Iron Man - builder/maker |
-| Reviewer | **Sherlock** | Detective, investigator |
-| Tester | **Labrador** | Testing, loyal retriever |
-| Docs | **Wiki** | Wikipedia, knowledge |
-| Product | **Steve** | Product leader |
-| UI/UX | **Artisan** | Craftsman of art |
-| Analyst | **Data** | Star Trek - analytical |
+| Role | Your Pick |
+|------|-----------|
+| Coordinator | Hermes |
+| Architect | Daedalus |
+| Engineer | Hephaestus |
+| Reviewer | Athena |
+| Tester | Cassandra |
+| Docs | Calliope |
 
 ---
 
-## Recommended: Greek Mythology (Option 1)
+## Quick Voting
 
-**Why Greek?**
-- Instantly recognizable
-- Rich metaphors
-- Clear character archetypes
-- Professional, timeless
+Just reply with your pick for each role, like:
 
----
+```
+Coordinator: Hermes
+Architect: Daedalus
+Engineer: Hephaestus
+Reviewer: Athena
+Tester: Cassandra
+Docs: Calliope
+```
 
-*Naming Proposal v1 — Phase 1 Code-Only Focus*
+Or mix and match across columns!
