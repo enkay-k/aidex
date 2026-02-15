@@ -1,5 +1,5 @@
 # AIDE X - AI Driven Engineering X
-## Whitepaper v0.8
+## Whitepaper v0.9
 
 ---
 
@@ -126,22 +126,22 @@ Most AI coding tools are great for:
 | **Reviewer** | Athena | Quality, best practices | Approve changes |
 | **Security** | Ares | Vulnerability scanning | Review findings |
 | **Tester** | Cassandra | Tests, validation | Approve coverage |
-| **DevOps** ⭐ | Hephaestus² | CI/CD, infra, deployment | Validate pipeline |
+| **DevOps** ⭐ | Karma | CI/CD, infra, deployment | Validate pipeline |
 | **VaPT** ⭐ | Themis | Verification, validation, compliance | Approve certification |
 | **Performance** | Titan | Load testing, stress testing | Validate scalability |
 | **Marketing** | Hermes² | Positioning, launch strategy | Approve messaging |
 | **Docs** | Calliope | Documentation | Review accuracy |
-| **Chronicler** | Historiograph | Release notes, versioning | Approve releases |
+| **Chronicler** ⭐ | Itihas | Release notes, versioning | Approve releases |
 | **Cost Estimator** | Plutus | Development + Ops costs, ROI | Validate estimates |
 | **Coordinator** | Foreman | Orchestrate pipeline | Manage flow |
 
 ---
 
-## ⭐ NEW: DevOps Engineer (Hephaestus²)
+## ⭐ NEW: DevOps Engineer (Karma)
 
 ### Infrastructure as Code, Automated
 
-Building at scale requires robust infrastructure. Hephaestus² handles:
+Building at scale requires robust infrastructure. Karma handles:
 
 ### 1. CI/CD Pipelines
 - Automated builds
@@ -345,9 +345,9 @@ Great systems need great launches. Hermes² handles:
 ✅ **Logging** — Structured, searchable  
 ✅ **Alerting** — Proactive notifications  
 ✅ **Security** — Vulnerability scanning  
-✅ **Release Management** — Chronicler  
+✅ **Release Management** — Itihas  
 ✅ **Cost Estimation** — Plutus (dev + ops)  
-✅ **DevOps** — Hephaestus² (CI/CD, infra)  
+✅ **DevOps** — Karma (CI/CD, infra)  
 ✅ **VaPT** — Themis (verification, compliance)  
 ✅ **Performance** — Titan (load testing)  
 ✅ **Marketing** — Hermes² (optional)
@@ -416,5 +416,5 @@ AIDE X gives you:
 
 ---
 
-*Whitepaper v0.8 — With DevOps (Hephaestus²) + VaPT (Themis) Agents*
+*Whitepaper v0.8 — With DevOps (Karma) + VaPT (Themis) + Sanskrit Codenames*
 *February 2026 — Work in Progress — Contributions Invited*
