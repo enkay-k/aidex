@@ -15,11 +15,107 @@
             min-height: 100vh;
         }
 
+        /* Top Bar */
+        .top-bar {
+            background: #fff;
+            border-bottom: 1px solid #e2e8f0;
+            padding: 0.75rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .version-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .version-badge {
+            background: linear-gradient(135deg, #0891b2, #7c3aed);
+            color: #fff;
+            padding: 0.4rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .dev-mode-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .dev-mode-badge.on {
+            background: #dbeafe;
+            color: #1d4ed8;
+            border: 1px solid #93c5fd;
+        }
+
+        .dev-mode-badge.off {
+            background: #f1f5f9;
+            color: #64748b;
+            border: 1px solid #e2e8f0;
+        }
+
+        .dev-toggle {
+            width: 32px;
+            height: 18px;
+            background: #cbd5e1;
+            border-radius: 9px;
+            position: relative;
+            transition: all 0.3s;
+        }
+
+        .dev-mode-badge.on .dev-toggle {
+            background: #3b82f6;
+        }
+
+        .dev-toggle::after {
+            content: '';
+            position: absolute;
+            width: 14px;
+            height: 14px;
+            background: #fff;
+            border-radius: 50%;
+            top: 2px;
+            left: 2px;
+            transition: all 0.3s;
+        }
+
+        .dev-mode-badge.on .dev-toggle::after {
+            left: 16px;
+        }
+
+        .settings-btn {
+            background: none;
+            border: none;
+            font-size: 1.25rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            color: #64748b;
+            transition: color 0.3s;
+        }
+
+        .settings-btn:hover {
+            color: #0891b2;
+        }
+
         /* Layout */
         .dashboard {
             display: grid;
             grid-template-columns: 260px 1fr 320px;
-            min-height: 100vh;
+            min-height: calc(100vh - 60px);
         }
 
         /* Sidebar */
@@ -131,11 +227,6 @@
             background: #fff;
             border: 1px solid #e2e8f0;
             color: #64748b;
-        }
-
-        .btn-secondary:hover {
-            border-color: #0891b2;
-            color: #0891b2;
         }
 
         /* Filters */
@@ -443,6 +534,53 @@
             border: 1px solid #bbf7d0;
         }
 
+        /* Release Notes Panel */
+        .release-panel {
+            background: #f0f9ff;
+            border: 1px solid #bae6fd;
+            border-radius: 12px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .release-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+        }
+
+        .release-version {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 600;
+            color: #0369a1;
+        }
+
+        .release-date {
+            font-size: 0.75rem;
+            color: #64748b;
+        }
+
+        .release-item {
+            font-size: 0.8rem;
+            color: #475569;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #e0f2fe;
+        }
+
+        .release-item:last-child {
+            border-bottom: none;
+        }
+
+        .release-item a {
+            color: #0891b2;
+            text-decoration: none;
+        }
+
+        .release-item a:hover {
+            text-decoration: underline;
+        }
+
         /* Responsive */
         @media (max-width: 1200px) {
             .dashboard { grid-template-columns: 1fr; }
@@ -452,6 +590,18 @@
     </style>
 </head>
 <body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="version-info">
+            <span class="version-badge">2026.02.15.0001</span>
+            <div class="dev-mode-badge off" id="devModeToggle" onclick="toggleDevMode()">
+                <span>Dev Mode</span>
+                <div class="dev-toggle"></div>
+            </div>
+        </div>
+        <button class="settings-btn" title="Settings">⚙️</button>
+    </div>
+
     <div class="dashboard">
         <!-- Sidebar -->
         <div class="sidebar">
@@ -468,6 +618,9 @@
                 </div>
                 <div class="nav-item">
                     <span class="nav-icon">🔄</span> Pipelines
+                </div>
+                <div class="nav-item">
+                    <span class="nav-icon">📜</span> Releases
                 </div>
             </div>
 
@@ -643,40 +796,31 @@
                         <span class="tag">K8s</span>
                     </div>
                 </div>
-
-                <!-- Card 4 -->
-                <div class="card">
-                    <div class="card-header">
-                        <div>
-                            <div class="card-title">Analytics Dashboard</div>
-                            <div class="card-subtitle">Real-time metrics UI</div>
-                        </div>
-                        <span class="card-status status-blocked">Human Rejected</span>
-                    </div>
-                    <div class="card-stages">
-                        <div class="stage complete"></div>
-                        <div class="stage complete"></div>
-                        <div class="stage error"></div>
-                        <div class="stage"></div>
-                        <div class="stage"></div>
-                        <div class="stage"></div>
-                        <div class="stage"></div>
-                    </div>
-                    <div class="card-meta">
-                        <span>❌ UI/UX rejected</span>
-                        <span>🎨 Needs redesign</span>
-                    </div>
-                    <div class="card-tags">
-                        <span class="tag">Vue.js</span>
-                        <span class="tag">D3.js</span>
-                        <span class="tag">GraphQL</span>
-                    </div>
-                </div>
             </div>
         </div>
 
         <!-- Right Panel -->
         <div class="activity-panel">
+            <!-- Release Notes (Shows when Dev Mode is ON) -->
+            <div class="release-panel" id="releasePanel" style="display: none;">
+                <div class="release-header">
+                    <span class="release-version">📦 2026.02.15.0001</span>
+                    <span class="release-date">Feb 15, 2026</span>
+                </div>
+                <div class="release-item">
+                    <a href="#">#001</a> Added dashboard UI with table/card design
+                </div>
+                <div class="release-item">
+                    <a href="#">#002</a> Updated whitepaper with AI philosophy
+                </div>
+                <div class="release-item">
+                    <a href="#">#003</a> Added light mode only (per user request)
+                </div>
+                <div style="margin-top: 0.75rem; padding-top: 0.5rem; border-top: 1px solid #bae6fd;">
+                    <a href="#" style="font-size: 0.8rem;">📜 View all releases</a>
+                </div>
+            </div>
+
             <div class="panel-section">
                 <div class="panel-title">⚡ Pending Human Decisions</div>
                 
@@ -687,9 +831,9 @@
                         AI generated 3 mockup options. Please review and select your preferred design direction.
                     </div>
                     <div class="decision-buttons">
-                        <button class="decision-btn btn-approve">Choose Option A</button>
-                        <button class="decision-btn btn-approve">Choose Option B</button>
-                        <button class="decision-btn btn-hold">View Options</button>
+                        <button class="decision-btn btn-approve">Option A</button>
+                        <button class="decision-btn btn-approve">Option B</button>
+                        <button class="decision-btn btn-hold">View</button>
                     </div>
                 </div>
 
@@ -756,5 +900,22 @@
             </div>
         </div>
     </div>
+
+    <script>
+        function toggleDevMode() {
+            const toggle = document.getElementById('devModeToggle');
+            const releasePanel = document.getElementById('releasePanel');
+            
+            if (toggle.classList.contains('off')) {
+                toggle.classList.remove('off');
+                toggle.classList.add('on');
+                releasePanel.style.display = 'block';
+            } else {
+                toggle.classList.remove('on');
+                toggle.classList.add('off');
+                releasePanel.style.display = 'none';
+            }
+        }
+    </script>
 </body>
 </html>
