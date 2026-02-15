@@ -1,337 +1,204 @@
 # AIDE X - AI Driven Engineering X
-## Whitepaper v0.4
+## Whitepaper v0.5
 
 ---
 
-## The Philosophy: Let AI Do What AI Does Best
+## The Story: Building a Team is Hard
 
-### The Core Insight
+### The Old Way
 
-Not all tasks are created equal. Some things AI excels at — others require human judgment, taste, and creativity.
+Want to build an industrial-strength system? You need:
 
-**AIDE X is built on a simple principle:**
+| Role | What They Do |
+|------|--------------|
+| **Product Manager** | Vision, strategy, prioritization |
+| **Business Analyst** | Requirements, feasibility |
+| **UI/UX Designer** | Look and feel, user experience |
+| **Architect** | System design, tech choices |
+| **Engineer** | Write the code |
+| **Code Reviewer** | Quality, best practices |
+| **Security Analyst** | Vulnerabilities, compliance |
+| **Tester** | Tests, validation |
+| **Technical Writer** | Documentation |
+| **Release Manager** | Versioning, deployment |
+| **Cost Estimator** | Infrastructure, timeline, ROI |
 
-> AI does what AI does best. Humans do what humans do best.
+### The Problem
+
+Finding these people is **super hard**:
+- Recruiting takes months
+- Training takes years
+- Salaries are expensive
+- Turnover is high
+- Coordination is a nightmare
+
+### The Silly Way
+
+Going to an AI and saying:
+> "Build me a system"
+
+That's like saying "surprise me" at a restaurant. You might get something great. You might get garbage. Unpredictable. Unreliable.
 
 ---
 
-## The Division of Labor
+## The AIDE X Way
 
-| What AI Does Best | What Humans Must Decide |
-|-------------------|------------------------|
-| Code generation | UI/UX design choices |
-| Research & analysis | Product direction |
-| Testing & validation | Business priorities |
-| Documentation | Brand & aesthetics |
-| Security scanning | Architecture (with guidance) |
-| **Release management** | **Deployment approval** |
-| Repetitive tasks | Strategic decisions |
+**What if you could have an entire team of specialists?**
 
----
+Each one an AI agent — purpose-built for their role. Working together. Predictable. Controllable.
 
-## The Problem: Not Enough Engineers
+**No need to:**
+- Post job listings
+- Conduct interviews
+- Negotiate salaries
+- Manage HR
+- Learn software engineering
 
-### The Gap is Growing
-
-- **10 million** — Number of unfilled software jobs globally
-- **85%** — Managers can't find enough engineering talent
-- **$1.2 trillion** — Cost of developer shortage in US alone
-
----
-
-## The Solution: AIDE X — Your AI Engineering Force Multiplier
-
-### What is AIDE X?
-
-AIDE X orchestrates specialized AI agents for what they do best — while humans stay in control of what matters most.
-
-**Think of it as:**
-- AI as your **research team** (fast, exhaustive, 24/7)
-- AI as your **code writers** (accurate, consistent)
-- AI as your **quality assurance** (thorough, never tired)
-- **You** as the decision maker (taste, judgment, vision)
+**You just:**
+1. Define what you want
+2. Review what AI proposes
+3. Approve what matters
+4. Ship
 
 ---
 
 ## The Agent Team
 
-| Agent | What They Do | Human Role |
-|-------|--------------|------------|
-| **Researcher** | Data gathering, market analysis, tech research | Review findings |
-| **Architect** | System design, trade-off analysis | Approve architecture |
-| **Designer** (AI-assisted) | Generate mockups, explore options | Make final design choices |
-| **Engineer** | Write code, implement features | Code review |
-| **Reviewer** | Quality checks, best practices | Approve changes |
-| **Security** | Vulnerability scanning | Review findings |
-| **Tester** | Generate tests, validate | Approve coverage |
-| **Docs** | Write documentation | Review accuracy |
-| **Chronicler** ⭐ | Release management, versioning | Approve releases |
-| **Coordinator** | Orchestrate pipeline | Manage flow |
+| Agent | Codename | What They Do | Human Role |
+|-------|----------|--------------|------------|
+| **Researcher** | Hermes | Data gathering, market analysis | Review findings |
+| **Product Manager** | Apollo | Vision, scope, priorities | Approve direction |
+| **Business Analyst** | Oracle | Requirements, feasibility | Validate scope |
+| **Architect** | Daedalus | System design, trade-offs | Approve architecture |
+| **Designer** | Aphrodite | Mockups, options | **Make final design choices** |
+| **Engineer** | Hephaestus | Write code | Code review |
+| **Reviewer** | Athena | Quality, best practices | Approve changes |
+| **Security** | Ares | Vulnerability scanning | Review findings |
+| **Tester** | Cassandra | Tests, validation | Approve coverage |
+| **Docs** | Calliope | Documentation | Review accuracy |
+| **Chronicler** ⭐ | Historiograph | Release notes, versioning | Approve releases |
+| **Cost Estimator** | Plutus ⭐ | Infrastructure, timeline, ROI | Validate estimates |
+| **Coordinator** | Foreman | Orchestrate pipeline | Manage flow |
 
 ---
 
-## ⭐ NEW: The Chronicler — Release Documentation Agent
+## ⭐ NEW: The Cost Estimator (Plutus)
 
-### Every System Built by AIDE X Includes a Built-in Release Agent
+### Every System Needs to Know: What's the Cost?
 
-**The Chronicler** is a special agent built into every project. It handles:
+The **Plutus** agent calculates:
 
-### 1. Version Management
+### 1. Infrastructure Costs
+- Cloud hosting (AWS/GCP/Azure)
+- Database costs
+- CDN/bandwidth
+- Third-party services
+
+### 2. Development Costs
+- Estimated build time
+- Agent compute costs
+- Human review time
+
+### 3. Maintenance Costs
+- Ongoing hosting
+- Support overhead
+- Update frequency
+
+### 4. ROI Projection
+- Time to first release
+- Comparison to traditional dev
+- Cost savings
+
+### Example Estimate
 ```
-Format: YYYY.MM.DD.NNNN
-Example: 2026.02.15.0001
-```
-- Date-based versioning (human predictable)
-- Incremental build numbers
-- Semantic versioning support (optional)
+💰 Project Cost Estimate: E-Commerce Platform
 
-### 2. Change Tracking
-- Every code change is logged
-- Linked to author (human or agent)
-- Categorized: Feature, Fix, Breaking, Docs
+Infrastructure (Monthly):
+  • Hosting: $150/mo
+  • Database: $80/mo
+  • CDN: $50/mo
+  • Third-party: $100/mo
+  ─────────────────────
+  Total: $380/mo
 
-### 3. Release Notes Generation
-Automatic release notes include:
-- Change ID and description
-- Links to artifacts (code, tests, docs)
-- Author attribution
-- Breaking changes highlighted
-- Migration guides when needed
+Development:
+  • AI Build Time: ~4 hours
+  • Human Review: ~1 hour
+  • First Ship: ~2 days
 
-### 4. Dev Mode Access
-- Toggle via settings
-- View all releases
-- Drill into any change
-- Compare versions
+ROI vs Traditional:
+  • Traditional: 3 months, $50K
+  • AIDE X: 2 days, $500
+  • Savings: 98%
 
-### Example Release Note
-```
-📦 Release: 2026.02.15.0001
-Date: February 15, 2026
-Status: ✅ Production Ready
-
-Changes:
-  #001 Added dashboard UI with table/card design
-       → [View Code] [View Tests] [View Docs]
-  #002 Updated whitepaper with AI philosophy
-       → [View Code]
-  #003 Added light mode only (per user request)
-       → [View Code] [View Design]
-
-Breaking Changes: None
-Migration Needed: No
-
-➡️ [View Full Changelog] [Compare with Previous]
-```
-
----
-
-## Built-In Standards: Every Project Gets These
-
-### Every system AIDE X builds includes:
-
-✅ **User Management**
-- Authentication (OAuth, SSO, MFA)
-- Role-based access control
-- Team workspaces
-- Audit logs of all actions
-
-✅ **Logging**
-- Structured logging from day one
-- Searchable, filterable
-- DEBUG, INFO, WARN, ERROR levels
-- Retention policies
-
-✅ **Alerting**
-- Pipeline status notifications
-- Error alerts
-- Human decision reminders
-- Deployment notifications
-
-✅ **Release Management (Chronicler)**
-- Auto-generated release notes
-- Human-readable versioning
-- Change tracking
-- Dev Mode access
-
-✅ **Security**
-- Vulnerability scanning
-- Dependency checks
-- Secret detection
-
-**These aren't add-ons. They're standard. Every project. Always.**
-
----
-
-## The Pipeline: Human-Guided, AI-Executed
-
-```
-┌─────────────────────────────────────────────────────────────────────────┐
-│                    AIDE X PIPELINE                                      │
-├─────────────────────────────────────────────────────────────────────────┤
-│                                                                          │
-│  ┌──────────────┐     ┌──────────────┐                                │
-│  │   PRODUCT    │     │  HUMAN       │                                │
-│  │   VISION     │────►│  APPROVAL    │ ◄── You decide direction      │
-│  │   (AI:data)  │     │              │                                │
-│  └──────────────┘     └──────────────┘                                │
-│         │                                                                │
-│         ▼                                                                │
-│  ┌──────────────┐     ┌──────────────┐                                │
-│  │ REQUIREMENTS │     │  HUMAN       │                                │
-│  │  (AI:write)  │────►│  REVIEW      │ ◄── You validate scope        │
-│  └──────────────┘     └──────────────┘                                │
-│         │                                                                │
-│         ▼                                                                │
-│  ┌──────────────┐     ┌──────────────┐                                │
-│  │   UI/UX      │     │  HUMAN       │                                │
-│  │  (AI:mockup) │────►│  APPROVAL    │ ◄── NEVER AI's choice!       │
-│  │  Human:DESIGN│     │              │                                │
-│  └──────────────┘     └──────────────┘                                │
-│         │                                                                │
-│         ▼                                                                │
-│  ┌──────────────┐     ┌──────────────┐                                │
-│  │  ARCHITECT   │     │  HUMAN       │                                │
-│  │ (AI:research)│────►│  APPROVAL    │ ◄── Deep thinking required    │
-│  │ Human:DECIDE │     │              │                                │
-│  └──────────────┘     └──────────────┘                                │
-│         │                                                                │
-│         ▼                                                                │
-│  ┌──────────────┐     ┌──────────────┐     ┌──────────────┐         │
-│  │     CODE     │     │  QUALITY     │     │  SECURITY    │         │
-│  │  (AI:write)  │────►│  REVIEW      │────►│   SCAN       │         │
-│  │              │     │  (AI+Human)  │     │  (AI)        │         │
-│  └──────────────┘     └──────────────┘     └──────────────┘         │
-│         │                                                                │
-│         ▼                                                                │
-│  ┌──────────────┐     ┌──────────────┐                                │
-│  │    TESTS     │     │  HUMAN       │                                │
-│  │  (AI:gen)    │────►│  REVIEW      │ ◄── Validate coverage          │
-│  └──────────────┘     └──────────────┘                                │
-│         │                                                                │
-│         ▼                                                                │
-│  ┌──────────────┐     ┌──────────────┐                                │
-│  │    DOCS      │     │  CHRONICLER   │                                │
-│  │  (AI:write)  │────►│  Release Note│ ◄── Auto-generate!            │
-│  └──────────────┘     └──────────────┘                                │
-│         │                                                                │
-│         ▼                                                                │
-│  ┌──────────────┐     ┌──────────────┐                                │
-│  │  DEPLOYMENT  │     │  HUMAN       │                                │
-│  │   (AI:run)   │────►│  GO/NO-GO    │ ◄── Final approval           │
-│  └──────────────┘     └──────────────┘                                │
-│                                                                          │
-│  ┌──────────────────────────────────────────────────────────┐          │
-│  │              STANDARD IN EVERY BUILD:                      │          │
-│  │  📝 Logging  •  🔔 Alerts  •  👥 Users  •  📊 Analytics  │          │
-│  │  📦 Chronicler (Release Notes + Versioning)              │          │
-│  └──────────────────────────────────────────────────────────┘          │
-│                                                                          │
-└─────────────────────────────────────────────────────────────────────────┘
+🚀 Ready to build? [Yes] [Adjust Scope]
 ```
 
 ---
 
-## Key Principles
+## Built-In Standards: Every Project
 
-### 1. Human Approval at Every Gate
-- Product vision → Human approves
-- Requirements → Human validates
-- UI/UX → Human designs (AI assists)
-- Architecture → Human approves (AI researches)
-- Code → Human reviews
-- Tests → Human validates
-- **Release → Human approves**
-- Deployment → Human approves
+✅ **User Management** — Auth, RBAC, audit logs  
+✅ **Logging** — Structured, searchable  
+✅ **Alerting** — Proactive notifications  
+✅ **Security** — Vulnerability scanning  
+✅ **Release Management** — Chronicler  
+✅ **Cost Estimation** — Plutus (built-in)
 
-### 2. AI Does the Heavy Lifting
-- Research: Fast, exhaustive
-- Code: Accurate, consistent
-- Tests: Comprehensive, automated
-- Docs: Complete, always updated
-- **Release Notes: Auto-generated**
-
-### 3. Built-In Standards
-Every project gets:
-- User management (auth, RBAC)
-- Logging (structured, searchable)
-- Alerting (proactive notifications)
-- Analytics (built-in)
-- **Release management (Chronicler)**
-
-### 4. AI for What AI Does Best
-- Pattern matching ✓
-- Repetitive tasks ✓
-- Research & analysis ✓
-- Code generation ✓
-- Testing ✓
-- **Release documentation** ✓
-
-- Design taste ✗
-- Personal choices ✗
-- Strategic decisions ✗
+**No add-ons. Standard always-on.**
 
 ---
 
-## The Dashboard: Control Center
+## The Pipeline
 
-Monitor everything:
-- Projects status
-- Pipeline progress
-- Pending decisions (human approvals)
-- Artifacts (code, tests, docs)
-- **Releases & versions (Chronicler)**
-- Logs & alerts
-- Team & users
+```
+IDEA → RESEARCH → REQUIREMENTS → UI/UX → ARCHITECTURE 
+    → CODE → REVIEW → SECURITY → TESTS → DOCS 
+    → COST ESTIMATE → RELEASE → DEPLOYMENT
+    
+Human approval at EVERY gate
+```
 
 ---
 
-## Use Cases
+## Why AIDE X Wins
 
-### Startups
-- Move from idea to MVP in days
-- AI handles code, tests, docs, releases
-- You focus on product & design
-
-### Enterprises
-- Accelerate modernization
-- Standardize quality
-- Consistent release notes across teams
-
-### Solo Developers
-- Build like a team
-- Ship faster with quality
-- Professional release notes, always
+| Traditional | AIDE X |
+|------------|--------|
+| Hire 10+ specialists | 13 AI agents |
+| 3-6 months to ship | 2 days to ship |
+| $50K+ in dev costs | <$1K in compute |
+| Unpredictable quality | Guaranteed standards |
+| Need to know coding | Just describe what you want |
 
 ---
 
 ## The Vision
 
-**AI is a force multiplier, not a replacement.**
+**Building software shouldn't require building a team first.**
 
-AIDE X believes in:
-- **Collaboration** over automation
-- **Judgment** over speed
-- **Quality** over quantity
-- **Standards** over ad-hoc
-- **Documentation** over assumptions
+AIDE X gives you:
+- **Specialists on demand** — No recruiting
+- **Predictable results** — Not "surprise me"
+- **Human control** — AI proposes, you decide
+- **Built-in quality** — Standards always on
+- **Cost transparency** — Know what you're spending
 
-**The future is human-AI partnership.**
-AI does the work. Humans steer. Quality is guaranteed. Releases are documented.
+**The future of engineering is having an entire team in your pocket.**
 
 ---
 
 ## Call to Action
 
-**Join us in building the future of engineering.**
+**Join us.**
 
 - ⭐ Star us on GitHub
 - 🍴 Fork to contribute
 - 📖 Read the docs
 
-**AIDE X — AI as your force multiplier.**
+**AIDE X — Your AI Engineering Team, On Demand.**
 
 ---
 
-*Whitepaper v0.4 — With Chronicler (Release Documentation Agent)*
+*Whitepaper v0.5 — The Full Story: No Team Required*
 *February 2026 — Work in Progress — Contributions Invited*
