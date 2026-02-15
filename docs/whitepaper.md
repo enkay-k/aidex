@@ -1,17 +1,41 @@
 # AIDE X - AI Driven Engineering X
-## Whitepaper v0.2
+## Whitepaper v0.3
 
 ---
 
-## Executive Summary
+## The Philosophy: Let AI Do What AI Does Best
 
-**The world doesn't have enough engineers.**
+### The Core Insight
 
-Every year, the demand for software grows faster than the supply of engineers. Companies are stuck, projects are delayed, and brilliant ideas die in backlog purgatory.
+Not all tasks are created equal. Some things AI excels at — others require human judgment, taste, and creativity.
 
-**What if one person could do the work of an entire team?**
+**AIDE X is built on a simple principle:**
 
-AIDE X (AI Driven Engineering X) is a force multiplier. It's a repeatable, predictable system for harnessing AI's capabilities to build industrial-strength software — from product vision to production release.
+> AI does what AI does best. Humans do what humans do best.
+
+---
+
+## The Division of Labor
+
+| What AI Does Best | What Humans Must Decide |
+|-------------------|------------------------|
+| Code generation | UI/UX design choices |
+| Research & analysis | Product direction |
+| Testing & validation | Business priorities |
+| Documentation | Brand & aesthetics |
+| Security scanning | Architecture (with guidance) |
+| Repetitive tasks | Strategic decisions |
+
+### Why This Matters
+
+**UI/UX is personal.** 
+Your app's look and feel is your brand. It's how users feel. AI shouldn't decide colors, layouts, or interactions — that's collaboration between designer and stakeholder.
+
+**Architecture requires deep thinking.**
+System design is about trade-offs, constraints, and future growth. AI can research, analyze, and propose — but humans must approve.
+
+**Multiple human checkpoints.**
+Every major decision passes through human hands. Not at the end — at every stage.
 
 ---
 
@@ -28,14 +52,6 @@ AIDE X (AI Driven Engineering X) is a force multiplier. It's a repeatable, predi
 - Delayed products → lost revenue
 - Burned-out teams → churn
 - Compromised quality → technical debt
-- Stifled innovation → missed opportunities
-
-### Current Solutions Don't Work
-
-- **Offshoring:** Quality issues, communication gaps
-- **Low-code:** Limited capability, vendor lock-in
-- **Copilots:** Helpful but still require expert developers
-- **Freelancers:** Inconsistent, hard to scale
 
 ---
 
@@ -43,97 +59,104 @@ AIDE X (AI Driven Engineering X) is a force multiplier. It's a repeatable, predi
 
 ### What is AIDE X?
 
-AIDE X is an **agentic operating system** that orchestrates a team of specialized AI agents through every stage of the software development lifecycle — all under human oversight.
+AIDE X orchestrates specialized AI agents for what they do best — while humans stay in control of what matters most.
 
-Think of it as a **digital engineering department** that works 24/7, never burns out, and produces production-quality code.
-
-### The Force Multiplier Effect
-
-| Traditional | With AIDE X |
-|-------------|-------------|
-| 1 engineer | 1 engineer + 6 AI agents |
-| Weeks to ship | Hours to ship |
-| Code review sometimes | Code review always |
-| Security as an afterthought | Security built-in |
-| Manual testing | Automated, comprehensive |
-| Tech debt accumulates | Quality guaranteed |
-
-**Result: 10x productivity, predictable output.**
+**Think of it as:**
+- AI as your **research team** (fast, exhaustive, 24/7)
+- AI as your **code writers** (accurate, consistent)
+- AI as your **quality assurance** (thorough, never tired)
+- **You** as the decision maker (taste, judgment, vision)
 
 ---
 
-## The Repeatable, Predictable System
+## Built-In Standards: Every Project Gets These
 
-### Key Principles
+### Every system AIDE X builds includes:
 
-1. **Pipeline Architecture**
-   - Every project follows the same proven flow
-   - No shortcuts, no missed steps
-   - Predictable outcomes
+✅ **User Management**
+- Authentication (OAuth, SSO, MFA)
+- Role-based access control
+- Team workspaces
+- Audit logs of all actions
 
-2. **Specialized Agents**
-   - Each agent is an expert in one domain
-   - They work together seamlessly
-   - Continuous improvement
+✅ **Logging**
+- Structured logging from day one
+- Searchable, filterable
+- DEBUG, INFO, WARN, ERROR levels
+- Retention policies
 
-3. **Human-in-the-Loop**
-   - Humans make critical decisions
-   - AI proposes, humans decide
-   - Accountability maintained
+✅ **Alerting**
+- Pipeline status notifications
+- Error alerts
+- Human decision reminders
+- Deployment notifications
 
-4. **Built-in Quality Gates**
-   - Code review always runs
-   - Security scans always pass
-   - Tests always validate
-
-5. **Standard Stack**
-   - Logging — from day one
-   - Alerting — proactive notifications
-   - User management — role-based access
-   - All included, not added later
+**These aren't add-ons. They're standard. Every project. Always.**
 
 ---
 
-## The Pipeline: Vision to Release
+## The Pipeline: Human-Guided, AI-Executed
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────┐
-│                         AIDE X PIPELINE                                 │
+│                    AIDE X PIPELINE                                      │
 ├─────────────────────────────────────────────────────────────────────────┤
 │                                                                          │
-│  ┌──────────────┐                                                       │
-│  │   PRODUCT    │ ◄── Product Vision & Strategy                        │
-│  │   VISION    │     Features, Roadmap, Priorities                     │
-│  └──────┬───────┘                                                       │
+│  ┌──────────────┐     ┌──────────────┐                                │
+│  │   PRODUCT    │     │  HUMAN       │                                │
+│  │   VISION     │────►│  APPROVAL    │ ◄── You decide direction      │
+│  │   (AI:data)  │     │              │                                │
+│  └──────────────┘     └──────────────┘                                │
 │         │                                                                │
 │         ▼                                                                │
-│  ┌──────────────┐                                                       │
-│  │ REQUIREMENTS │ ◄── Detailed User Stories                           │
-│  │              │     Acceptance Criteria                               │
-│  └──────┬───────┘                                                       │
+│  ┌──────────────┐     ┌──────────────┐                                │
+│  │ REQUIREMENTS │     │  HUMAN       │                                │
+│  │  (AI:write)  │────►│  REVIEW      │ ◄── You validate scope        │
+│  └──────────────┘     └──────────────┘                                │
 │         │                                                                │
 │         ▼                                                                │
-│  ┌──────────────┐     ┌──────────────┐     ┌──────────────┐            │
-│  │  ARCHITECT   │ ──► │     CODE     │ ──► │    TESTS    │            │
-│  │   DESIGN     │     │   (FORGE)    │     │  (CASSANDRA)│            │
-│  └──────┬───────┘     └──────┬───────┘     └──────┬───────┘            │
-│         │                     │                     │                     │
-│         │              ┌──────┴───────┐             │                     │
-│         │              │              │             │                     │
-│         │              ▼              ▼             ▼                     │
-│         │       ┌───────────┐  ┌───────────┐  ┌───────────┐           │
-│         │       │  QUALITY  │  │ SECURITY  │  │  COVERAGE │           │
-│         │       │  REVIEW    │  │   SCAN    │  │   CHECK   │           │
-│         │       │ (ATHENA)  │  │ (ATHENA)  │  │           │           │
-│         │       └───────────┘  └───────────┘  └───────────┘           │
-│         │                     │                     │                     │
-│         ▼                     ▼                     ▼                     │
-│  ┌──────────────┐     ┌──────────────┐     ┌──────────────┐            │
-│  │    DOCS      │     │  ARTIFACTS   │     │   RELEASE    │            │
-│  │ (CALLIOPE)   │     │   STORED     │     │  DEPLOYED    │            │
-│  └──────────────┘     └──────────────┘     └──────────────┘            │
+│  ┌──────────────┐     ┌──────────────┐                                │
+│  │   UI/UX      │     │  HUMAN       │                                │
+│  │  (AI:mockup) │────►│  APPROVAL    │ ◄── NEVER AI's choice!       │
+│  │  Human:DESIGN│     │              │                                │
+│  └──────────────┘     └──────────────┘                                │
+│         │                                                                │
+│         ▼                                                                │
+│  ┌──────────────┐     ┌──────────────┐                                │
+│  │  ARCHITECT   │     │  HUMAN       │                                │
+│  │ (AI:research)│────►│  APPROVAL    │ ◄── Deep thinking required    │
+│  │ Human:DECIDE │     │              │                                │
+│  └──────────────┘     └──────────────┘                                │
+│         │                                                                │
+│         ▼                                                                │
+│  ┌──────────────┐     ┌──────────────┐     ┌──────────────┐         │
+│  │     CODE     │     │  QUALITY     │     │  SECURITY    │         │
+│  │  (AI:write)  │────►│  REVIEW      │────►│   SCAN       │         │
+│  │              │     │  (AI+Human)  │     │  (AI)        │         │
+│  └──────────────┘     └──────────────┘     └──────────────┘         │
+│         │                                                                │
+│         ▼                                                                │
+│  ┌──────────────┐     ┌──────────────┐                                │
+│  │    TESTS     │     │  HUMAN       │                                │
+│  │  (AI:gen)    │────►│  REVIEW      │ ◄── Validate coverage          │
+│  └──────────────┘     └──────────────┘                                │
+│         │                                                                │
+│         ▼                                                                │
+│  ┌──────────────┐     ┌──────────────┐                                │
+│  │    DOCS      │     │  HUMAN       │                                │
+│  │  (AI:write)  │────►│  REVIEW      │ ◄── Approve before release    │
+│  └──────────────┘     └──────────────┘                                │
+│         │                                                                │
+│         ▼                                                                │
+│  ┌──────────────┐     ┌──────────────┐                                │
+│  │  DEPLOYMENT  │     │  HUMAN       │                                │
+│  │   (AI:run)   │────►│  GO/NO-GO    │ ◄── Final approval            │
+│  └──────────────┘     └──────────────┘                                │
 │                                                                          │
-│         ◄────────── HUMAN DECISION GATES ──────────►                    │
+│  ┌──────────────────────────────────────────────────────────┐          │
+│  │              STANDARD IN EVERY BUILD:                      │          │
+│  │  📝 Logging  •  🔔 Alerts  •  👥 Users  •  📊 Analytics  │          │
+│  └──────────────────────────────────────────────────────────┘          │
 │                                                                          │
 └─────────────────────────────────────────────────────────────────────────┘
 ```
@@ -142,99 +165,68 @@ Think of it as a **digital engineering department** that works 24/7, never burns
 
 ## The Agent Team
 
-| Agent | Codename | Role |
-|-------|----------|------|
-| **Coordinator** | Hermes | Orchestrates the entire pipeline |
-| **Architect** | Daedalus | System design, tech stack |
-| **Engineer** | Hephaestus | Code generation |
-| **Reviewer** | Athena | Quality, conformance, security |
-| **Tester** | Cassandra | Test generation, validation |
-| **Docs** | Calliope | Documentation |
+| Agent | What They Do | Human Role |
+|-------|--------------|------------|
+| **Researcher** | Data gathering, market analysis, tech research | Review findings |
+| **Architect** | System design, trade-off analysis | Approve architecture |
+| **Designer** (AI-assisted) | Generate mockups, explore options | Make final design choices |
+| **Engineer** | Write code, implement features | Code review |
+| **Reviewer** | Quality checks, best practices | Approve changes |
+| **Security** | Vulnerability scanning | Review findings |
+| **Tester** | Generate tests, validate | Approve coverage |
+| **Docs** | Write documentation | Review accuracy |
+| **Coordinator** | Orchestrate pipeline | Manage flow |
 
 ---
 
-## Built-In Quality: Always On
+## Key Principles
 
-### Code Review — Every Time
+### 1. Human Approval at Every Gate
+- Product vision → Human approves
+- Requirements → Human validates
+- UI/UX → Human designs (AI assists)
+- Architecture → Human approves (AI researches)
+- Code → Human reviews
+- Tests → Human validates
+- Deployment → Human approves
 
-- **Quality:** Style, structure, best practices
-- **Conformance:** Architecture patterns, coding standards
-- **Security:** Vulnerability detection, OWASP checks
+### 2. AI Does the Heavy Lifting
+- Research: Fast, exhaustive
+- Code: Accurate, consistent
+- Tests: Comprehensive, automated
+- Docs: Complete, always updated
 
-No code passes without review. No exceptions.
+### 3. Built-In Standards
+Every project gets:
+- User management (auth, RBAC)
+- Logging (structured, searchable)
+- Alerting (proactive notifications)
+- Analytics (built-in)
 
-### Security — Built In
+No exceptions. No configure-to-enable.
 
-- Static application security testing (SAST)
-- Dependency vulnerability scanning
-- Secret detection
-- Compliance checks
+### 4. AI for What AI Does Best
+- Pattern matching ✓
+- Repetitive tasks ✓
+- Research & analysis ✓
+- Code generation ✓
+- Testing ✓
 
-### Testing — Comprehensive
-
-- Unit tests generation
-- Integration tests
-- E2E scenarios
-- Coverage thresholds
-
----
-
-## Standard Stack, Included
-
-### Logging
-
-- Structured logging from every agent
-- Log levels: DEBUG, INFO, WARN, ERROR
-- Searchable, filterable
-- Retention policies
-
-### Alerting
-
-- Pipeline status notifications
-- Error alerts
-- Human decision reminders
-- Deployment notifications
-
-### User Management
-
-- Role-based access control (RBAC)
-- Owner, Editor, Viewer roles
-- Audit logs of all actions
-- Team workspaces
+- Design taste ✗
+- Personal choices ✗
+- Strategic decisions ✗
 
 ---
 
 ## The Dashboard: Control Center
 
-AIDE X includes a mission-control dashboard that shows:
-
-| View | What's Shown |
-|------|--------------|
-| **Pipeline** | Current stage, progress, ETA |
-| **Decisions** | Pending human approvals |
-| **Artifacts** | Code, tests, docs, builds |
-| **Quality** | Review scores, security status |
-| **History** | All projects, all runs |
-| **Team** | Users, roles, permissions |
-
-**Table + Card Design:**
-- Filter by status, agent, date
-- Search across all artifacts
-- Drill down into details
-- Export reports
-
----
-
-## Why It's Different
-
-| Feature | AIDE X | Traditional |
-|---------|--------|-------------|
-| Code review | Always, automated | Often skipped |
-| Security | Built-in | Add-on |
-| Tests | Auto-generated | Often manual |
-| Docs | Auto-written | Often missing |
-| Scaling | Infinite | Linear |
-| 24/7 | Yes | No |
+Monitor everything:
+- Projects status
+- Pipeline progress
+- Pending decisions (human approvals)
+- Artifacts (code, tests, docs)
+- Logs & alerts
+- Team & users
 
 ---
 
@@ -242,35 +234,32 @@ AIDE X includes a mission-control dashboard that shows:
 
 ### Startups
 - Move from idea to MVP in days
-- Compete with 10x bigger teams
+- AI handles code, tests, docs
+- You focus on product & design
 
 ### Enterprises
 - Accelerate modernization
-- Reduce backlog
 - Standardize quality
+- Human oversight maintained
 
 ### Solo Developers
 - Build like a team
-- Ship faster
-
-### Non-Profits
-- Do more with less
-- Focus on mission, not code
+- Ship faster with quality
 
 ---
 
 ## The Vision
 
-**Every organization will have AI engineering teams.**
+**AI is a force multiplier, not a replacement.**
 
-AIDE X is building the future where:
-- One person directs a team of AI agents
-- Quality is guaranteed, not hoped for
-- Security is built-in, not bolted on
-- Software ships at the speed of ideas
+AIDE X believes in:
+- **Collaboration** over automation
+- **Judgment** over speed
+- **Quality** over quantity
+- **Standards** over ad-hoc
 
-**The question isn't whether AI will transform engineering.**
-**It's whether you'll be leading the change or playing catch-up.**
+**The future is human-AI partnership.**
+AI does the work. Humans steer. Quality is guaranteed.
 
 ---
 
@@ -281,11 +270,10 @@ AIDE X is building the future where:
 - ⭐ Star us on GitHub
 - 🍴 Fork to contribute
 - 📖 Read the docs
-- 💬 Join the community
 
-**AIDE X — Where AI is your force multiplier.**
+**AIDE X — AI as your force multiplier.**
 
 ---
 
-*Whitepaper v0.2 — February 2026*
-*Contributions Invited — This is just the beginning.*
+*Whitepaper v0.3 — The Philosophy: AI does what AI does best*
+*February 2026 — Work in Progress — Contributions Invited*
