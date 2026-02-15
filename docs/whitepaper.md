@@ -1,5 +1,5 @@
 # AIDE X - AI Driven Engineering X
-## Whitepaper v0.3
+## Whitepaper v0.4
 
 ---
 
@@ -24,18 +24,8 @@ Not all tasks are created equal. Some things AI excels at — others require hum
 | Testing & validation | Business priorities |
 | Documentation | Brand & aesthetics |
 | Security scanning | Architecture (with guidance) |
+| **Release management** | **Deployment approval** |
 | Repetitive tasks | Strategic decisions |
-
-### Why This Matters
-
-**UI/UX is personal.** 
-Your app's look and feel is your brand. It's how users feel. AI shouldn't decide colors, layouts, or interactions — that's collaboration between designer and stakeholder.
-
-**Architecture requires deep thinking.**
-System design is about trade-offs, constraints, and future growth. AI can research, analyze, and propose — but humans must approve.
-
-**Multiple human checkpoints.**
-Every major decision passes through human hands. Not at the end — at every stage.
 
 ---
 
@@ -46,12 +36,6 @@ Every major decision passes through human hands. Not at the end — at every sta
 - **10 million** — Number of unfilled software jobs globally
 - **85%** — Managers can't find enough engineering talent
 - **$1.2 trillion** — Cost of developer shortage in US alone
-
-### The Cost
-
-- Delayed products → lost revenue
-- Burned-out teams → churn
-- Compromised quality → technical debt
 
 ---
 
@@ -66,6 +50,79 @@ AIDE X orchestrates specialized AI agents for what they do best — while humans
 - AI as your **code writers** (accurate, consistent)
 - AI as your **quality assurance** (thorough, never tired)
 - **You** as the decision maker (taste, judgment, vision)
+
+---
+
+## The Agent Team
+
+| Agent | What They Do | Human Role |
+|-------|--------------|------------|
+| **Researcher** | Data gathering, market analysis, tech research | Review findings |
+| **Architect** | System design, trade-off analysis | Approve architecture |
+| **Designer** (AI-assisted) | Generate mockups, explore options | Make final design choices |
+| **Engineer** | Write code, implement features | Code review |
+| **Reviewer** | Quality checks, best practices | Approve changes |
+| **Security** | Vulnerability scanning | Review findings |
+| **Tester** | Generate tests, validate | Approve coverage |
+| **Docs** | Write documentation | Review accuracy |
+| **Chronicler** ⭐ | Release management, versioning | Approve releases |
+| **Coordinator** | Orchestrate pipeline | Manage flow |
+
+---
+
+## ⭐ NEW: The Chronicler — Release Documentation Agent
+
+### Every System Built by AIDE X Includes a Built-in Release Agent
+
+**The Chronicler** is a special agent built into every project. It handles:
+
+### 1. Version Management
+```
+Format: YYYY.MM.DD.NNNN
+Example: 2026.02.15.0001
+```
+- Date-based versioning (human predictable)
+- Incremental build numbers
+- Semantic versioning support (optional)
+
+### 2. Change Tracking
+- Every code change is logged
+- Linked to author (human or agent)
+- Categorized: Feature, Fix, Breaking, Docs
+
+### 3. Release Notes Generation
+Automatic release notes include:
+- Change ID and description
+- Links to artifacts (code, tests, docs)
+- Author attribution
+- Breaking changes highlighted
+- Migration guides when needed
+
+### 4. Dev Mode Access
+- Toggle via settings
+- View all releases
+- Drill into any change
+- Compare versions
+
+### Example Release Note
+```
+📦 Release: 2026.02.15.0001
+Date: February 15, 2026
+Status: ✅ Production Ready
+
+Changes:
+  #001 Added dashboard UI with table/card design
+       → [View Code] [View Tests] [View Docs]
+  #002 Updated whitepaper with AI philosophy
+       → [View Code]
+  #003 Added light mode only (per user request)
+       → [View Code] [View Design]
+
+Breaking Changes: None
+Migration Needed: No
+
+➡️ [View Full Changelog] [Compare with Previous]
+```
 
 ---
 
@@ -90,6 +147,17 @@ AIDE X orchestrates specialized AI agents for what they do best — while humans
 - Error alerts
 - Human decision reminders
 - Deployment notifications
+
+✅ **Release Management (Chronicler)**
+- Auto-generated release notes
+- Human-readable versioning
+- Change tracking
+- Dev Mode access
+
+✅ **Security**
+- Vulnerability scanning
+- Dependency checks
+- Secret detection
 
 **These aren't add-ons. They're standard. Every project. Always.**
 
@@ -143,39 +211,24 @@ AIDE X orchestrates specialized AI agents for what they do best — while humans
 │         │                                                                │
 │         ▼                                                                │
 │  ┌──────────────┐     ┌──────────────┐                                │
-│  │    DOCS      │     │  HUMAN       │                                │
-│  │  (AI:write)  │────►│  REVIEW      │ ◄── Approve before release    │
+│  │    DOCS      │     │  CHRONICLER   │                                │
+│  │  (AI:write)  │────►│  Release Note│ ◄── Auto-generate!            │
 │  └──────────────┘     └──────────────┘                                │
 │         │                                                                │
 │         ▼                                                                │
 │  ┌──────────────┐     ┌──────────────┐                                │
 │  │  DEPLOYMENT  │     │  HUMAN       │                                │
-│  │   (AI:run)   │────►│  GO/NO-GO    │ ◄── Final approval            │
+│  │   (AI:run)   │────►│  GO/NO-GO    │ ◄── Final approval           │
 │  └──────────────┘     └──────────────┘                                │
 │                                                                          │
 │  ┌──────────────────────────────────────────────────────────┐          │
 │  │              STANDARD IN EVERY BUILD:                      │          │
 │  │  📝 Logging  •  🔔 Alerts  •  👥 Users  •  📊 Analytics  │          │
+│  │  📦 Chronicler (Release Notes + Versioning)              │          │
 │  └──────────────────────────────────────────────────────────┘          │
 │                                                                          │
 └─────────────────────────────────────────────────────────────────────────┘
 ```
-
----
-
-## The Agent Team
-
-| Agent | What They Do | Human Role |
-|-------|--------------|------------|
-| **Researcher** | Data gathering, market analysis, tech research | Review findings |
-| **Architect** | System design, trade-off analysis | Approve architecture |
-| **Designer** (AI-assisted) | Generate mockups, explore options | Make final design choices |
-| **Engineer** | Write code, implement features | Code review |
-| **Reviewer** | Quality checks, best practices | Approve changes |
-| **Security** | Vulnerability scanning | Review findings |
-| **Tester** | Generate tests, validate | Approve coverage |
-| **Docs** | Write documentation | Review accuracy |
-| **Coordinator** | Orchestrate pipeline | Manage flow |
 
 ---
 
@@ -188,6 +241,7 @@ AIDE X orchestrates specialized AI agents for what they do best — while humans
 - Architecture → Human approves (AI researches)
 - Code → Human reviews
 - Tests → Human validates
+- **Release → Human approves**
 - Deployment → Human approves
 
 ### 2. AI Does the Heavy Lifting
@@ -195,6 +249,7 @@ AIDE X orchestrates specialized AI agents for what they do best — while humans
 - Code: Accurate, consistent
 - Tests: Comprehensive, automated
 - Docs: Complete, always updated
+- **Release Notes: Auto-generated**
 
 ### 3. Built-In Standards
 Every project gets:
@@ -202,8 +257,7 @@ Every project gets:
 - Logging (structured, searchable)
 - Alerting (proactive notifications)
 - Analytics (built-in)
-
-No exceptions. No configure-to-enable.
+- **Release management (Chronicler)**
 
 ### 4. AI for What AI Does Best
 - Pattern matching ✓
@@ -211,6 +265,7 @@ No exceptions. No configure-to-enable.
 - Research & analysis ✓
 - Code generation ✓
 - Testing ✓
+- **Release documentation** ✓
 
 - Design taste ✗
 - Personal choices ✗
@@ -225,6 +280,7 @@ Monitor everything:
 - Pipeline progress
 - Pending decisions (human approvals)
 - Artifacts (code, tests, docs)
+- **Releases & versions (Chronicler)**
 - Logs & alerts
 - Team & users
 
@@ -234,17 +290,18 @@ Monitor everything:
 
 ### Startups
 - Move from idea to MVP in days
-- AI handles code, tests, docs
+- AI handles code, tests, docs, releases
 - You focus on product & design
 
 ### Enterprises
 - Accelerate modernization
 - Standardize quality
-- Human oversight maintained
+- Consistent release notes across teams
 
 ### Solo Developers
 - Build like a team
 - Ship faster with quality
+- Professional release notes, always
 
 ---
 
@@ -257,9 +314,10 @@ AIDE X believes in:
 - **Judgment** over speed
 - **Quality** over quantity
 - **Standards** over ad-hoc
+- **Documentation** over assumptions
 
 **The future is human-AI partnership.**
-AI does the work. Humans steer. Quality is guaranteed.
+AI does the work. Humans steer. Quality is guaranteed. Releases are documented.
 
 ---
 
@@ -275,5 +333,5 @@ AI does the work. Humans steer. Quality is guaranteed.
 
 ---
 
-*Whitepaper v0.3 — The Philosophy: AI does what AI does best*
+*Whitepaper v0.4 — With Chronicler (Release Documentation Agent)*
 *February 2026 — Work in Progress — Contributions Invited*
