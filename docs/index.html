@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
         :root {
+            /* Dark Mode (Default) */
             --bg-dark: #0a0a0f;
             --bg-card: #12121a;
             --bg-card-hover: #1a1a25;
@@ -19,6 +20,22 @@
             --text-primary: #ffffff;
             --text-secondary: #9ca3af;
             --border: #2a2a35;
+            --gradient-start: #0a0a0f;
+            --gradient-end: #12121a;
+        }
+
+        [data-theme="light"] {
+            --bg-dark: #f8fafc;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f1f5f9;
+            --accent-primary: #0891b2;
+            --accent-secondary: #7c3aed;
+            --accent-tertiary: #0e7490;
+            --text-primary: #0f172a;
+            --text-secondary: #64748b;
+            --border: #e2e8f0;
+            --gradient-start: #f8fafc;
+            --gradient-end: #ffffff;
         }
 
         * {
@@ -34,6 +51,7 @@
             min-height: 100vh;
             line-height: 1.6;
             overflow-x: hidden;
+            transition: background 0.3s, color 0.3s;
         }
 
         /* Gemini 3 Inspired Animation */
@@ -53,6 +71,7 @@
             filter: blur(60px);
             opacity: 0.4;
             animation: float 20s ease-in-out infinite;
+            transition: opacity 0.3s;
         }
 
         .orb-1 {
@@ -83,19 +102,15 @@
             animation-delay: -14s;
         }
 
+        [data-theme="light"] .orb {
+            opacity: 0.15;
+        }
+
         @keyframes float {
-            0%, 100% {
-                transform: translate(0, 0) scale(1);
-            }
-            25% {
-                transform: translate(50px, -30px) scale(1.1);
-            }
-            50% {
-                transform: translate(-30px, 50px) scale(0.9);
-            }
-            75% {
-                transform: translate(-50px, -20px) scale(1.05);
-            }
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(50px, -30px) scale(1.1); }
+            50% { transform: translate(-30px, 50px) scale(0.9); }
+            75% { transform: translate(-50px, -20px) scale(1.05); }
         }
 
         /* Particle Animation */
@@ -121,20 +136,52 @@
         }
 
         @keyframes particle-float {
-            0% {
-                transform: translateY(100vh) rotate(0deg);
-                opacity: 0;
-            }
-            10% {
-                opacity: 0.8;
-            }
-            90% {
-                opacity: 0.8;
-            }
-            100% {
-                transform: translateY(-100vh) rotate(720deg);
-                opacity: 0;
-            }
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.8; }
+            90% { opacity: 0.8; }
+            100% { transform: translateY(-100vh) rotate(720deg); opacity: 0; }
+        }
+
+        /* Theme Toggle */
+        .theme-toggle {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            z-index: 200;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 50px;
+            padding: 0.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s;
+        }
+
+        .theme-toggle:hover {
+            border-color: var(--accent-primary);
+        }
+
+        .theme-icon {
+            font-size: 1.2rem;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.3s;
+        }
+
+        .theme-icon.dark { background: var(--bg-dark); }
+        .theme-icon.light { background: #fef3c7; }
+
+        .theme-label {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            padding-right: 0.5rem;
+            font-weight: 500;
         }
 
         /* Navigation */
@@ -147,6 +194,11 @@
             backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border);
             padding: 1rem 2rem;
+            transition: background 0.3s, border-color 0.3s;
+        }
+
+        [data-theme="light"] nav {
+            background: rgba(248, 250, 252, 0.9);
         }
 
         .nav-content {
@@ -167,9 +219,7 @@
             z-index: 10;
         }
 
-        .logo span {
-            font-weight: 300;
-        }
+        .logo span { font-weight: 300; }
 
         .nav-links {
             display: flex;
@@ -187,9 +237,7 @@
             position: relative;
         }
 
-        .nav-links a:hover {
-            color: var(--accent-primary);
-        }
+        .nav-links a:hover { color: var(--accent-primary); }
 
         .nav-links a::after {
             content: '';
@@ -202,9 +250,7 @@
             transition: width 0.3s;
         }
 
-        .nav-links a:hover::after {
-            width: 100%;
-        }
+        .nav-links a:hover::after { width: 100%; }
 
         .nav-links a.cta {
             background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
@@ -218,9 +264,7 @@
             box-shadow: 0 5px 20px rgba(0, 212, 255, 0.4);
         }
 
-        .nav-links a.cta::after {
-            display: none;
-        }
+        .nav-links a.cta::after { display: none; }
 
         /* Hero */
         .hero {
@@ -236,10 +280,11 @@
             border: 1px solid rgba(124, 58, 237, 0.3);
             padding: 0.5rem 1.5rem;
             border-radius: 50px;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             color: var(--accent-secondary);
             margin-bottom: 2rem;
             animation: fadeInUp 0.8s ease-out;
+            font-weight: 500;
         }
 
         .hero h1 {
@@ -265,7 +310,7 @@
 
         .hero-tagline {
             font-size: 1.5rem;
-            color: var(--text-secondary);
+            color: var(--text-primary);
             max-width: 700px;
             margin: 0 auto 1rem;
             animation: fadeInUp 0.8s ease-out 0.4s backwards;
@@ -274,21 +319,15 @@
         .hero-subtagline {
             font-size: 1.1rem;
             color: var(--text-secondary);
-            opacity: 0.7;
+            opacity: 0.9;
             max-width: 600px;
             margin: 0 auto 2.5rem;
             animation: fadeInUp 0.8s ease-out 0.5s backwards;
         }
 
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .hero-buttons {
@@ -325,9 +364,7 @@
             transition: left 0.5s;
         }
 
-        .btn-primary:hover::before {
-            left: 100%;
-        }
+        .btn-primary:hover::before { left: 100%; }
 
         .btn-primary:hover {
             transform: translateY(-3px);
@@ -401,15 +438,8 @@
             box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
         }
 
-        .flow-step-icon {
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .flow-step-label {
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
+        .flow-step-icon { font-size: 2rem; margin-bottom: 0.5rem; }
+        .flow-step-label { font-weight: 600; font-size: 0.9rem; }
 
         .flow-arrow {
             color: var(--accent-primary);
@@ -427,7 +457,8 @@
             position: relative;
             z-index: 5;
             padding: 4rem 2rem;
-            background: rgba(18, 18, 26, 0.5);
+            background: var(--bg-card);
+            transition: background 0.3s;
         }
 
         .stats-grid {
@@ -438,9 +469,7 @@
             gap: 2rem;
         }
 
-        .stat-item {
-            text-align: center;
-        }
+        .stat-item { text-align: center; }
 
         .stat-number {
             font-size: 3rem;
@@ -450,10 +479,7 @@
             -webkit-text-fill-color: transparent;
         }
 
-        .stat-label {
-            color: var(--text-secondary);
-            font-size: 1rem;
-        }
+        .stat-label { color: var(--text-secondary); font-size: 1rem; }
 
         /* Features */
         .features {
@@ -493,9 +519,7 @@
             transition: opacity 0.4s;
         }
 
-        .feature-card:hover::before {
-            opacity: 1;
-        }
+        .feature-card:hover::before { opacity: 1; }
 
         .feature-card:hover {
             border-color: var(--accent-primary);
@@ -540,10 +564,7 @@
             background: linear-gradient(180deg, transparent, rgba(124, 58, 237, 0.1));
         }
 
-        .cta-section h2 {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-        }
+        .cta-section h2 { font-size: 3rem; margin-bottom: 1.5rem; }
 
         .cta-section p {
             color: var(--text-secondary);
@@ -562,31 +583,27 @@
             border-top: 1px solid var(--border);
             text-align: center;
             color: var(--text-secondary);
+            transition: border-color 0.3s;
         }
 
-        footer a {
-            color: var(--accent-primary);
-            text-decoration: none;
-        }
+        footer a { color: var(--accent-primary); text-decoration: none; }
 
         /* Responsive */
         @media (max-width: 900px) {
-            .hero h1 {
-                font-size: 3rem;
-            }
-            .hero-tagline {
-                font-size: 1.2rem;
-            }
-            .flow-diagram {
-                flex-direction: column;
-            }
-            .flow-arrow {
-                transform: rotate(90deg);
-            }
+            .hero h1 { font-size: 3rem; }
+            .hero-tagline { font-size: 1.2rem; }
+            .flow-diagram { flex-direction: column; }
+            .flow-arrow { transform: rotate(90deg); }
         }
     </style>
 </head>
 <body>
+    <!-- Theme Toggle -->
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+        <span class="theme-label" id="theme-label">Dark</span>
+        <div class="theme-icon dark" id="theme-icon">🌙</div>
+    </button>
+
     <!-- Gemini 3 Inspired Animation -->
     <div class="hero-canvas">
         <div class="orb orb-1"></div>
@@ -602,6 +619,7 @@
             <ul class="nav-links">
                 <li><a href="#how-it-works">How It Works</a></li>
                 <li><a href="#features">Agents</a></li>
+                <li><a href="#whitepaper">Whitepaper</a></li>
                 <li><a href="https://github.com/enkay-k/aidex">GitHub</a></li>
                 <li><a href="https://github.com/enkay-k/aidex" class="cta">Get Started</a></li>
             </ul>
@@ -609,7 +627,7 @@
     </nav>
 
     <section class="hero">
-        <div class="hero-badge">🚀 Now in Alpha</div>
+        <div class="hero-badge">🔧 Work in Progress — Contributions Invited</div>
         <h1>AI Driven Engineering <span class="x-factor">X</span></h1>
         <p class="hero-tagline">Code at the speed of thought.</p>
         <p class="hero-subtagline">One human + AI agents = entire engineering team. From feature spec to production code in minutes. Industrial strength, not just prototypes.</p>
@@ -708,10 +726,30 @@
         </div>
     </section>
 
+    <!-- Whitepaper Section -->
+    <section class="cta-section" id="whitepaper" style="background: var(--bg-card);">
+        <div class="section-header">
+            <h2>Read the Vision</h2>
+            <p>Our whitepaper outlines the complete AIDE X architecture</p>
+        </div>
+        <a href="https://github.com/enkay-k/aidex/blob/main/docs/whitepaper.md" class="btn btn-secondary" style="display: inline-block; margin-bottom: 2rem;">📄 Read Whitepaper</a>
+        <div style="text-align: left; max-width: 800px; margin: 0 auto; background: var(--bg-dark); border-radius: 16px; padding: 2rem; border: 1px solid var(--border);">
+            <h3 style="margin-bottom: 1rem;">AIDE X Whitepaper</h3>
+            <ul style="color: var(--text-secondary); line-height: 2;">
+                <li>🎯 The Problem: Software development is broken</li>
+                <li>💡 The Solution: Agent pipeline architecture</li>
+                <li>👥 The Team: 9 specialized AI agents</li>
+                <li>🔄 The Pipeline: From idea to deployment</li>
+                <li>📈 The Roadmap: Phase 1-4</li>
+            </ul>
+        </div>
+    </section>
+
     <section class="cta-section">
         <h2>Build Faster. Scale Smarter.</h2>
         <p>Your AI engineering team, 24/7. Production-ready code, not just prototypes.</p>
         <a href="https://github.com/enkay-k/aidex" class="btn btn-primary">Get Started</a>
+        <p style="margin-top: 1.5rem; font-size: 0.9rem; opacity: 0.7;">⭐ Star us on GitHub | 🍴 Fork to contribute | 📖 Read the docs</p>
     </section>
 
     <footer>
@@ -719,6 +757,36 @@
     </footer>
 
     <script>
+        // Theme Toggle
+        function toggleTheme() {
+            const html = document.documentElement;
+            const label = document.getElementById('theme-label');
+            const icon = document.getElementById('theme-icon');
+            
+            if (html.getAttribute('data-theme') === 'light') {
+                html.setAttribute('data-theme', 'dark');
+                label.textContent = 'Dark';
+                icon.textContent = '🌙';
+                icon.className = 'theme-icon dark';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                html.setAttribute('data-theme', 'light');
+                label.textContent = 'Light';
+                icon.textContent = '☀️';
+                icon.className = 'theme-icon light';
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        // Load saved theme
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        if (savedTheme === 'light') {
+            document.getElementById('theme-label').textContent = 'Light';
+            document.getElementById('theme-icon').textContent = '☀️';
+            document.getElementById('theme-icon').className = 'theme-icon light';
+        }
+
         // Create particles
         const particlesContainer = document.getElementById('particles');
         const particleCount = 50;
