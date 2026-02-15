@@ -1,5 +1,5 @@
 # AIDE X - AI Driven Engineering X
-## Whitepaper v0.7
+## Whitepaper v0.8
 
 ---
 
@@ -19,11 +19,13 @@ Want to build an industrial-strength system? You need:
 | **Code Reviewer** | Quality, best practices |
 | **Security Analyst** | Vulnerabilities, compliance |
 | **Tester** | Tests, validation |
+| **DevOps Engineer** | CI/CD, deployment, infrastructure |
+| **Performance Engineer** | Load testing, stress testing |
+| **VaPT Engineer** | Verification, validation, compliance |
+| **Marketing Specialist** | Positioning, launch |
 | **Technical Writer** | Documentation |
 | **Release Manager** | Versioning, deployment |
 | **Cost Estimator** | Infrastructure, timeline, ROI |
-| **Performance Engineer** | Load testing, stress testing |
-| **Marketing Specialist** | Positioning, launch |
 
 ### The Problem
 
@@ -124,8 +126,10 @@ Most AI coding tools are great for:
 | **Reviewer** | Athena | Quality, best practices | Approve changes |
 | **Security** | Ares | Vulnerability scanning | Review findings |
 | **Tester** | Cassandra | Tests, validation | Approve coverage |
-| **Performance** ⭐ | Titan | Load testing, stress testing | Validate scalability |
-| **Marketing** ⭐ | Hermes² | Positioning, launch strategy | Approve messaging |
+| **DevOps** ⭐ | Hephaestus² | CI/CD, infra, deployment | Validate pipeline |
+| **VaPT** ⭐ | Themis | Verification, validation, compliance | Approve certification |
+| **Performance** | Titan | Load testing, stress testing | Validate scalability |
+| **Marketing** | Hermes² | Positioning, launch strategy | Approve messaging |
 | **Docs** | Calliope | Documentation | Review accuracy |
 | **Chronicler** | Historiograph | Release notes, versioning | Approve releases |
 | **Cost Estimator** | Plutus | Development + Ops costs, ROI | Validate estimates |
@@ -133,7 +137,119 @@ Most AI coding tools are great for:
 
 ---
 
-## ⭐ NEW: Performance Engineer (Titan)
+## ⭐ NEW: DevOps Engineer (Hephaestus²)
+
+### Infrastructure as Code, Automated
+
+Building at scale requires robust infrastructure. Hephaestus² handles:
+
+### 1. CI/CD Pipelines
+- Automated builds
+- Multi-stage deployments
+- Environment management
+- Rollback strategies
+
+### 2. Infrastructure as Code
+- Terraform/CloudFormation
+- Kubernetes configs
+- Docker containers
+- Serverless setups
+
+### 3. Cloud Architecture
+- Multi-region deployment
+- Auto-scaling rules
+- Load balancing
+- Disaster recovery
+
+### 4. Observability
+- Logging aggregation
+- Metrics collection
+- Tracing setup
+- Alerting rules
+
+### Example Output
+```
+🔧 DevOps Setup: Payment Gateway
+
+CI/CD Pipeline:
+  • Build: ✓ 3 minutes
+  • Test: ✓ 12 minutes  
+  • Security Scan: ✓ 5 minutes
+  • Deploy: ✓ 2 minutes
+
+Infrastructure:
+  • Kubernetes Cluster: 3 nodes
+  • Auto-scale: 2-10 nodes
+  • Multi-region: us-east, eu-west
+  • CDN: Cloudflare
+
+Observability:
+  • Logs: Datadog
+  • Metrics: Prometheus
+  • Tracing: Jaeger
+  • Alerts: PagerDuty
+
+🔄 [View Pipeline] [View Infra] [Manual Deploy]
+```
+
+---
+
+## ⭐ NEW: VaPT Engineer (Themis)
+
+### Verification, Validation & Compliance
+
+Enterprise systems need formal verification. Themis handles:
+
+### 1. Verification
+- Formal code verification
+- Logic correctness proofs
+- Model checking
+- Property-based testing
+
+### 2. Validation
+- Requirements validation
+- Acceptance criteria
+- User acceptance testing
+- System integration tests
+
+### 3. Compliance
+- GDPR compliance
+- SOC 2 certification
+- ISO 27001
+- PCI-DSS for payments
+- HIPAA for healthcare
+
+### 4. Audit Readiness
+- Audit trails
+- Compliance reports
+- Documentation for auditors
+- Remediation plans
+
+### Example Output
+```
+⚖️ VaPT Report: Payment Gateway
+
+Verification:
+  ✓ Logic correctness: PASS
+  ✓ Property tests: 500/500 passed
+  ✓ Model checking: No violations
+
+Validation:
+  ✓ Requirements: 47/47 met
+  ✓ Integration: All APIs pass
+  ✓ UAT: 98% success rate
+
+Compliance:
+  ✓ PCI-DSS: Level 1 Ready
+  ✓ GDPR: Data handling compliant
+  ✓ SOC 2: Type II in progress
+
+📋 [View Full Report] [Remediation Plan] [Download Certs]
+```
+
+---
+
+## ⭐ Performance Engineer (Titan)
 
 ### Scale Demands Stress Testing
 
@@ -141,7 +257,7 @@ When you're building payment systems or AI agent engines, you need to know:
 
 **Can it handle the load?**
 
-Titan the Performance Engineer handles:
+Titan handles:
 
 ### 1. Load Testing
 - Simulate thousands of concurrent users
@@ -163,32 +279,9 @@ Titan the Performance Engineer handles:
 - Memory leak detection
 - Degradation over time
 
-### Example Output
-```
-⚡ Performance Test: Payment Gateway
-
-Load Test (10K concurrent users):
-  • Avg Response: 45ms ✓
-  • P99 Latency: 120ms ✓
-  • Throughput: 15K TPS ✓
-  • Error Rate: 0.01% ✓
-
-Stress Test (100K users):
-  • Breaking Point: 85K users
-  • Recovery: 30 seconds ✓
-  • No data corruption ✓
-
-Spike Test (10x traffic):
-  • Auto-scale: 15 seconds ✓
-  • No failures ✓
-  • Cost impact: +$2/hour
-
-📊 [Full Report] [View Metrics] [Compare]
-```
-
 ---
 
-## ⭐ NEW: Marketing Specialist (Hermes²)
+## ⭐ Marketing Specialist (Hermes²)
 
 ### Build It. Tell the World.
 
@@ -214,29 +307,6 @@ Great systems need great launches. Hermes² handles:
 - Recording scripts
 - Showcase videos
 
-### Example Output
-```
-📢 Launch Plan: Payment Gateway
-
-Positioning:
-  "The fastest payment API for AI-first companies"
-  Target: SaaS, marketplaces, platforms
-
-Channels:
-  • Product Hunt (Day 1)
-  • Twitter/X threads
-  • Hacker News
-  • Dev communities
-
-Timeline:
-  Week 1: Teaser campaign
-  Week 2: Beta launch
-  Week 3: Public launch
-  Week 4: Analytics review
-
-📝 [View Press Kit] [Generate Assets] [Schedule Posts]
-```
-
 ---
 
 ## ⭐ The Cost Estimator (Plutus)
@@ -247,11 +317,9 @@ Timeline:
 
 | Factor | Traditional | AIDE X |
 |--------|-------------|--------|
-| Team Size | 10+ humans | 15 AI agents |
+| Team Size | 12+ humans | 17 AI agents |
 | Time to First Ship | 3-6 months | 2 days |
-| Development Cost | $50,000+ | ~$200-500 |
-| Compute (AI) Cost | — | ~$150-300 |
-| Human Review Time | — | ~1-2 hours |
+| Development Cost | $75,000+ | ~$300-500 |
 
 ---
 
@@ -265,6 +333,7 @@ Timeline:
 | Auth | $0-100/mo | ✅ Auth0, Supabase (free) |
 | Email | $0-50/mo | ✅ SendGrid (free) |
 | Storage | $0-100/mo | ✅ S3, Backblaze (free) |
+| Monitoring | $0-100/mo | ✅ Datadog (free) |
 
 **Plutus provides recommendations for FREE at scale**
 
@@ -278,10 +347,12 @@ Timeline:
 ✅ **Security** — Vulnerability scanning  
 ✅ **Release Management** — Chronicler  
 ✅ **Cost Estimation** — Plutus (dev + ops)  
-✅ **Performance Testing** — Titan (optional)  
+✅ **DevOps** — Hephaestus² (CI/CD, infra)  
+✅ **VaPT** — Themis (verification, compliance)  
+✅ **Performance** — Titan (load testing)  
 ✅ **Marketing** — Hermes² (optional)
 
-**No add-ons. Standard always-on. Scale agents when needed.**
+**Standard always-on. Scale agents when needed.**
 
 ---
 
@@ -290,8 +361,8 @@ Timeline:
 ```
 IDEA → RESEARCH → REQUIREMENTS → UI/UX → ARCHITECTURE 
     → CODE → REVIEW → SECURITY → TESTS → DOCS 
-    → PERFORMANCE → COST ESTIMATE → RELEASE 
-    → MARKETING → DEPLOYMENT
+    → DEVOPS → VAPT → PERFORMANCE → COST ESTIMATE 
+    → RELEASE → MARKETING → DEPLOYMENT
     
 Human approval at EVERY gate
 ```
@@ -302,10 +373,12 @@ Human approval at EVERY gate
 
 | Traditional | AIDE X |
 |------------|--------|
-| Hire 10+ specialists | 15 AI agents |
+| Hire 12+ specialists | 17 AI agents |
 | 3-6 months to ship | 2 days to ship |
-| $50K+ in dev costs | ~$300 to ship |
+| $75K+ in dev costs | ~$400 to ship |
 | $500+/mo operations | **$0/mo possible** |
+| Manual DevOps | Automated CI/CD |
+| No compliance | Built-in VaPT |
 | No scale testing | Built-in performance |
 | No launch strategy | Optional marketing |
 | Unpredictable quality | Guaranteed standards |
@@ -322,6 +395,7 @@ AIDE X gives you:
 - **Predictable results** — Not "surprise me"
 - **Human control** — AI proposes, you decide
 - **Built-in quality** — Standards always on
+- **Enterprise-ready** — DevOps + VaPT built-in
 - **Scale-ready** — Performance testing built-in
 - **Launch-ready** — Marketing support available
 - **Cost transparency** — Dev + Ops, with free options
@@ -342,5 +416,5 @@ AIDE X gives you:
 
 ---
 
-*Whitepaper v0.7 — Scale-First: Performance + Marketing Agents*
+*Whitepaper v0.8 — With DevOps (Hephaestus²) + VaPT (Themis) Agents*
 *February 2026 — Work in Progress — Contributions Invited*
