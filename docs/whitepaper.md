@@ -1,5 +1,5 @@
 # AIDE X - AI Driven Engineering X
-## Whitepaper v0.6
+## Whitepaper v0.7
 
 ---
 
@@ -22,6 +22,8 @@ Want to build an industrial-strength system? You need:
 | **Technical Writer** | Documentation |
 | **Release Manager** | Versioning, deployment |
 | **Cost Estimator** | Infrastructure, timeline, ROI |
+| **Performance Engineer** | Load testing, stress testing |
+| **Marketing Specialist** | Positioning, launch |
 
 ### The Problem
 
@@ -62,6 +64,53 @@ Each one an AI agent — purpose-built for their role. Working together. Predict
 
 ---
 
+## ⚠️ AIDE X is Not for Small Apps
+
+### We're Building for Scale
+
+Most AI coding tools are great for:
+- Small scripts
+- Simple utilities
+- Quick prototypes
+
+**AIDE X is different.** We're building **industrial-strength systems**:
+
+| Small Apps | AIDE X Scale Systems |
+|------------|----------------------|
+| Todo list | Payment processing |
+| Blog | Agentic marketing engine |
+| Weather widget | DeFi protocol |
+| Calculator | AI agent orchestration |
+| Contact form | Enterprise CRM |
+
+### What Scale Means
+
+**Large Database Systems**
+- Millions of records
+- Complex queries
+- Real-time analytics
+- Data pipelines
+
+**Blockchain Integration**
+- Smart contracts
+- Web3 wallets
+- DeFi protocols
+- Token systems
+
+**AI Agent Orchestration**
+- Multi-agent workflows
+- Decision trees
+- Learning systems
+- Autonomous agents
+
+**High Traffic**
+- Millions of users
+- Global distribution
+- 99.99% uptime
+- Edge computing
+
+---
+
 ## The Agent Team
 
 | Agent | Codename | What They Do | Human Role |
@@ -75,10 +124,118 @@ Each one an AI agent — purpose-built for their role. Working together. Predict
 | **Reviewer** | Athena | Quality, best practices | Approve changes |
 | **Security** | Ares | Vulnerability scanning | Review findings |
 | **Tester** | Cassandra | Tests, validation | Approve coverage |
+| **Performance** ⭐ | Titan | Load testing, stress testing | Validate scalability |
+| **Marketing** ⭐ | Hermes² | Positioning, launch strategy | Approve messaging |
 | **Docs** | Calliope | Documentation | Review accuracy |
-| **Chronicler** ⭐ | Historiograph | Release notes, versioning | Approve releases |
-| **Cost Estimator** | Plutus ⭐ | Development + Ops costs, ROI | Validate estimates |
+| **Chronicler** | Historiograph | Release notes, versioning | Approve releases |
+| **Cost Estimator** | Plutus | Development + Ops costs, ROI | Validate estimates |
 | **Coordinator** | Foreman | Orchestrate pipeline | Manage flow |
+
+---
+
+## ⭐ NEW: Performance Engineer (Titan)
+
+### Scale Demands Stress Testing
+
+When you're building payment systems or AI agent engines, you need to know:
+
+**Can it handle the load?**
+
+Titan the Performance Engineer handles:
+
+### 1. Load Testing
+- Simulate thousands of concurrent users
+- Measure response times
+- Identify bottlenecks
+
+### 2. Stress Testing
+- Push beyond normal capacity
+- Find breaking points
+- Recovery behavior
+
+### 3. Spike Testing
+- Sudden traffic spikes
+- Burst handling
+- Auto-scaling validation
+
+### 4. Endurance Testing
+- Long-running loads
+- Memory leak detection
+- Degradation over time
+
+### Example Output
+```
+⚡ Performance Test: Payment Gateway
+
+Load Test (10K concurrent users):
+  • Avg Response: 45ms ✓
+  • P99 Latency: 120ms ✓
+  • Throughput: 15K TPS ✓
+  • Error Rate: 0.01% ✓
+
+Stress Test (100K users):
+  • Breaking Point: 85K users
+  • Recovery: 30 seconds ✓
+  • No data corruption ✓
+
+Spike Test (10x traffic):
+  • Auto-scale: 15 seconds ✓
+  • No failures ✓
+  • Cost impact: +$2/hour
+
+📊 [Full Report] [View Metrics] [Compare]
+```
+
+---
+
+## ⭐ NEW: Marketing Specialist (Hermes²)
+
+### Build It. Tell the World.
+
+Great systems need great launches. Hermes² handles:
+
+### 1. Positioning
+- Target audience analysis
+- Competitive differentiation
+- Key messaging
+
+### 2. Launch Strategy
+- Go-to-market plan
+- Channel selection
+- Timeline
+
+### 3. Content
+- Press releases
+- Product descriptions
+- Feature highlights
+
+### 4. Demo Generation
+- Auto-generate demo scenarios
+- Recording scripts
+- Showcase videos
+
+### Example Output
+```
+📢 Launch Plan: Payment Gateway
+
+Positioning:
+  "The fastest payment API for AI-first companies"
+  Target: SaaS, marketplaces, platforms
+
+Channels:
+  • Product Hunt (Day 1)
+  • Twitter/X threads
+  • Hacker News
+  • Dev communities
+
+Timeline:
+  Week 1: Teaser campaign
+  Week 2: Beta launch
+  Week 3: Public launch
+  Week 4: Analytics review
+
+📝 [View Press Kit] [Generate Assets] [Schedule Posts]
+```
 
 ---
 
@@ -86,36 +243,19 @@ Each one an AI agent — purpose-built for their role. Working together. Predict
 
 ### Two Types of Costs
 
-Every system needs to know: What's the cost?
-
 #### 1. 💻 Cost of Development
 
 | Factor | Traditional | AIDE X |
 |--------|-------------|--------|
-| Team Size | 10+ humans | 13 AI agents |
+| Team Size | 10+ humans | 15 AI agents |
 | Time to First Ship | 3-6 months | 2 days |
-| Development Cost | $50,000+ | <$500 |
-| Compute (AI) Cost | — | ~$100-200 |
+| Development Cost | $50,000+ | ~$200-500 |
+| Compute (AI) Cost | — | ~$150-300 |
 | Human Review Time | — | ~1-2 hours |
-
-**The Math:**
-```
-Traditional Team (10 people × $150/hr × 480 hrs) = $72,000
-AIDE X (AI compute + human review)               = ~$300
-Savings: 99.5%
-```
-
-**What Plutus calculates:**
-- AI model costs (based on tokens, complexity)
-- Estimated build time
-- Human review time (valued at your rate)
-- Comparison to hiring a team
 
 ---
 
 #### 2. 🚀 Cost of Operations (Monthly)
-
-Infrastructure costs after launch:
 
 | Component | Typical Cost | Free Tier Available |
 |-----------|--------------|---------------------|
@@ -126,72 +266,7 @@ Infrastructure costs after launch:
 | Email | $0-50/mo | ✅ SendGrid (free) |
 | Storage | $0-100/mo | ✅ S3, Backblaze (free) |
 
-**Plutus provides recommendations for FREE at scale:**
-```
-💡 Operations Cost Estimate: E-Commerce Platform
-
-Recommended Stack (Free Tier):
-  • Hosting:      $0/mo (Vercel Free)
-  • Database:     $0/mo (Supabase Free)
-  • CDN:          $0/mo (Cloudflare Free)
-  • Auth:         $0/mo (Supabase Auth)
-  • Storage:      $0/mo (Backblaze B2)
-  ─────────────────────────────
-  Total:          $0/mo ✓
-
-Upgrades When You Scale:
-  • $29/mo Pro tier (all included)
-  • Pay-as-you-go for usage spikes
-```
-
----
-
-### Example Full Estimate
-
-```
-💰 Project Cost Estimate: E-Commerce Platform
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-📦 DEVELOPMENT COST
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  AI Compute:         ~$150
-  Human Review:       ~$50 (1 hr @ $50/hr)
-  ─────────────────────────────
-  Total to Ship:      ~$200
-
-  vs Traditional:     $50,000+
-  Savings:            99.6%
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-⚡ OPERATIONS COST (Monthly)
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  Option A (Free Tier):
-    Hosting:         $0/mo
-    Database:         $0/mo  
-    CDN:              $0/mo
-    Auth:             $0/mo
-    ─────────────────────────────
-    Total:            $0/mo ✓
-
-  Option B (Production):
-    Hosting:          $29/mo
-    Database:         $25/mo
-    CDN:              $10/mo
-    ─────────────────────────────
-    Total:            $64/mo
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-🚀 ROI PROJECTION
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  Time to First Ship:     2 days
-  Traditional Timeline:    3-6 months
-  Time Saved:              98%
-  
-  12-Month Savings:        ~$600K
-  (vs hiring 10-person team)
-
-➡️ [Start Building] [Adjust Scope] [View Free Tier Guide]
-```
+**Plutus provides recommendations for FREE at scale**
 
 ---
 
@@ -202,9 +277,11 @@ Upgrades When You Scale:
 ✅ **Alerting** — Proactive notifications  
 ✅ **Security** — Vulnerability scanning  
 ✅ **Release Management** — Chronicler  
-✅ **Cost Estimation** — Plutus (dev + ops)
+✅ **Cost Estimation** — Plutus (dev + ops)  
+✅ **Performance Testing** — Titan (optional)  
+✅ **Marketing** — Hermes² (optional)
 
-**No add-ons. Standard always-on.**
+**No add-ons. Standard always-on. Scale agents when needed.**
 
 ---
 
@@ -213,7 +290,8 @@ Upgrades When You Scale:
 ```
 IDEA → RESEARCH → REQUIREMENTS → UI/UX → ARCHITECTURE 
     → CODE → REVIEW → SECURITY → TESTS → DOCS 
-    → COST ESTIMATE → RELEASE → DEPLOYMENT
+    → PERFORMANCE → COST ESTIMATE → RELEASE 
+    → MARKETING → DEPLOYMENT
     
 Human approval at EVERY gate
 ```
@@ -224,10 +302,12 @@ Human approval at EVERY gate
 
 | Traditional | AIDE X |
 |------------|--------|
-| Hire 10+ specialists | 13 AI agents |
+| Hire 10+ specialists | 15 AI agents |
 | 3-6 months to ship | 2 days to ship |
-| $50K+ in dev costs | ~$200 to ship |
+| $50K+ in dev costs | ~$300 to ship |
 | $500+/mo operations | **$0/mo possible** |
+| No scale testing | Built-in performance |
+| No launch strategy | Optional marketing |
 | Unpredictable quality | Guaranteed standards |
 | Need to know coding | Just describe what you want |
 
@@ -242,6 +322,8 @@ AIDE X gives you:
 - **Predictable results** — Not "surprise me"
 - **Human control** — AI proposes, you decide
 - **Built-in quality** — Standards always on
+- **Scale-ready** — Performance testing built-in
+- **Launch-ready** — Marketing support available
 - **Cost transparency** — Dev + Ops, with free options
 
 **The future of engineering is having an entire team in your pocket.**
@@ -260,5 +342,5 @@ AIDE X gives you:
 
 ---
 
-*Whitepaper v0.6 — With Dual Cost Estimation (Development + Operations)*
+*Whitepaper v0.7 — Scale-First: Performance + Marketing Agents*
 *February 2026 — Work in Progress — Contributions Invited*
