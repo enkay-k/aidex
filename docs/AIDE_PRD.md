@@ -1,214 +1,195 @@
-# AIDE - AI Driven Engineering Operating System
+# AIDE X - AI Driven Engineering X
+## PRD v0.4 - Phase 1 (Code Only)
+
+---
 
 ## Vision
 
 **Can AI build industrial-strength solutions almost autonomously?**
 
-AIDE is an agentic operating system where multiple AI agents work like a human engineering team — each agent has a role, produces observable output, and passes work to the next agent. Humans watch, guide, and approve — AI does the heavy lifting.
+AIDE X is an agentic operating system where multiple AI agents work like a human engineering team — each agent has a role, produces observable output, and passes work to the next. Humans watch, guide, and approve — AI does the heavy lifting.
 
-**Key Insight:** The problem must be larger than any single context window (100x+). This isn't about code completion — it's about *systematic engineering* by agents.
+**X = Force Multiplier**
 
 ---
 
-## Full Pipeline: Startup to Deployment
+## Phase 1 Scope: Code Only
+
+**What we build first:**
+- Agent pipeline starts at **code generation**
+- Input: Feature spec / requirements
+- Output: Working code + tests + docs
+
+**What we skip for now:**
+- Infrastructure (Docker, Terraform, K8s)
+- UI/UX design (Muse)
+- Deployment automation
+- Product/Analyst (user provides requirements)
+
+**Future (Phase 2+):** Full pipeline including infra, design, deployment
+
+---
+
+## Phase 1 Agent Team (Greek Mythology Names)
+
+| Role | Codename | Description | Phase 1 |
+|------|----------|-------------|---------|
+| Coordinator | **Hermes** | Orchestrates pipeline | ✅ |
+| Architect | **Daedalus** | System design | ✅ |
+| Engineer | **Hephaestus** | Code generation | ✅ |
+| Reviewer | **Athena** | Code review, security | ✅ |
+| Tester | **Cassandra** | Test generation | ✅ |
+| Docs | **Calliope** | Documentation | ✅ |
+| Product | Apollo | Scope, prioritization | ❌ (Phase 2) |
+| UI/UX | Aphrodite | Design | ❌ (Phase 2) |
+| Analyst | Oracle | Requirements | ❌ (User provides) |
+
+---
+
+## Phase 1 Pipeline
 
 ```
-┌─────────────────────────────────────────────────────────────────────────────┐
-│                         AIDE FULL PIPELINE                                  │
-├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
-│  USER PAIN ──► PROBLEM STATEMENT ──► BUSINESS REQS ──► FEATURES            │
-│       │             │                    │                 │                │
-│       ▼             ▼                    ▼                 ▼                │
-│  ┌─────────┐  ┌──────────┐       ┌───────────┐     ┌──────────┐           │
-│  │ Analyst │  │Analyst   │       │Product    │     │Product   │           │
-│  │Discovery│  │Problem   │       │Requirements│     │Feature   │           │
-│  └────┬────┘  └────┬─────┘       └─────┬─────┘     └────┬─────┘           │
-│       │            │                    │                │                 │
-│       │        HUMAN DECISION:          │            HUMAN DECISION:       │
-│       │        "Is this a real pain?"  │            "Prioritize these?"    │
-│       │                                                           │          │
-│       ▼                                                           ▼          │
-│  ┌─────────────────────────────────────────────────────────────────────┐   │
-│  │                    DETAILED ENGINEERING                             │   │
-│  ├─────────────────────────────────────────────────────────────────────┤   │
-│  │                                                                       │   │
-│  │  ARCHITECTURE ──► UI/UX DESIGN ──► CODE ──► TEST CASES              │   │
-│  │       │               │            │            │                    │   │
-│  │       ▼               ▼            ▼            ▼                    │   │
-│  │  ┌─────────┐    ┌──────────┐ ┌────────┐   ┌────────┐               │   │
-│  │  │Blueprint│    │   Muse   │ │ Forge  │   │ Prover │               │   │
-│  │  │   Arch  │    │UI/UX Design│ │ Code   │   │ Tests  │               │   │
-│  │  └────┬────┘    └────┬─────┘ └───┬────┘   └───┬────┘               │   │
-│  │       │              │           │            │                     │   │
-│  │       │          HUMAN DECISION │        HUMAN DECISION             │   │
-│  │       │          "Love the UI?" │        "Tests pass?"              │   │
-│  │       │                          │                                   │   │
-│  │       ▼                          ▼                                   │   │
-│  │  ┌────────────────────────────────────────────────────────────────┐  │   │
-│  │  │                    DEPLOYMENT                                 │  │   │
-│  │  ├────────────────────────────────────────────────────────────────┤  │   │
-│  │  │                                                                 │  │   │
-│  │  │   CI/CD ──► STAGING ──► PRODUCTION ──► MONITORING            │  │   │
-│  │  │                          │                   │                 │  │   │
-│  │  │                    HUMAN DECISION:                            │  │   │
-│  │  │                    "Ready to ship?"                          │  │   │
-│  │  │                                                                 │  │   │
-│  │  └────────────────────────────────────────────────────────────────┘  │   │
-│  │                                                                       │   │
-│  └───────────────────────────────────────────────────────────────────────┘   │
-│                                                                              │
-│              HUMAN DECISION GATES AT EVERY MAJOR STAGE                       │
-└─────────────────────────────────────────────────────────────────────────────┘
+Feature Spec (Human Input)
+         │
+         ▼
+    ┌─────────┐
+    │ Hermes  │ ← Coordinator
+    └────┬────┘
+         │ orchestr
+         ▼
+    ┌──────────┐
+    │ Daedalus │ ← Architect
+    └────┬─────┘
+         │ design
+         ▼
+    ┌────────────┐
+    │ Hephaestus │ ← Engineer (MAIN AGENT)
+    └─────┬──────┘
+          │ code
+          ▼
+    ┌──────────┐
+    │  Athena  │ ← Reviewer
+    └────┬─────┘
+         │ review
+         ▼
+    ┌──────────┐
+    │ Cassandra │ ← Tester
+    └────┬─────┘
+         │ tests
+         ▼
+    ┌──────────┐
+    │ Calliope  │ ← Docs
+    └────┬─────┘
+         │ docs
+         ▼
+    Code + Tests + Docs (Output)
+    
+    Human Decision Gates at: Design, Code Review, Tests
 ```
 
 ---
 
-## Stage-by-Stage Breakdown
+## Human Decision Gates (Phase 1)
 
-| Stage | Agent | AI Does | Human Does |
-|-------|-------|---------|------------|
-| **1. Discovery** | Analyst | Interviews user, captures pain points | Validate pain is real |
-| **2. Problem Statement** | Analyst | Frame problem, market context | Approve problem framing |
-| **3. Business Requirements** | Product | ROI, scope, constraints | Approve business case |
-| **4. Features** | Product | Feature list, prioritization | Prioritize & approve |
-| **5. Architecture** | Blueprint | System design, tech choices | Approve architecture |
-| **6. UI/UX Design** | Muse | Wireframes, mockups, flows | Approve design |
-| **7. Code** | Forge | Implementation | Review code |
-| **8. Tests** | Prover | Test cases, validation | Approve test results |
-| **9. Documentation** | DocSmith | Docs, READMEs | Review docs |
-| **10. Deployment** | Foreman | CI/CD, infra config | Final go/no-go |
-| **11. Monitoring** | Foreman | Alerts, dashboards | Act on alerts |
+| Gate | Question | Options |
+|------|----------|---------|
+| G1 | Architecture sound? | Approve / Redesign |
+| G2 | Code ready? | Approve / Request Changes |
+| G3 | Tests pass? | Approve / Fix / Skip |
 
 ---
 
-## Agent Roles
+## Problem Decomposition
 
-| Role | Codename | What They Do |
-|------|----------|--------------|
-| Coordinator | **Foreman** | Orchestrates pipeline, manages state |
-| Architect | **Blueprint** | System design, tech stack |
-| Engineer | **Forge** | Code generation |
-| Reviewer | **Critic** | Code review, security |
-| Tester | **Prover** | Test generation, validation |
-| Docs | **DocSmith** | Documentation |
-| Product Manager | **Product** | Scope, prioritization, ROI |
-| UI/UX Designer | **Muse** | Design, user flows, mocks |
-| Business Analyst | **Analyst** | Requirements, feasibility |
+**Key insight:** Break large problems into small, predictable chunks.
 
----
+Each agent:
+- Works on one small thing at a time
+- Has clear inputs and outputs
+- Can be monitored and validated
+- Predictable behavior
 
-## Human Decision Gates
+**Example:**
+```
+Large: "Build an e-commerce platform"
+    │
+    ▼
+Chunk 1: User authentication
+Chunk 2: Product catalog  
+Chunk 3: Shopping cart
+Chunk 4: Checkout flow
+...
+```
 
-| Gate # | Question | Options |
-|--------|----------|---------|
-| G1 | Is this pain real & worth solving? | Approve / Reject / More Research |
-| G2 | Business case valid? | Approve / Modify Scope |
-| G3 | Features prioritized correctly? | Approve / Reorder |
-| G4 | Architecture sound? | Approve / Redesign |
-| G5 | UI/UX acceptable? | Approve / Redesign |
-| G6 | Code ready? | Approve / Request Changes |
-| G7 | Tests passing? | Approve / Fix / Skip |
-| G8 | Ready to deploy? | Deploy / Hold |
+Each chunk flows through the pipeline independently.
 
 ---
 
-## Key Realizations
+## Context Chunking (The 100x Problem)
 
-### What AI Can Do Well:
-- Generate code from specs
-- Write test cases
-- Create documentation
-- Propose architectures
-- Design UI mocks (via tools)
-- Run CI/CD pipelines
+For problems 100x larger than context window:
 
-### What Humans Must Decide:
-- Is this problem worth solving?
-- What's the business priority?
-- Does the design feel right?
-- Is this ready for production?
-- Any ethical/legal concerns?
-
-### The 100x Context Problem:
-- Large startup = 100x context window
-- AIDE chunks problems into manageable pieces
-- Each chunk flows through the pipeline
-- Results synthesized at end
+1. **Decompose** → Break into sub-tasks
+2. **Solve** → Each sub-task through pipeline
+3. **Synthesize** → Combine results
 
 ---
 
-## Reference Models
-
-1. **Mission Control HQ** — Dashboard for multi-agent orchestration
-2. **OpenClaw** — The underlying agent runtime
-3. **AIDE v2** — Previous attempts
-
----
-
-## Architecture
+## Technical Architecture
 
 ### Stack
 - **Runtime:** OpenClaw
 - **Dashboard:** Niyantran (Python FastAPI + HTML/JS)
 - **Storage:** SQLite + file artifacts
+- **CI/CD:** GitHub Actions
 
-### Pipeline Engine
-- Configurable stages
-- Parallel where possible
-- Sequential where required
-- Rollback on failure
-
----
-
-## Phases
-
-### Phase 0: Foundation
-- Repo structure
-- Agent definitions
-- Simple pipeline (Code → Test → Deploy)
-
-### Phase 1: Basic Pipeline
-- Analyst → Blueprint → Forge → Prover → DocSmith
-- Manual human gates
-- Basic dashboard
-
-### Phase 2: Full Pipeline
-- Add Product, Muse
-- All human decision gates
-- Rich dashboard
-
-### Phase 3: Scale
-- Context chunking
-- Concurrent pipelines
-- Advanced artifacts
-
-### Phase 4: Production
-- Full automation
-- Self-healing
-- Analytics
-
----
-
-## Ambitious Goal
-
-**Yes, this can go from user pain to deployment.** But:
-- Humans are always in the loop for big decisions
-- Each stage produces observable artifacts
-- Pipeline can pause at any gate for human input
-- AI does the work, humans steer
-
+### File Structure (Phase 1)
+```
+aidex/
+├── src/
+│   ├── agents/
+│   │   ├── hermes.py      # Coordinator
+│   │   ├── daedalus.py    # Architect
+│   │   ├── hephaestus.py  # Engineer
+│   │   ├── athena.py      # Reviewer
+│   │   ├── cassandra.py   # Tester
+│   │   └── calliope.py    # Docs
+│   ├── pipeline/          # Execution engine
+│   ├── dashboard/         # Niyantran UI
+│   ├── storage/          # SQLite + artifacts
+│   └── utils/
+├── tests/
+├── docs/
+│   ├── PRD.md
+│   ├── whitepaper.md
+│   ├── naming.md
+│   ├── github-actions-analysis.md
+│   └── website/
+├── scripts/
+│   ├── setup.sh
+│   └── run.sh
+└── README.md
 ---
 
 ## Open Questions
 
-1. How granular should decision gates be?
-2. What's the minimum viable first pipeline?
-3. How to handle conflicting agent outputs?
-4. What about legal/compliance review?
-5. Parallel staging or sequential?
+1. Is Greek mythology naming good?
+2. Is Phase 1 scope right (code only)?
+3. How granular should chunks be?
+4. How many parallel pipelines?
+5. 
+
+Deployment approach (local first or cloud)?
 
 ---
 
-*Draft PRD v0.3 — Full Startup-to-Deployment Pipeline*
+## Next Steps
+
+1. Confirm naming (Greek mythology)
+2. Lock Phase 1 scope
+3. Start building prototype
+
+---
+
+*PRD v0.4 — Phase 1 Code Only + Greek Names*
 *Created: 2026-02-14*
