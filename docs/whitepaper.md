@@ -1,5 +1,5 @@
 # AIDE X - AI Driven Engineering X
-## Whitepaper v0.5
+## Whitepaper v0.6
 
 ---
 
@@ -77,61 +77,120 @@ Each one an AI agent — purpose-built for their role. Working together. Predict
 | **Tester** | Cassandra | Tests, validation | Approve coverage |
 | **Docs** | Calliope | Documentation | Review accuracy |
 | **Chronicler** ⭐ | Historiograph | Release notes, versioning | Approve releases |
-| **Cost Estimator** | Plutus ⭐ | Infrastructure, timeline, ROI | Validate estimates |
+| **Cost Estimator** | Plutus ⭐ | Development + Ops costs, ROI | Validate estimates |
 | **Coordinator** | Foreman | Orchestrate pipeline | Manage flow |
 
 ---
 
-## ⭐ NEW: The Cost Estimator (Plutus)
+## ⭐ The Cost Estimator (Plutus)
 
-### Every System Needs to Know: What's the Cost?
+### Two Types of Costs
 
-The **Plutus** agent calculates:
+Every system needs to know: What's the cost?
 
-### 1. Infrastructure Costs
-- Cloud hosting (AWS/GCP/Azure)
-- Database costs
-- CDN/bandwidth
-- Third-party services
+#### 1. 💻 Cost of Development
 
-### 2. Development Costs
+| Factor | Traditional | AIDE X |
+|--------|-------------|--------|
+| Team Size | 10+ humans | 13 AI agents |
+| Time to First Ship | 3-6 months | 2 days |
+| Development Cost | $50,000+ | <$500 |
+| Compute (AI) Cost | — | ~$100-200 |
+| Human Review Time | — | ~1-2 hours |
+
+**The Math:**
+```
+Traditional Team (10 people × $150/hr × 480 hrs) = $72,000
+AIDE X (AI compute + human review)               = ~$300
+Savings: 99.5%
+```
+
+**What Plutus calculates:**
+- AI model costs (based on tokens, complexity)
 - Estimated build time
-- Agent compute costs
-- Human review time
+- Human review time (valued at your rate)
+- Comparison to hiring a team
 
-### 3. Maintenance Costs
-- Ongoing hosting
-- Support overhead
-- Update frequency
+---
 
-### 4. ROI Projection
-- Time to first release
-- Comparison to traditional dev
-- Cost savings
+#### 2. 🚀 Cost of Operations (Monthly)
 
-### Example Estimate
+Infrastructure costs after launch:
+
+| Component | Typical Cost | Free Tier Available |
+|-----------|--------------|---------------------|
+| Hosting | $20-500/mo | ✅ Vercel, Render (free) |
+| Database | $0-200/mo | ✅ Supabase, Firebase (free) |
+| CDN | $0-50/mo | ✅ Cloudflare (free) |
+| Auth | $0-100/mo | ✅ Auth0, Supabase (free) |
+| Email | $0-50/mo | ✅ SendGrid (free) |
+| Storage | $0-100/mo | ✅ S3, Backblaze (free) |
+
+**Plutus provides recommendations for FREE at scale:**
+```
+💡 Operations Cost Estimate: E-Commerce Platform
+
+Recommended Stack (Free Tier):
+  • Hosting:      $0/mo (Vercel Free)
+  • Database:     $0/mo (Supabase Free)
+  • CDN:          $0/mo (Cloudflare Free)
+  • Auth:         $0/mo (Supabase Auth)
+  • Storage:      $0/mo (Backblaze B2)
+  ─────────────────────────────
+  Total:          $0/mo ✓
+
+Upgrades When You Scale:
+  • $29/mo Pro tier (all included)
+  • Pay-as-you-go for usage spikes
+```
+
+---
+
+### Example Full Estimate
+
 ```
 💰 Project Cost Estimate: E-Commerce Platform
 
-Infrastructure (Monthly):
-  • Hosting: $150/mo
-  • Database: $80/mo
-  • CDN: $50/mo
-  • Third-party: $100/mo
-  ─────────────────────
-  Total: $380/mo
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📦 DEVELOPMENT COST
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  AI Compute:         ~$150
+  Human Review:       ~$50 (1 hr @ $50/hr)
+  ─────────────────────────────
+  Total to Ship:      ~$200
 
-Development:
-  • AI Build Time: ~4 hours
-  • Human Review: ~1 hour
-  • First Ship: ~2 days
+  vs Traditional:     $50,000+
+  Savings:            99.6%
 
-ROI vs Traditional:
-  • Traditional: 3 months, $50K
-  • AIDE X: 2 days, $500
-  • Savings: 98%
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+⚡ OPERATIONS COST (Monthly)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Option A (Free Tier):
+    Hosting:         $0/mo
+    Database:         $0/mo  
+    CDN:              $0/mo
+    Auth:             $0/mo
+    ─────────────────────────────
+    Total:            $0/mo ✓
 
-🚀 Ready to build? [Yes] [Adjust Scope]
+  Option B (Production):
+    Hosting:          $29/mo
+    Database:         $25/mo
+    CDN:              $10/mo
+    ─────────────────────────────
+    Total:            $64/mo
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🚀 ROI PROJECTION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Time to First Ship:     2 days
+  Traditional Timeline:    3-6 months
+  Time Saved:              98%
+  
+  12-Month Savings:        ~$600K
+  (vs hiring 10-person team)
+
+➡️ [Start Building] [Adjust Scope] [View Free Tier Guide]
 ```
 
 ---
@@ -143,7 +202,7 @@ ROI vs Traditional:
 ✅ **Alerting** — Proactive notifications  
 ✅ **Security** — Vulnerability scanning  
 ✅ **Release Management** — Chronicler  
-✅ **Cost Estimation** — Plutus (built-in)
+✅ **Cost Estimation** — Plutus (dev + ops)
 
 **No add-ons. Standard always-on.**
 
@@ -167,7 +226,8 @@ Human approval at EVERY gate
 |------------|--------|
 | Hire 10+ specialists | 13 AI agents |
 | 3-6 months to ship | 2 days to ship |
-| $50K+ in dev costs | <$1K in compute |
+| $50K+ in dev costs | ~$200 to ship |
+| $500+/mo operations | **$0/mo possible** |
 | Unpredictable quality | Guaranteed standards |
 | Need to know coding | Just describe what you want |
 
@@ -182,7 +242,7 @@ AIDE X gives you:
 - **Predictable results** — Not "surprise me"
 - **Human control** — AI proposes, you decide
 - **Built-in quality** — Standards always on
-- **Cost transparency** — Know what you're spending
+- **Cost transparency** — Dev + Ops, with free options
 
 **The future of engineering is having an entire team in your pocket.**
 
@@ -200,5 +260,5 @@ AIDE X gives you:
 
 ---
 
-*Whitepaper v0.5 — The Full Story: No Team Required*
+*Whitepaper v0.6 — With Dual Cost Estimation (Development + Operations)*
 *February 2026 — Work in Progress — Contributions Invited*
