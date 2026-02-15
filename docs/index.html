@@ -6,203 +6,120 @@
     <title>AIDE X - AI Driven Engineering X</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
-        :root {
-            /* Dark Mode (Default) */
-            --bg-dark: #0a0a0f;
-            --bg-card: #12121a;
-            --bg-card-hover: #1a1a25;
-            --accent-primary: #00d4ff;
-            --accent-secondary: #7c3aed;
-            --accent-tertiary: #06b6d4;
-            --accent-success: #10b981;
-            --accent-warning: #f59e0b;
-            --accent-danger: #ef4444;
-            --text-primary: #ffffff;
-            --text-secondary: #9ca3af;
-            --border: #2a2a35;
-            --gradient-start: #0a0a0f;
-            --gradient-end: #12121a;
-        }
-
-        [data-theme="light"] {
-            --bg-dark: #f8fafc;
-            --bg-card: #ffffff;
-            --bg-card-hover: #f1f5f9;
-            --accent-primary: #0891b2;
-            --accent-secondary: #7c3aed;
-            --accent-tertiary: #0e7490;
-            --text-primary: #0f172a;
-            --text-secondary: #64748b;
-            --border: #e2e8f0;
-            --gradient-start: #f8fafc;
-            --gradient-end: #ffffff;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Inter', sans-serif;
-            background: var(--bg-dark);
-            color: var(--text-primary);
+            background: #f8fafc;
+            color: #0f172a;
             min-height: 100vh;
             line-height: 1.6;
-            overflow-x: hidden;
-            transition: background 0.3s, color 0.3s;
         }
 
-        /* Gemini 3 Inspired Animation */
-        .hero-canvas {
-            position: fixed;
+        /* Top Bar */
+        .top-bar {
+            background: #fff;
+            border-bottom: 1px solid #e2e8f0;
+            padding: 0.75rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
             top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-            pointer-events: none;
+            z-index: 100;
         }
 
-        .orb {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(60px);
-            opacity: 0.4;
-            animation: float 20s ease-in-out infinite;
-            transition: opacity 0.3s;
+        .version-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
         }
 
-        .orb-1 {
-            width: 600px;
-            height: 600px;
-            background: var(--accent-primary);
-            top: -200px;
-            left: -200px;
-            animation-delay: 0s;
+        .version-badge {
+            background: linear-gradient(135deg, #0891b2, #7c3aed);
+            color: #fff;
+            padding: 0.4rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            font-family: 'JetBrains Mono', monospace;
         }
 
-        .orb-2 {
-            width: 500px;
-            height: 500px;
-            background: var(--accent-secondary);
-            bottom: -150px;
-            right: -150px;
-            animation-delay: -7s;
-        }
-
-        .orb-3 {
-            width: 400px;
-            height: 400px;
-            background: var(--accent-tertiary);
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            animation-delay: -14s;
-        }
-
-        [data-theme="light"] .orb {
-            opacity: 0.15;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            25% { transform: translate(50px, -30px) scale(1.1); }
-            50% { transform: translate(-30px, 50px) scale(0.9); }
-            75% { transform: translate(-50px, -20px) scale(1.05); }
-        }
-
-        /* Particle Animation */
-        .particles {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-            pointer-events: none;
-            overflow: hidden;
-        }
-
-        .particle {
-            position: absolute;
-            width: 2px;
-            height: 2px;
-            background: var(--accent-primary);
-            border-radius: 50%;
-            opacity: 0;
-            animation: particle-float 15s linear infinite;
-        }
-
-        @keyframes particle-float {
-            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
-            10% { opacity: 0.8; }
-            90% { opacity: 0.8; }
-            100% { transform: translateY(-100vh) rotate(720deg); opacity: 0; }
-        }
-
-        /* Theme Toggle */
-        .theme-toggle {
-            position: fixed;
-            top: 1rem;
-            right: 1rem;
-            z-index: 200;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 50px;
-            padding: 0.5rem;
-            cursor: pointer;
+        .dev-mode-badge {
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            transition: all 0.3s;
-        }
-
-        .theme-toggle:hover {
-            border-color: var(--accent-primary);
-        }
-
-        .theme-icon {
-            font-size: 1.2rem;
-            width: 32px;
-            height: 32px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            transition: all 0.3s;
-        }
-
-        .theme-icon.dark { background: var(--bg-dark); }
-        .theme-icon.light { background: #fef3c7; }
-
-        .theme-label {
+            padding: 0.4rem 0.75rem;
+            border-radius: 6px;
             font-size: 0.75rem;
-            color: var(--text-secondary);
-            padding-right: 0.5rem;
             font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .dev-mode-badge.on {
+            background: #dbeafe;
+            color: #1d4ed8;
+            border: 1px solid #93c5fd;
+        }
+
+        .dev-mode-badge.off {
+            background: #f1f5f9;
+            color: #64748b;
+            border: 1px solid #e2e8f0;
+        }
+
+        .dev-toggle {
+            width: 32px;
+            height: 18px;
+            background: #cbd5e1;
+            border-radius: 9px;
+            position: relative;
+            transition: all 0.3s;
+        }
+
+        .dev-mode-badge.on .dev-toggle {
+            background: #3b82f6;
+        }
+
+        .dev-toggle::after {
+            content: '';
+            position: absolute;
+            width: 14px;
+            height: 14px;
+            background: #fff;
+            border-radius: 50%;
+            top: 2px;
+            left: 2px;
+            transition: all 0.3s;
+        }
+
+        .dev-mode-badge.on .dev-toggle::after {
+            left: 16px;
+        }
+
+        .settings-btn {
+            background: none;
+            border: none;
+            font-size: 1.25rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            color: #64748b;
         }
 
         /* Navigation */
         nav {
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 100;
-            background: rgba(10, 10, 15, 0.8);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--border);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #e2e8f0;
             padding: 1rem 2rem;
-            transition: background 0.3s, border-color 0.3s;
-        }
-
-        [data-theme="light"] nav {
-            background: rgba(248, 250, 252, 0.9);
+            position: sticky;
+            top: 52px;
+            z-index: 99;
         }
 
         .nav-content {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
@@ -212,11 +129,9 @@
         .logo {
             font-size: 1.5rem;
             font-weight: 700;
-            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            background: linear-gradient(135deg, #0891b2, #7c3aed);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            position: relative;
-            z-index: 10;
         }
 
         .logo span { font-weight: 300; }
@@ -225,175 +140,205 @@
             display: flex;
             gap: 2rem;
             list-style: none;
-            position: relative;
-            z-index: 10;
         }
 
         .nav-links a {
-            color: var(--text-secondary);
+            color: #64748b;
             text-decoration: none;
             font-weight: 500;
-            transition: all 0.3s;
-            position: relative;
+            transition: color 0.3s;
         }
 
-        .nav-links a:hover { color: var(--accent-primary); }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--accent-primary);
-            transition: width 0.3s;
-        }
-
-        .nav-links a:hover::after { width: 100%; }
+        .nav-links a:hover { color: #0891b2; }
 
         .nav-links a.cta {
-            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            background: linear-gradient(135deg, #0891b2, #7c3aed);
             padding: 0.5rem 1.5rem;
             border-radius: 8px;
-            color: var(--bg-dark);
+            color: #fff;
         }
-
-        .nav-links a.cta:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(0, 212, 255, 0.4);
-        }
-
-        .nav-links a.cta::after { display: none; }
 
         /* Hero */
         .hero {
-            position: relative;
-            z-index: 5;
-            padding: 14rem 2rem 8rem;
+            padding: 6rem 2rem 4rem;
             text-align: center;
+            background: linear-gradient(180deg, #f0f9ff 0%, #f8fafc 100%);
         }
 
         .hero-badge {
             display: inline-block;
-            background: rgba(124, 58, 237, 0.15);
-            border: 1px solid rgba(124, 58, 237, 0.3);
+            background: #dbeafe;
+            border: 1px solid #93c5fd;
             padding: 0.5rem 1.5rem;
             border-radius: 50px;
             font-size: 0.9rem;
-            color: var(--accent-secondary);
+            color: #1d4ed8;
             margin-bottom: 2rem;
-            animation: fadeInUp 0.8s ease-out;
             font-weight: 500;
         }
 
         .hero h1 {
-            font-size: 5rem;
+            font-size: 3.5rem;
             font-weight: 700;
-            margin-bottom: 1.5rem;
-            line-height: 1.1;
-            animation: fadeInUp 0.8s ease-out 0.2s backwards;
+            margin-bottom: 1rem;
+            line-height: 1.2;
         }
 
         .hero h1 .x-factor {
-            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary), var(--accent-tertiary));
-            background-size: 200% 200%;
+            background: linear-gradient(135deg, #0891b2, #7c3aed);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            animation: gradient-shift 3s ease infinite;
-        }
-
-        @keyframes gradient-shift {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
         }
 
         .hero-tagline {
             font-size: 1.5rem;
-            color: var(--text-primary);
+            color: #0f172a;
             max-width: 700px;
             margin: 0 auto 1rem;
-            animation: fadeInUp 0.8s ease-out 0.4s backwards;
         }
 
         .hero-subtagline {
             font-size: 1.1rem;
-            color: var(--text-secondary);
-            opacity: 0.9;
+            color: #64748b;
             max-width: 600px;
-            margin: 0 auto 2.5rem;
-            animation: fadeInUp 0.8s ease-out 0.5s backwards;
-        }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
+            margin: 0 auto 2rem;
         }
 
         .hero-buttons {
             display: flex;
             gap: 1rem;
             justify-content: center;
-            animation: fadeInUp 0.8s ease-out 0.6s backwards;
         }
 
         .btn {
-            padding: 1rem 2.5rem;
+            padding: 1rem 2rem;
             border-radius: 12px;
             font-weight: 600;
             text-decoration: none;
             transition: all 0.3s;
             font-size: 1rem;
+            border: none;
+            cursor: pointer;
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
-            color: var(--bg-dark);
-            position: relative;
-            overflow: hidden;
+            background: linear-gradient(135deg, #0891b2, #7c3aed);
+            color: #fff;
         }
-
-        .btn-primary::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: left 0.5s;
-        }
-
-        .btn-primary:hover::before { left: 100%; }
 
         .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(0, 212, 255, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(8, 145, 178, 0.3);
         }
 
         .btn-secondary {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            color: var(--text-primary);
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            color: #64748b;
         }
 
-        .btn-secondary:hover {
-            border-color: var(--accent-primary);
-            transform: translateY(-3px);
+        /* Problem Section */
+        .problem {
+            padding: 5rem 2rem;
+            background: #fff;
         }
 
-        /* How It Works */
-        .how-it-works {
-            position: relative;
-            z-index: 5;
-            padding: 6rem 2rem;
-            max-width: 1200px;
+        .problem-grid {
+            max-width: 1000px;
             margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .problem-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .problem-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .problem-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .problem-desc {
+            color: #64748b;
+            font-size: 0.95rem;
+        }
+
+        /* The Old Way vs AIDE X */
+        .comparison {
+            padding: 5rem 2rem;
+            background: #f8fafc;
+        }
+
+        .comparison-grid {
+            max-width: 1100px;
+            margin: 3rem auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .comparison-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid #e2e8f0;
+        }
+
+        .comparison-card.old {
+            border-left: 4px solid #ef4444;
+        }
+
+        .comparison-card.new {
+            border-left: 4px solid #10b981;
+        }
+
+        .comparison-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .comparison-card.old .comparison-title { color: #ef4444; }
+        .comparison-card.new .comparison-title { color: #10b981; }
+
+        .comparison-list {
+            list-style: none;
+        }
+
+        .comparison-list li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #f1f5f9;
+            color: #475569;
+        }
+
+        .comparison-list li:last-child { border-bottom: none; }
+
+        /* Agents Grid */
+        .agents {
+            padding: 5rem 2rem;
+            background: #fff;
         }
 
         .section-header {
             text-align: center;
-            margin-bottom: 4rem;
+            max-width: 700px;
+            margin: 0 auto 3rem;
         }
 
         .section-header h2 {
@@ -402,225 +347,172 @@
         }
 
         .section-header p {
-            color: var(--text-secondary);
+            color: #64748b;
             font-size: 1.1rem;
         }
 
-        .flow-diagram {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-wrap: wrap;
+        .agents-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 1rem;
-            margin: 3rem 0;
         }
 
-        .flow-step {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 1.5rem 2rem;
-            text-align: center;
-            min-width: 180px;
+        .agent-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 14px;
+            padding: 1.5rem;
             transition: all 0.3s;
-            animation: fadeInUp 0.6s ease-out backwards;
         }
 
-        .flow-step:nth-child(1) { animation-delay: 0.1s; }
-        .flow-step:nth-child(3) { animation-delay: 0.2s; }
-        .flow-step:nth-child(5) { animation-delay: 0.3s; }
-        .flow-step:nth-child(7) { animation-delay: 0.4s; }
-        .flow-step:nth-child(9) { animation-delay: 0.5s; }
-
-        .flow-step:hover {
-            border-color: var(--accent-primary);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
+        .agent-card:hover {
+            border-color: #0891b2;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
         }
 
-        .flow-step-icon { font-size: 2rem; margin-bottom: 0.5rem; }
-        .flow-step-label { font-weight: 600; font-size: 0.9rem; }
-
-        .flow-arrow {
-            color: var(--accent-primary);
-            font-size: 1.5rem;
-            animation: pulse-arrow 2s ease-in-out infinite;
+        .agent-icon {
+            font-size: 2rem;
+            margin-bottom: 0.75rem;
         }
 
-        @keyframes pulse-arrow {
-            0%, 100% { transform: translateX(0); opacity: 0.5; }
-            50% { transform: translateX(5px); opacity: 1; }
+        .agent-name {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
         }
 
-        /* Stats */
-        .stats {
-            position: relative;
-            z-index: 5;
-            padding: 4rem 2rem;
-            background: var(--bg-card);
-            transition: background 0.3s;
+        .agent-codename {
+            font-size: 0.8rem;
+            color: #7c3aed;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
         }
 
-        .stats-grid {
-            max-width: 1000px;
+        .agent-desc {
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+
+        /* Built-In Standards */
+        .standards {
+            padding: 5rem 2rem;
+            background: linear-gradient(180deg, #f0f9ff 0%, #f8fafc 100%);
+        }
+
+        .standards-grid {
+            max-width: 900px;
             margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
+            gap: 1rem;
+            margin-top: 2rem;
         }
 
-        .stat-item { text-align: center; }
-
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .stat-label { color: var(--text-secondary); font-size: 1rem; }
-
-        /* Features */
-        .features {
-            position: relative;
-            z-index: 5;
-            padding: 6rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .feature-card {
-            background: var(--bg-card);
-            border-radius: 20px;
-            padding: 2rem;
-            border: 1px solid var(--border);
-            transition: all 0.4s;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(0, 212, 255, 0.05), rgba(124, 58, 237, 0.05));
-            opacity: 0;
-            transition: opacity 0.4s;
-        }
-
-        .feature-card:hover::before { opacity: 1; }
-
-        .feature-card:hover {
-            border-color: var(--accent-primary);
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0, 212, 255, 0.15);
-        }
-
-        .feature-icon {
-            width: 56px;
-            height: 56px;
-            border-radius: 14px;
-            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            margin-bottom: 1.25rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .feature-card h3 {
-            font-size: 1.25rem;
-            margin-bottom: 0.75rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .feature-card p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            position: relative;
-            z-index: 1;
+        .standard-item {
+            background: #fff;
+            border: 1px solid #bae6fd;
+            border-radius: 12px;
+            padding: 1.25rem;
+            text-align: center;
+            font-weight: 500;
+            color: #0369a1;
         }
 
         /* CTA */
         .cta-section {
-            position: relative;
-            z-index: 5;
-            padding: 8rem 2rem;
+            padding: 6rem 2rem;
+            background: #0f172a;
             text-align: center;
-            background: linear-gradient(180deg, transparent, rgba(124, 58, 237, 0.1));
+            color: #fff;
         }
 
-        .cta-section h2 { font-size: 3rem; margin-bottom: 1.5rem; }
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
 
         .cta-section p {
-            color: var(--text-secondary);
-            margin-bottom: 2.5rem;
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+            color: #94a3b8;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
         }
 
         /* Footer */
         footer {
-            position: relative;
-            z-index: 5;
             padding: 2rem;
-            border-top: 1px solid var(--border);
+            background: #f8fafc;
+            border-top: 1px solid #e2e8f0;
             text-align: center;
-            color: var(--text-secondary);
-            transition: border-color 0.3s;
+            color: #64748b;
         }
 
-        footer a { color: var(--accent-primary); text-decoration: none; }
+        footer a { color: #0891b2; text-decoration: none; }
+
+        /* Release Panel */
+        .release-panel {
+            background: #f0f9ff;
+            border: 1px solid #bae6fd;
+            border-radius: 12px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            display: none;
+        }
+
+        .release-panel.show { display: block; }
+
+        .release-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.75rem;
+        }
+
+        .release-version {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 600;
+            color: #0369a1;
+        }
+
+        .release-date { font-size: 0.75rem; color: #64748b; }
+
+        .release-item {
+            font-size: 0.8rem;
+            color: #475569;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #e0f2fe;
+        }
 
         /* Responsive */
-        @media (max-width: 900px) {
-            .hero h1 { font-size: 3rem; }
-            .hero-tagline { font-size: 1.2rem; }
-            .flow-diagram { flex-direction: column; }
-            .flow-arrow { transform: rotate(90deg); }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .comparison-grid { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
         }
     </style>
 </head>
 <body>
-    <!-- Theme Toggle -->
-    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
-        <span class="theme-label" id="theme-label">Dark</span>
-        <div class="theme-icon dark" id="theme-icon">🌙</div>
-    </button>
-
-    <!-- Gemini 3 Inspired Animation -->
-    <div class="hero-canvas">
-        <div class="orb orb-1"></div>
-        <div class="orb orb-2"></div>
-        <div class="orb orb-3"></div>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="version-info">
+            <span class="version-badge">2026.02.15.0001</span>
+            <div class="dev-mode-badge off" id="devModeToggle" onclick="toggleDevMode()">
+                <span>Dev Mode</span>
+                <div class="dev-toggle"></div>
+            </div>
+        </div>
+        <button class="settings-btn" title="Settings">⚙️</button>
     </div>
-    
-    <div class="particles" id="particles"></div>
 
     <nav>
         <div class="nav-content">
             <div class="logo">AIDE <span>X</span></div>
             <ul class="nav-links">
-                <li><a href="#how-it-works">How It Works</a></li>
-                <li><a href="#features">Agents</a></li>
-                <li><a href="#whitepaper">Whitepaper</a></li>
-                <li><a href="#dashboard-preview">Control Center</a></li>
+                <li><a href="#problem">The Problem</a></li>
+                <li><a href="#agents">Agents</a></li>
+                <li><a href="#standards">Built-In Standards</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
                 <li><a href="https://github.com/enkay-k/aidex">GitHub</a></li>
                 <li><a href="https://github.com/enkay-k/aidex" class="cta">Get Started</a></li>
             </ul>
@@ -630,141 +522,185 @@
     <section class="hero">
         <div class="hero-badge">🔧 Work in Progress — Contributions Invited</div>
         <h1>AI Driven Engineering <span class="x-factor">X</span></h1>
-        <p class="hero-tagline">Code at the speed of thought.</p>
-        <p class="hero-subtagline">One human + AI agents = entire engineering team. From feature spec to production code in minutes. Industrial strength, not just prototypes.</p>
+        <p class="hero-tagline">Building software shouldn't require building a team first.</p>
+        <p class="hero-subtagline">13 specialized AI agents. No recruiting. No coding knowledge needed. Just describe what you want.</p>
         <div class="hero-buttons">
             <a href="https://github.com/enkay-k/aidex" class="btn btn-primary">View on GitHub</a>
-            <a href="#how-it-works" class="btn btn-secondary">See How It Works</a>
+            <a href="#problem" class="btn btn-secondary">Learn More</a>
         </div>
     </section>
 
-    <section class="how-it-works" id="how-it-works">
+    <section class="problem" id="problem">
         <div class="section-header">
-            <h2>From Idea to Code in Minutes</h2>
-            <p>Industrial-strength applications, built by AI, guided by you</p>
+            <h2>The Old Way is Broken</h2>
+            <p>Want to build industrial-strength software? Here's what you traditionally need...</p>
         </div>
-
-        <div class="flow-diagram">
-            <div class="flow-step">
-                <div class="flow-step-icon">📝</div>
-                <div class="flow-step-label">You write<br>feature spec</div>
+        <div class="problem-grid">
+            <div class="problem-card">
+                <div class="problem-icon">👥</div>
+                <div class="problem-title">10+ Specialists</div>
+                <div class="problem-desc">Product Manager, Designer, Architect, Engineers, Reviewers, Testers, Writers, and more...</div>
             </div>
-            <div class="flow-arrow">→</div>
-            <div class="flow-step">
-                <div class="flow-step-icon">🤖</div>
-                <div class="flow-step-label">AI agents<br>collaborate</div>
+            <div class="problem-card">
+                <div class="problem-icon">⏱️</div>
+                <div class="problem-title">Months to Hire</div>
+                <div class="problem-desc">Recruiting takes 3-6 months per role. Training takes years.</div>
             </div>
-            <div class="flow-arrow">→</div>
-            <div class="flow-step">
-                <div class="flow-step-icon">✅</div>
-                <div class="flow-step-label">You approve<br>decisions</div>
+            <div class="problem-card">
+                <div class="problem-icon">💰</div>
+                <div class="problem-title">Expensive</div>
+                <div class="problem-desc">Salaries, benefits, overhead. A team costs $50K+ per month.</div>
             </div>
-            <div class="flow-arrow">→</div>
-            <div class="flow-step">
-                <div class="flow-step-icon">🚀</div>
-                <div class="flow-step-label">Production code<br>ready</div>
-            </div>
-        </div>
-
-        <div class="stats">
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <div class="stat-number">10x</div>
-                    <div class="stat-label">Faster Development</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">6</div>
-                    <div class="stat-label">Specialized Agents</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">100x</div>
-                    <div class="stat-label">Context Scale</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">0</div>
-                    <div class="stat-label">Burnout</div>
-                </div>
+            <div class="problem-card">
+                <div class="problem-icon">🤷</div>
+                <div class="problem-title">"Surprise Me"</div>
+                <div class="problem-desc">Asking AI "build me a system" is like saying "surprise me" — unpredictable results.</div>
             </div>
         </div>
     </section>
 
-    <section class="features" id="features">
+    <section class="comparison">
         <div class="section-header">
-            <h2>Your AI Engineering Team</h2>
-            <p>Specialized agents, each an expert in their domain</p>
+            <h2>The AIDE X Way</h2>
+            <p>Whole team. No hiring. Predictable results.</p>
         </div>
-        <div class="feature-grid">
-            <div class="feature-card">
-                <div class="feature-icon">📋</div>
-                <h3>Architect</h3>
-                <p>Designs system architecture, chooses tech stack, plans components.</p>
+        <div class="comparison-grid">
+            <div class="comparison-card old">
+                <div class="comparison-title">❌ The Old Way</div>
+                <ul class="comparison-list">
+                    <li>🔴 Post job listings</li>
+                    <li>🔴 Conduct interviews</li>
+                    <li>🔴 Negotiate salaries</li>
+                    <li>🔴 Manage HR</li>
+                    <li>🔴 Coordinate teams</li>
+                    <li>🔴 Hope for quality</li>
+                    <li>🔴 3-6 months to ship</li>
+                    <li>🔴 $50K+ in costs</li>
+                </ul>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon">🔨</div>
-                <h3>Engineer</h3>
-                <p>Writes production-quality code. Clean, tested, documented.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🔍</div>
-                <h3>Reviewer</h3>
-                <p>Catches bugs, security issues, code quality problems.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">✅</div>
-                <h3>Tester</h3>
-                <p>Generates tests, validates behavior, ensures reliability.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">📖</div>
-                <h3>Docs</h3>
-                <p>Automatically writes READMEs, API docs, guides.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">👷</div>
-                <h3>Coordinator</h3>
-                <p>Orchestrates the pipeline, manages state, reports progress.</p>
+            <div class="comparison-card new">
+                <div class="comparison-title">✅ With AIDE X</div>
+                <ul class="comparison-list">
+                    <li>🟢 13 AI agents</li>
+                    <li>🟢 Ready instantly</li>
+                    <li>🟢 No salaries</li>
+                    <li>🟢 Auto-coordinated</li>
+                    <li>🟢 Guaranteed standards</li>
+                    <li>🟢 2 days to ship</li>
+                    <li>🟢 &lt;$1K in compute</li>
+                    <li>🟢 Human in control</li>
+                </ul>
             </div>
         </div>
     </section>
 
-    <!-- Whitepaper Section -->
-    <section class="cta-section" id="whitepaper" style="background: var(--bg-card);">
+    <section class="agents" id="agents">
         <div class="section-header">
-            <h2>Read the Vision</h2>
-            <p>Our whitepaper outlines the complete AIDE X architecture</p>
+            <h2>Your AI Team</h2>
+            <p>13 specialized agents. Each an expert in their domain.</p>
         </div>
-        <a href="https://github.com/enkay-k/aidex/blob/main/docs/whitepaper.md" class="btn btn-secondary" style="display: inline-block; margin-bottom: 2rem;">📄 Read Whitepaper</a>
-        <div style="text-align: left; max-width: 800px; margin: 0 auto; background: var(--bg-dark); border-radius: 16px; padding: 2rem; border: 1px solid var(--border);">
-            <h3 style="margin-bottom: 1rem;">AIDE X Whitepaper</h3>
-            <ul style="color: var(--text-secondary); line-height: 2;">
-                <li>🎯 The Problem: Software development is broken</li>
-                <li>💡 The Solution: Agent pipeline architecture</li>
-                <li>👥 The Team: 9 specialized AI agents</li>
-                <li>🔄 The Pipeline: From idea to deployment</li>
-                <li>📈 The Roadmap: Phase 1-4</li>
-            </ul>
+        <div class="agents-grid">
+            <div class="agent-card">
+                <div class="agent-icon">🔍</div>
+                <div class="agent-name">Researcher</div>
+                <div class="agent-codename">Hermes</div>
+                <div class="agent-desc">Data gathering, market analysis, tech research</div>
+            </div>
+            <div class="agent-card">
+                <div class="agent-icon">📋</div>
+                <div class="agent-name">Product Manager</div>
+                <div class="agent-codename">Apollo</div>
+                <div class="agent-desc">Vision, scope, priorities</div>
+            </div>
+            <div class="agent-card">
+                <div class="agent-icon">💡</div>
+                <div class="agent-name">Business Analyst</div>
+                <div class="agent-codename">Oracle</div>
+                <div class="agent-desc">Requirements, feasibility</div>
+            </div>
+            <div class="agent-card">
+                <div class="agent-icon">📐</div>
+                <div class="agent-name">Architect</div>
+                <div class="agent-codename">Daedalus</div>
+                <div class="agent-desc">System design, trade-offs</div>
+            </div>
+            <div class="agent-card">
+                <div class="agent-icon">🎨</div>
+                <div class="agent-name">Designer</div>
+                <div class="agent-codename">Aphrodite</div>
+                <div class="agent-desc">Mockups, options (you choose)</div>
+            </div>
+            <div class="agent-card">
+                <div class="agent-icon">🔨</div>
+                <div class="agent-name">Engineer</div>
+                <div class="agent-codename">Hephaestus</div>
+                <div class="agent-desc">Write production code</div>
+            </div>
+            <div class="agent-card">
+                <div class="agent-icon">🔍</div>
+                <div class="agent-name">Reviewer</div>
+                <div class="agent-codename">Athena</div>
+                <div class="agent-desc">Quality, best practices</div>
+            </div>
+            <div class="agent-card">
+                <div class="agent-icon">🛡️</div>
+                <div class="agent-name">Security</div>
+                <div class="agent-codename">Ares</div>
+                <div class="agent-desc">Vulnerability scanning</div>
+            </div>
+            <div class="agent-card">
+                <div class="agent-icon">✅</div>
+                <div class="agent-name">Tester</div>
+                <div class="agent-codename">Cassandra</div>
+                <div class="agent-desc">Tests, validation</div>
+            </div>
+            <div class="agent-card">
+                <div class="agent-icon">📖</div>
+                <div class="agent-name">Docs</div>
+                <div class="agent-codename">Calliope</div>
+                <div class="agent-desc">Documentation</div>
+            </div>
+            <div class="agent-card">
+                <div class="agent-icon">📦</div>
+                <div class="agent-name">Chronicler</div>
+                <div class="agent-codename">Historiograph</div>
+                <div class="agent-desc">Release notes, versioning</div>
+            </div>
+            <div class="agent-card">
+                <div class="agent-icon">💰</div>
+                <div class="agent-name">Cost Estimator</div>
+                <div class="agent-codename">Plutus</div>
+                <div class="agent-desc">Infra costs, ROI projection</div>
+            </div>
+            <div class="agent-card">
+                <div class="agent-icon">👷</div>
+                <div class="agent-name">Coordinator</div>
+                <div class="agent-codename">Foreman</div>
+                <div class="agent-desc">Orchestrate pipeline</div>
+            </div>
         </div>
     </section>
 
-    <!-- Dashboard Preview -->
-    <section class="cta-section" id="dashboard-preview" style="background: linear-gradient(180deg, var(--bg-card), var(--bg-dark));">
+    <section class="standards" id="standards">
         <div class="section-header">
-            <h2>Control Center Dashboard</h2>
-            <p>Monitor every project from vision to release</p>
+            <h2>Built-In Standards</h2>
+            <p>Every project comes with these. No add-ons needed.</p>
         </div>
-        <div style="text-align: center; margin-bottom: 2rem;">
-            <a href="dashboard.html" target="_blank" class="btn btn-secondary" style="display: inline-block;">🎛️ Open Dashboard Demo</a>
-        </div>
-        <div style="background: var(--bg-dark); border-radius: 16px; padding: 1.5rem; border: 1px solid var(--border); max-width: 900px; margin: 0 auto;">
-            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Crect fill='%2312121a' width='800' height='450'/%3E%3Ctext x='400' y='200' fill='%239ca3af' font-family='sans-serif' font-size='20' text-anchor='middle'%3EAIDE X Control Center%3C/text%3E%3Ctext x='400' y='240' fill='%2364748b' font-family='sans-serif' font-size='14' text-anchor='middle'%3EProjects • Pipelines • Logs • Alerts • Users%3C/text%3E%3Ctext x='400' y='280' fill='%2300d4ff' font-family='sans-serif' font-size='14' text-anchor='middle'%3EClick "Open Dashboard Demo" to explore%3C/text%3E%3C/svg%3E" alt="Dashboard Preview" style="width: 100%; border-radius: 12px;">
+        <div class="standards-grid">
+            <div class="standard-item">👥 User Management</div>
+            <div class="standard-item">📝 Logging</div>
+            <div class="standard-item">🔔 Alerting</div>
+            <div class="standard-item">🔒 Security</div>
+            <div class="standard-item">📦 Release Notes</div>
+            <div class="standard-item">💰 Cost Estimation</div>
         </div>
     </section>
 
     <section class="cta-section">
         <h2>Build Faster. Scale Smarter.</h2>
-        <p>Your AI engineering team, 24/7. Production-ready code, not just prototypes.</p>
+        <p>No team needed. Just describe what you want. AI does the rest.</p>
         <a href="https://github.com/enkay-k/aidex" class="btn btn-primary">Get Started</a>
-        <p style="margin-top: 1.5rem; font-size: 0.9rem; opacity: 0.7;">⭐ Star us on GitHub | 🍴 Fork to contribute | 📖 Read the docs</p>
+        <p style="margin-top: 2rem; font-size: 0.9rem; opacity: 0.7;">⭐ Star us on GitHub | 🍴 Fork to contribute | 📖 Read the docs</p>
     </section>
 
     <footer>
@@ -772,74 +708,16 @@
     </footer>
 
     <script>
-        // Theme Toggle
-        function toggleTheme() {
-            const html = document.documentElement;
-            const label = document.getElementById('theme-label');
-            const icon = document.getElementById('theme-icon');
-            
-            if (html.getAttribute('data-theme') === 'light') {
-                html.setAttribute('data-theme', 'dark');
-                label.textContent = 'Dark';
-                icon.textContent = '🌙';
-                icon.className = 'theme-icon dark';
-                localStorage.setItem('theme', 'dark');
+        function toggleDevMode() {
+            const toggle = document.getElementById('devModeToggle');
+            if (toggle.classList.contains('off')) {
+                toggle.classList.remove('off');
+                toggle.classList.add('on');
             } else {
-                html.setAttribute('data-theme', 'light');
-                label.textContent = 'Light';
-                icon.textContent = '☀️';
-                icon.className = 'theme-icon light';
-                localStorage.setItem('theme', 'light');
+                toggle.classList.remove('on');
+                toggle.classList.add('off');
             }
         }
-
-        // Load saved theme
-        const savedTheme = localStorage.getItem('theme') || 'dark';
-        document.documentElement.setAttribute('data-theme', savedTheme);
-        if (savedTheme === 'light') {
-            document.getElementById('theme-label').textContent = 'Light';
-            document.getElementById('theme-icon').textContent = '☀️';
-            document.getElementById('theme-icon').className = 'theme-icon light';
-        }
-
-        // Create particles
-        const particlesContainer = document.getElementById('particles');
-        const particleCount = 50;
-
-        for (let i = 0; i < particleCount; i++) {
-            const particle = document.createElement('div');
-            particle.className = 'particle';
-            particle.style.left = Math.random() * 100 + '%';
-            particle.style.animationDelay = Math.random() * 15 + 's';
-            particle.style.animationDuration = (15 + Math.random() * 10) + 's';
-            
-            const colors = ['#00d4ff', '#7c3aed', '#06b6d4'];
-            particle.style.background = colors[Math.floor(Math.random() * colors.length)];
-            
-            particlesContainer.appendChild(particle);
-        }
-
-        // Scroll reveal animation
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.feature-card, .flow-step').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(el);
-        });
     </script>
 </body>
 </html>
