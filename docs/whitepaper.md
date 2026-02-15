@@ -128,8 +128,8 @@ Most AI coding tools are great for:
 | **Tester** | Cassandra | Tests, validation | Approve coverage |
 | **DevOps** ⭐ | Karma | CI/CD, infra, deployment | Validate pipeline |
 | **VaPT** ⭐ | Themis | Verification, validation, compliance | Approve certification |
-| **Performance** | Titan | Load testing, stress testing | Validate scalability |
-| **Marketing** | Hermes² | Positioning, launch strategy | Approve messaging |
+| **Performance** | Tosh | Load testing, stress testing | Validate scalability |
+| **Marketing** | Kriti | Positioning, launch strategy | Approve messaging |
 | **Docs** | Calliope | Documentation | Review accuracy |
 | **Chronicler** ⭐ | Itihas | Release notes, versioning | Approve releases |
 | **Cost Estimator** | Plutus | Development + Ops costs, ROI | Validate estimates |
@@ -249,7 +249,7 @@ Compliance:
 
 ---
 
-## ⭐ Performance Engineer (Titan)
+## ⭐ Performance Engineer (Tosh)
 
 ### Scale Demands Stress Testing
 
@@ -257,7 +257,7 @@ When you're building payment systems or AI agent engines, you need to know:
 
 **Can it handle the load?**
 
-Titan handles:
+Tosh handles:
 
 ### 1. Load Testing
 - Simulate thousands of concurrent users
@@ -281,11 +281,11 @@ Titan handles:
 
 ---
 
-## ⭐ Marketing Specialist (Hermes²)
+## ⭐ Marketing Specialist (Kriti)
 
 ### Build It. Tell the World.
 
-Great systems need great launches. Hermes² handles:
+Great systems need great launches. Kriti handles:
 
 ### 1. Positioning
 - Target audience analysis
@@ -349,8 +349,8 @@ Great systems need great launches. Hermes² handles:
 ✅ **Cost Estimation** — Plutus (dev + ops)  
 ✅ **DevOps** — Karma (CI/CD, infra)  
 ✅ **VaPT** — Themis (verification, compliance)  
-✅ **Performance** — Titan (load testing)  
-✅ **Marketing** — Hermes² (optional)
+✅ **Performance** — Tosh (load testing)  
+✅ **Marketing** — Kriti (optional)
 
 **Standard always-on. Scale agents when needed.**
 
@@ -416,5 +416,5 @@ AIDE X gives you:
 
 ---
 
-*Whitepaper v0.8 — With DevOps (Karma) + VaPT (Themis) + Sanskrit Codenames*
+*Whitepaper v0.9 — With DevOps (Karma), VaPT (Themis), Performance (Tosh), Marketing (Kriti)*
 *February 2026 — Work in Progress — Contributions Invited*
