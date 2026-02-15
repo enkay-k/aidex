@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIDE X Control Center - Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0a0a0f;
+            --bg-card: #12121a;
+            --bg-card-hover: #1a1a25;
+            --accent-primary: #00d4ff;
+            --accent-secondary: #7c3aed;
+            --accent-tertiary: #06b6d4;
+            --accent-success: #10b981;
+            --accent-warning: #f59e0b;
+            --accent-danger: #ef4444;
+            --text-primary: #ffffff;
+            --text-secondary: #9ca3af;
+            --border: #2a2a35;
+        }
+
+        [data-theme="light"] {
+            --bg-dark: #f8fafc;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f1f5f9;
+            --accent-primary: #0891b2;
+            --accent-secondary: #7c3aed;
+            --text-primary: #0f172a;
+            --text-secondary: #64748b;
+            --border: #e2e8f0;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            min-height: 100vh;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        /* Layout */
+        .dashboard {
+            display: grid;
+            grid-template-columns: 260px 1fr 320px;
+            min-height: 100vh;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            background: var(--bg-card);
+            border-right: 1px solid var(--border);
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-section { margin-bottom: 1rem; }
+        .nav-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1rem;
+            border-radius: 10px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: all 0.3s;
+            margin-bottom: 0.25rem;
+            cursor: pointer;
+        }
+
+        .nav-item:hover, .nav-item.active {
+            background: rgba(0, 212, 255, 0.1);
+            color: var(--accent-primary);
+        }
+
+        .nav-item .badge {
+            margin-left: auto;
+            background: var(--accent-warning);
+            color: #000;
+            font-size: 0.7rem;
+            padding: 0.2rem 0.5rem;
+            border-radius: 10px;
+            font-weight: 600;
+        }
+
+        .nav-icon { font-size: 1.2rem; }
+
+        /* Main Content */
+        .main {
+            padding: 1.5rem;
+            overflow-y: auto;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .header h1 { font-size: 1.5rem; }
+
+        .header-actions {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .btn {
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+            font-size: 0.9rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            color: var(--bg-dark);
+        }
+
+        .btn-secondary {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+        }
+
+        /* Filters */
+        .filters {
+            display: flex;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .filter {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .filter:hover, .filter.active {
+            border-color: var(--accent-primary);
+            color: var(--accent-primary);
+        }
+
+        .search {
+            flex: 1;
+            min-width: 200px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-size: 0.9rem;
+        }
+
+        /* Pipeline View */
+        .pipeline-tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.5rem;
+        }
+
+        .pipeline-tab {
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .pipeline-tab:hover, .pipeline-tab.active {
+            background: var(--bg-card);
+            color: var(--accent-primary);
+        }
+
+        /* Cards Grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1rem;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 1.25rem;
+            transition: all 0.3s;
+        }
+
+        .card:hover {
+            border-color: var(--accent-primary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .card-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .card-subtitle {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .card-status {
+            font-size: 0.7rem;
+            padding: 0.25rem 0.6rem;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+
+        .status-running { background: rgba(0, 212, 255, 0.2); color: var(--accent-primary); }
+        .status-complete { background: rgba(16, 185, 129, 0.2); color: var(--accent-success); }
+        .status-pending { background: rgba(245, 158, 11, 0.2); color: var(--accent-warning); }
+        .status-blocked { background: rgba(239, 68, 68, 0.2); color: var(--accent-danger); }
+
+        .card-stages {
+            display: flex;
+            gap: 0.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .stage {
+            flex: 1;
+            height: 6px;
+            border-radius: 3px;
+            background: var(--border);
+        }
+
+        .stage.complete { background: var(--accent-success); }
+        .stage.current { background: var(--accent-primary); }
+        .stage.error { background: var(--accent-danger); }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            padding-top: 0.75rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .card-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-top: 0.75rem;
+        }
+
+        .tag {
+            font-size: 0.7rem;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            background: var(--bg-dark);
+            color: var(--text-secondary);
+        }
+
+        /* Right Panel - Activity */
+        .activity-panel {
+            background: var(--bg-card);
+            border-left: 1px solid var(--border);
+            padding: 1.5rem;
+            overflow-y: auto;
+        }
+
+        .activity-title {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .activity-item {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .activity-time {
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.25rem;
+        }
+
+        .activity-text {
+            font-size: 0.85rem;
+            line-height: 1.4;
+        }
+
+        .activity-text .highlight {
+            color: var(--accent-primary);
+        }
+
+        /* Decision Queue */
+        .decision-card {
+            background: var(--bg-dark);
+            border: 1px solid var(--accent-warning);
+            border-radius: 12px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .decision-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .decision-label {
+            font-size: 0.7rem;
+            color: var(--accent-warning);
+            text-transform: uppercase;
+        }
+
+        .decision-title {
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .decision-context {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+        }
+
+        .decision-buttons {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .decision-btn {
+            flex: 1;
+            padding: 0.4rem;
+            border-radius: 6px;
+            border: none;
+            font-weight: 600;
+            font-size: 0.8rem;
+            cursor: pointer;
+        }
+
+        .btn-approve { background: var(--accent-success); color: #000; }
+        .btn-deny { background: var(--accent-danger); color: #fff; }
+        .btn-hold { background: var(--border); color: var(--text-primary); }
+
+        /* Stats */
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .stat-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 1.75rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            margin-top: 0.25rem;
+        }
+
+        /* Theme Toggle */
+        .theme-toggle {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            z-index: 200;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 50px;
+            padding: 0.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .theme-toggle span {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            padding: 0 0.5rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .dashboard { grid-template-columns: 1fr; }
+            .sidebar, .activity-panel { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Theme Toggle -->
+    <button class="theme-toggle" onclick="toggleTheme()">
+        <span id="theme-label">Dark</span>
+    </button>
+
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo">AIDE X</div>
+            
+            <div class="nav-section">
+                <div class="nav-label">Overview</div>
+                <div class="nav-item active">
+                    <span class="nav-icon">📊</span> Dashboard
+                </div>
+                <div class="nav-item">
+                    <span class="nav-icon">🚀</span> Projects
+                    <span class="badge">3</span>
+                </div>
+                <div class="nav-item">
+                    <span class="nav-icon">🔄</span> Pipelines
+                </div>
+            </div>
+
+            <div class="nav-section">
+                <div class="nav-label">Pipeline Stages</div>
+                <div class="nav-item"><span class="nav-icon">💡</span> Vision</div>
+                <div class="nav-item"><span class="nav-icon">📋</span> Requirements</div>
+                <div class="nav-item"><span class="nav-icon">📐</span> Architecture</div>
+                <div class="nav-item"><span class="nav-icon">🔨</span> Engineering</div>
+                <div class="nav-item"><span class="nav-icon">✅</span> Tests</div>
+                <div class="nav-item"><span class="nav-icon">📖</span> Docs</div>
+                <div class="nav-item"><span class="nav-icon">🚀</span> Release</div>
+            </div>
+
+            <div class="nav-section">
+                <div class="nav-label">System</div>
+                <div class="nav-item"><span class="nav-icon">📝</span> Logs</div>
+                <div class="nav-item"><span class="nav-icon">🔔</span> Alerts</div>
+                <div class="nav-item"><span class="nav-icon">👥</span> Users</div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main">
+            <div class="header">
+                <h1>Control Center</h1>
+                <div class="header-actions">
+                    <button class="btn btn-secondary">New Project</button>
+                    <button class="btn btn-primary">+ New Pipeline</button>
+                </div>
+            </div>
+
+            <!-- Stats -->
+            <div class="stats-row">
+                <div class="stat-card">
+                    <div class="stat-number">12</div>
+                    <div class="stat-label">Active Projects</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">47</div>
+                    <div class="stat-label">Pipelines Run</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">98%</div>
+                    <div class="stat-label">Quality Score</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">2</div>
+                    <div class="stat-label">Pending Decisions</div>
+                </div>
+            </div>
+
+            <!-- Filters -->
+            <div class="filters">
+                <input type="text" class="search" placeholder="Search projects...">
+                <div class="filter active">All</div>
+                <div class="filter">Running</div>
+                <div class="filter">Complete</div>
+                <div class="filter">Pending</div>
+                <div class="filter">Blocked</div>
+            </div>
+
+            <!-- Pipeline Tabs -->
+            <div class="pipeline-tabs">
+                <div class="pipeline-tab active">All Projects</div>
+                <div class="pipeline-tab">Vision</div>
+                <div class="pipeline-tab">Requirements</div>
+                <div class="pipeline-tab">Architecture</div>
+                <div class="pipeline-tab">Engineering</div>
+                <div class="pipeline-tab">Tests</div>
+                <div class="pipeline-tab">Release</div>
+            </div>
+
+            <!-- Cards Grid -->
+            <div class="cards-grid">
+                <!-- Card 1 -->
+                <div class="card">
+                    <div class="card-header">
+                        <div>
+                            <div class="card-title">E-Commerce Platform</div>
+                            <div class="card-subtitle">Full-stack marketplace app</div>
+                        </div>
+                        <span class="card-status status-running">Running</span>
+                    </div>
+                    <div class="card-stages">
+                        <div class="stage complete"></div>
+                        <div class="stage complete"></div>
+                        <div class="stage complete"></div>
+                        <div class="stage current"></div>
+                        <div class="stage"></div>
+                        <div class="stage"></div>
+                        <div class="stage"></div>
+                    </div>
+                    <div class="card-meta">
+                        <span>⏱️ 4m 32s elapsed</span>
+                        <span>👤 Human decision: 2/5</span>
+                    </div>
+                    <div class="card-tags">
+                        <span class="tag">React</span>
+                        <span class="tag">Node.js</span>
+                        <span class="tag">PostgreSQL</span>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="card">
+                    <div class="card-header">
+                        <div>
+                            <div class="card-title">API Gateway Service</div>
+                            <div class="card-subtitle">Microservices authentication</div>
+                        </div>
+                        <span class="card-status status-pending">Pending</span>
+                    </div>
+                    <div class="card-stages">
+                        <div class="stage complete"></div>
+                        <div class="stage complete"></div>
+                        <div class="stage complete"></div>
+                        <div class="stage complete"></div>
+                        <div class="stage complete"></div>
+                        <div class="stage"></div>
+                        <div class="stage"></div>
+                    </div>
+                    <div class="card-meta">
+                        <span>⏸️ Waiting for 2 approvals</span>
+                        <span>🔒 Security scan</span>
+                    </div>
+                    <div class="card-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">FastAPI</span>
+                        <span class="tag">Redis</span>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="card">
+                    <div class="card-header">
+                        <div>
+                            <div class="card-title">Mobile App Backend</div>
+                            <div class="card-subtitle">iOS/Android API</div>
+                        </div>
+                        <span class="card-status status-complete">Complete</span>
+                    </div>
+                    <div class="card-stages">
+                        <div class="stage complete"></div>
+                        <div class="stage complete"></div>
+                        <div class="stage complete"></div>
+                        <div class="stage complete"></div>
+                        <div class="stage complete"></div>
+                        <div class="stage complete"></div>
+                        <div class="stage complete"></div>
+                    </div>
+                    <div class="card-meta">
+                        <span>✅ Deployed to prod</span>
+                        <span>📦 v1.2.0</span>
+                    </div>
+                    <div class="card-tags">
+                        <span class="tag">Go</span>
+                        <span class="tag">gRPC</span>
+                        <span class="tag">Kubernetes</span>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="card">
+                    <div class="card-header">
+                        <div>
+                            <div class="card-title">Analytics Dashboard</div>
+                            <div class="card-subtitle">Real-time metrics UI</div>
+                        </div>
+                        <span class="card-status status-blocked">Blocked</span>
+                    </div>
+                    <div class="card-stages">
+                        <div class="stage complete"></div>
+                        <div class="stage complete"></div>
+                        <div class="stage error"></div>
+                        <div class="stage"></div>
+                        <div class="stage"></div>
+                        <div class="stage"></div>
+                        <div class="stage"></div>
+                    </div>
+                    <div class="card-meta">
+                        <span>❌ Architecture rejected</span>
+                        <span>🔄 Needs revision</span>
+                    </div>
+                    <div class="card-tags">
+                        <span class="tag">Vue.js</span>
+                        <span class="tag">D3.js</span>
+                        <span class="tag">GraphQL</span>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="card">
+                    <div class="card-header">
+                        <div>
+                            <div class="card-title">Payment Integration</div>
+                            <div class="card-subtitle">Stripe & PayPal</div>
+                        </div>
+                        <span class="card-status status-running">Running</span>
+                    </div>
+                    <div class="card-stages">
+                        <div class="stage complete"></div>
+                        <div class="stage complete"></div>
+                        <div class="stage complete"></div>
+                        <div class="stage complete"></div>
+                        <div class="stage current"></div>
+                        <div class="stage"></div>
+                        <div class="stage"></div>
+                    </div>
+                    <div class="card-meta">
+                        <span>⏱️ 2m 15s elapsed</span>
+                        <span>🔍 Security review</span>
+                    </div>
+                    <div class="card-tags">
+                        <span class="tag">TypeScript</span>
+                        <span class="tag">Stripe</span>
+                        <span class="tag">PCI</span>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="card">
+                    <div class="card-header">
+                        <div>
+                            <div class="card-title">User Auth Service</div>
+                            <div class="card-subtitle">SSO & OAuth2</div>
+                        </div>
+                        <span class="card-status status-complete">Complete</span>
+                    </div>
+                    <div class="card-stages">
+                        <div class="stage complete"></div>
+                        <div class="stage complete"></div>
+                        <div class="stage complete"></div>
+                        <div class="stage complete"></div>
+                        <div class="stage complete"></div>
+                        <div class="stage complete"></div>
+                        <div class="stage complete"></div>
+                    </div>
+                    <div class="card-meta">
+                        <span>✅ Deployed to staging</span>
+                        <span>📦 v2.0.0-rc1</span>
+                    </div>
+                    <div class="card-tags">
+                        <span class="tag">Rust</span>
+                        <span class="tag">OAuth2</span>
+                        <span class="tag">JWT</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Panel -->
+        <div class="activity-panel">
+            <div class="activity-title">⚡ Pending Decisions</div>
+            
+            <div class="decision-card">
+                <div class="decision-header">
+                    <span class="decision-label">Architecture Review</span>
+                </div>
+                <div class="decision-title">E-Commerce Platform</div>
+                <div class="decision-context">
+                    Agent proposes microservices with 12 components. Consider switching to modular monolith for faster shipping.
+                </div>
+                <div class="decision-buttons">
+                    <button class="decision-btn btn-approve">Approve</button>
+                    <button class="decision-btn btn-deny">Reject</button>
+                    <button class="decision-btn btn-hold">Review</button>
+                </div>
+            </div>
+
+            <div class="decision-card">
+                <div class="decision-header">
+                    <span class="decision-label">Security Scan</span>
+                </div>
+                <div class="decision-title">Payment Integration</div>
+                <div class="decision-context">
+                    Found 2 medium vulnerabilities in dependencies. Review required before proceeding.
+                </div>
+                <div class="decision-buttons">
+                    <button class="decision-btn btn-approve">Fix & Continue</button>
+                    <button class="decision-btn btn-hold">Ignore</button>
+                </div>
+            </div>
+
+            <div class="activity-title" style="margin-top: 1.5rem;">📜 Recent Activity</div>
+            
+            <div class="activity-item">
+                <div class="activity-time">2 min ago</div>
+                <div class="activity-text">
+                    <span class="highlight">Hephaestus</span> generated 342 lines of code for Payment service
+                </div>
+            </div>
+
+            <div class="activity-item">
+                <div class="activity-time">5 min ago</div>
+                <div class="activity-text">
+                    <span class="highlight">Athena</span> completed security scan on API Gateway — 0 issues
+                </div>
+            </div>
+
+            <div class="activity-item">
+                <div class="activity-time">8 min ago</div>
+                <div class="activity-text">
+                    User <span class="highlight">@nirav</span> approved architecture for Mobile App Backend
+                </div>
+            </div>
+
+            <div class="activity-item">
+                <div class="activity-time">12 min ago</div>
+                <div class="activity-text">
+                    <span class="highlight">Cassandra</span> generated 28 test cases for Auth Service
+                </div>
+            </div>
+
+            <div class="activity-item">
+                <div class="activity-time">15 min ago</div>
+                <div class="activity-text">
+                    <span class="highlight">Calliope</span> generated API documentation for E-Commerce Platform
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleTheme() {
+            const html = document.documentElement;
+            const label = document.getElementById('theme-label');
+            
+            if (html.getAttribute('data-theme') === 'light') {
+                html.setAttribute('data-theme', 'dark');
+                label.textContent = 'Dark';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                html.setAttribute('data-theme', 'light');
+                label.textContent = 'Light';
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        // Load saved theme
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        document.getElementById('theme-label').textContent = savedTheme.charAt(0).toUpperCase() + savedTheme.slice(1);
+    </script>
+</body>
+</html>
