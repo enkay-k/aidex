@@ -1,406 +1,320 @@
 # AIDE X - AI Driven Engineering X
-## Whitepaper v0.9
+## Whitepaper v1.0
+
+**X = Force Multiplier**
+
+> **AIDE X is a protocol for developing industrial-strength solutions — force multiplied by AI, imagined and steered by humans.**
+
+This is not just theory. AIDE X is evolving into a living tool — an operating system for building real products. And as AI grows more capable, the steering itself becomes increasingly automatic. Today, humans imagine and steer most decisions. Tomorrow, AI handles more. Eventually, the human role is pure imagination and final approval — and the force multiplier keeps growing.
 
 ---
 
-## The Story: Building a Team is Hard
+## The Real Problem: Unpredictability
 
-### The Old Way
+### Two Broken Ways to Build Software
 
-Want to build an industrial-strength system? You need:
+**The Old Way — Build a Team First**
 
-| Role | What They Do |
-|------|--------------|
-| **Product Manager** | Vision, strategy, prioritization |
-| **Business Analyst** | Requirements, feasibility |
-| **UI/UX Designer** | Look and feel, user experience |
-| **Architect** | System design, tech choices |
-| **Engineer** | Write the code |
-| **Code Reviewer** | Quality, best practices |
-| **Security Analyst** | Vulnerabilities, compliance |
-| **Tester** | Tests, validation |
-| **DevOps Engineer** | CI/CD, deployment, infrastructure |
-| **Performance Engineer** | Load testing, stress testing |
-| **VaPT Engineer** | Verification, validation, compliance |
-| **Marketing Specialist** | Positioning, launch |
-| **Technical Writer** | Documentation |
-| **Release Manager** | Versioning, deployment |
-| **Cost Estimator** | Infrastructure, timeline, ROI |
+Want to build an industrial-strength system? Traditionally, you need 12-15 specialists: Product Manager, Business Analyst, Designer, Architect, Engineers, Reviewers, Security Analyst, Tester, DevOps, Performance Engineer, Technical Writer, Release Manager, and more.
 
-### The Problem
+Finding these people takes months. Training takes years. Salaries cost $50K+ per month. Coordination is a nightmare. And even with all of that — projects still fail, ship late, or go over budget.
 
-Finding these people is **super hard**:
-- Recruiting takes months
-- Training takes years
-- Salaries are expensive
-- Turnover is high
-- Coordination is a nightmare
+**The New Broken Way — "Vibe Coding"**
 
-### The Silly Way
+Go to an AI and say "build me a system." Sometimes you get magic. Sometimes you get garbage. It's a coin flip.
 
-Going to an AI and saying:
-> "Build me a system"
+But the problem goes deeper than bad code. Even AI-generated PRDs, architecture documents, and designs are unpredictable. Nobody asked you if you wanted React or Vue. Nobody asked if you prefer PostgreSQL or MongoDB. Nobody checked if the design matches your brand. The AI just... decided. For you. Without asking.
 
-That's like saying "surprise me" at a restaurant. You might get something great. You might get garbage. Unpredictable. Unreliable.
+The result? You spend hours fixing choices you never made. Or you throw the whole thing away and start over.
+
+**The core problem isn't AI capability. It's AI predictability.**
 
 ---
 
-## The AIDE X Way
+## The AIDE X Way: Describe → Decide → Deliver
 
-**What if you could have an entire team of specialists?**
+**What if AI was predictable, controllable, and still fast?**
 
-Each one an AI agent — purpose-built for their role. Working together. Predictable. Controllable.
+AIDE X doesn't make AI smarter — it makes AI *controllable*. It surfaces every important decision, asks you at the right moment, and ensures nothing gets decided by accident.
 
-**No need to:**
-- Post job listings
-- Conduct interviews
-- Negotiate salaries
-- Manage HR
-- Learn software engineering
-
-**You just:**
-1. Define what you want
-2. Review what AI proposes
-3. Approve what matters
-4. Ship
+You describe what you want. AI asks the right questions. You make the decisions that matter. AI delivers — in minutes, not months.
 
 ---
 
-## ⚠️ AIDE X is Not for Small Apps
+## The Journey: From Idea to Running Product
 
-### We're Building for Scale
+Here's exactly what happens when you bring an idea to AIDE X:
 
-Most AI coding tools are great for:
-- Small scripts
-- Simple utilities
-- Quick prototypes
+### Phase 1: Describe — From Idea to Clarity
 
-**AIDE X is different.** We're building **industrial-strength systems**:
+You describe your pain point in plain language. Not code. Not requirements. Just what you need.
 
-| Small Apps | AIDE X Scale Systems |
-|------------|----------------------|
+AI asks targeted questions to remove ambiguity: Who is this for? What's the most important thing it should do? What are the constraints? What's the budget?
+
+**You decide:** "Yes, that's what I mean" or "No, let me clarify."
+
+**Output:** Clear problem statement + project guardrails (your rules for the project).
+
+**Time:** ~15 minutes of conversation.
+
+### Phase 2: Describe — From Clarity to Requirements
+
+AI expands your problem into structured requirements. Functional requirements (what it does), non-functional requirements (how well it does it), edge cases, and priorities.
+
+**You decide:** Approve scope, cut features, add features, set priorities.
+
+**Output:** Complete requirements document.
+
+**Time:** ~30 minutes of review.
+
+### Phase 3: Decide — Architecture & Visualization
+
+AI designs the system with visual diagrams. You see the building blocks, data flows, and technology choices — presented visually at different zoom levels so you can understand the big picture without being an engineer.
+
+**You decide:** Approve the architecture, request changes, ask questions. Every technology choice is explained with trade-offs.
+
+**Output:** Architecture document + system diagrams (auto-generated).
+
+**Time:** ~20 minutes of review.
+
+### Phase 4: Decide — Look & Feel
+
+AI generates design options — not one take-it-or-leave-it design, but alternatives with trade-offs explained.
+
+**You decide:** Pick the design direction. This is ALWAYS a human choice. Design is taste, not logic.
+
+**Output:** Approved design direction.
+
+**Time:** Your pace — this gate never rushes.
+
+### Phase 5: Deliver — Build
+
+AI breaks the work into small, atomic tasks and executes them — each in a fresh context so quality never degrades. Tasks run in parallel where possible. Every task produces code, tests, and documentation.
+
+**You decide:** Review at the feature level, not line-by-line. Approve or request changes.
+
+**Output:** Working code + tests + documentation.
+
+**Time:** Minutes to hours (not weeks).
+
+### Phase 6: Deliver — Verify & Secure
+
+Security scanning, code review, performance testing, compliance checks — all automated.
+
+**You decide:** Accept the risk assessment or request fixes.
+
+**Output:** Quality-verified, security-scanned, performance-tested codebase.
+
+**Time:** Minutes (automated).
+
+### Phase 7: Deliver — Deploy
+
+CI/CD pipeline setup, infrastructure configuration, monitoring and alerting — all automated.
+
+**You decide:** Final go/no-go for production.
+
+**Output:** Running application with monitoring.
+
+**Time:** Minutes.
+
+### Phase 8: Evolve — The Real Force Multiplier
+
+This is where AIDE X changes everything.
+
+Since AI built your system, AI *knows* your system. Every design decision, every architecture choice, every line of code — it's all tracked and understood.
+
+Bug fixes aren't fire drills. New features aren't new projects. They're conversations. "Add a payment option." "Fix the login timeout." "Support Spanish." Each change flows through the same pipeline — described, decided, delivered.
+
+Traditional dev shops charge you again for every change. AIDE X makes change nearly free.
+
+**This is Phase 8. And it never ends.**
+
+---
+
+## The Principles
+
+### 1. Describe It, Then Build It
+You describe what you want in plain language. AI asks the right questions. Nothing gets built until both sides agree on what "done" looks like.
+
+### 2. Your Rules, Always
+Every project has guardrails — your preferred technologies, design standards, security requirements, budget limits. AI operates within YOUR rules, not its own. These guardrails are set once and enforced everywhere.
+
+### 3. See It Before You Build It
+Every architecture decision, every system design, every data flow is visual. You see what you're getting before a single line of code is written. Multiple zoom levels — executives see the big picture, developers see the internals.
+
+### 4. Fresh Eyes on Every Task
+Each piece of work gets a clean start. No accumulated confusion. No degrading quality over time. The 50th task is as sharp as the 1st.
+
+### 5. Pause Where It Matters
+AI moves fast where it can, stops where it should. Design choices, architecture approvals, go-live decisions — always yours. The pipeline pauses where human judgment matters and accelerates where it doesn't.
+
+### 6. AI Builds It, AI Knows It
+After deployment, your AI team remembers everything. Bug fixes, new features, refactors — they're conversations, not projects. Every change is tracked, versioned, and traceable.
+
+---
+
+## What You Usually Pay Extra For (Built-In With AIDE X)
+
+### Cost Transparency — Plutus
+
+Most teams don't know what their app will cost to run until it's running. AIDE X tells you *before you build* — with free-tier recommendations that can keep your monthly operations at $0.
+
+| Component | Typical Cost | AIDE X Recommendation |
+|-----------|--------------|----------------------|
+| Hosting | $20-500/mo | Vercel, Render (free tier) |
+| Database | $0-200/mo | Supabase, Firebase (free tier) |
+| CDN | $0-50/mo | Cloudflare (free tier) |
+| Auth | $0-100/mo | Auth0, Supabase (free tier) |
+| Storage | $0-100/mo | S3, Backblaze (free tier) |
+| Monitoring | $0-100/mo | Datadog (free tier) |
+
+**Development cost:** Traditional team ($75K+) vs. AIDE X (~$300-500 in AI compute).
+
+This isn't an afterthought — it's built into the pipeline. Plutus estimates before you commit.
+
+### Security Analysis — Ares
+
+Most startups skip security until they get hacked. AIDE X bakes vulnerability scanning into every build. OWASP Top 10, dependency audits, secrets detection, compliance checks — automatic, not optional.
+
+Not a bolt-on. A standard.
+
+### Change Management — Itihas
+
+Every change is versioned and traceable. Release notes are auto-generated. Rollback is one command. You know exactly what changed, when, and why — without digging through git logs.
+
+When regulators ask "what changed in the last release?" — you have the answer instantly.
+
+### Compliance & Verification — Themis
+
+GDPR, SOC 2, ISO 27001, PCI-DSS, HIPAA — verified automatically. Audit trails, compliance reports, and remediation plans generated as part of the pipeline. Not a separate engagement. Not a separate vendor.
+
+---
+
+## The Agent Team
+
+17 specialized AI agents, organized by when they activate.
+
+### Tier 1 — Core (Always Active)
+
+| Agent | Codename | What They Do | You Decide |
+|-------|----------|--------------|------------|
+| **Coordinator** | Foreman | Orchestrates the pipeline | Manage flow |
+| **Architect** | Daedalus | System design, trade-offs, diagrams | Approve architecture |
+| **Engineer** | Hephaestus | Write production code | Review at feature level |
+| **Reviewer** | Athena | Quality, best practices, code review | Approve changes |
+
+### Tier 2 — Standard (Activated Per Project)
+
+| Agent | Codename | What They Do | You Decide |
+|-------|----------|--------------|------------|
+| **Product Manager** | Apollo | Vision, scope, priorities | Approve direction |
+| **Tester** | Cassandra | Tests, validation | Approve coverage |
+| **Docs** | Calliope | Documentation | Review accuracy |
+| **Security** | Ares | Vulnerability scanning, OWASP | Review findings |
+
+### Tier 3 — Enterprise Scale
+
+| Agent | Codename | What They Do | You Decide |
+|-------|----------|--------------|------------|
+| **DevOps** | Karma | CI/CD, infrastructure, deployment | Validate pipeline |
+| **VaPT** | Themis | Verification, compliance | Approve certification |
+| **Performance** | Tosh | Load testing, stress testing | Validate scalability |
+| **Cost Estimator** | Plutus | Dev + Ops costs, ROI | Validate estimates |
+
+### Tier 4 — On Demand
+
+| Agent | Codename | What They Do | You Decide |
+|-------|----------|--------------|------------|
+| **Researcher** | Hermes | Market analysis, tech research | Review findings |
+| **Business Analyst** | Oracle | Requirements, feasibility | Validate scope |
+| **Designer** | Aphrodite | Mockups, design options | **Make final design choices** |
+| **Marketing** | Kriti | Positioning, launch strategy | Approve messaging |
+| **Chronicler** | Itihas | Release notes, versioning, change tracking | Approve releases |
+
+You start with Tier 1. Scale up as your project demands. Not all projects need all 17.
+
+---
+
+## Built-In Standards: Every Project
+
+Every AIDE X project ships with these — no add-ons, no extras, no additional cost:
+
+- **User Management** — Authentication, role-based access, audit logs
+- **Logging** — Structured, searchable, centralized
+- **Alerting** — Proactive notifications, threshold monitoring
+- **Security Scanning** — Vulnerability detection on every build
+- **Cost Estimation** — Before you commit, know what it costs
+- **Change Tracking** — Every change versioned and traceable
+- **Visual Architecture** — Auto-generated diagrams at every level
+
+**These are standards, not features. They're always on.**
+
+---
+
+## AIDE X is Not for Small Apps
+
+Most AI coding tools are great for small scripts and quick prototypes. AIDE X is for industrial-strength systems:
+
+| Vibe Coding | AIDE X |
+|-------------|--------|
 | Todo list | Payment processing |
 | Blog | Agentic marketing engine |
 | Weather widget | DeFi protocol |
 | Calculator | AI agent orchestration |
 | Contact form | Enterprise CRM |
 
-### What Scale Means
-
-**Large Database Systems**
-- Millions of records
-- Complex queries
-- Real-time analytics
-- Data pipelines
-
-**Blockchain Integration**
-- Smart contracts
-- Web3 wallets
-- DeFi protocols
-- Token systems
-
-**AI Agent Orchestration**
-- Multi-agent workflows
-- Decision trees
-- Learning systems
-- Autonomous agents
-
-**High Traffic**
-- Millions of users
-- Global distribution
-- 99.99% uptime
-- Edge computing
-
----
-
-## The Agent Team
-
-| Agent | Codename | What They Do | Human Role |
-|-------|----------|--------------|------------|
-| **Researcher** | Hermes | Data gathering, market analysis | Review findings |
-| **Product Manager** | Apollo | Vision, scope, priorities | Approve direction |
-| **Business Analyst** | Oracle | Requirements, feasibility | Validate scope |
-| **Architect** | Daedalus | System design, trade-offs | Approve architecture |
-| **Designer** | Aphrodite | Mockups, options | **Make final design choices** |
-| **Engineer** | Hephaestus | Write code | Code review |
-| **Reviewer** | Athena | Quality, best practices | Approve changes |
-| **Security** | Ares | Vulnerability scanning | Review findings |
-| **Tester** | Cassandra | Tests, validation | Approve coverage |
-| **DevOps** ⭐ | Karma | CI/CD, infra, deployment | Validate pipeline |
-| **VaPT** ⭐ | Themis | Verification, validation, compliance | Approve certification |
-| **Performance** | Tosh | Load testing, stress testing | Validate scalability |
-| **Marketing** | Kriti | Positioning, launch strategy | Approve messaging |
-| **Docs** | Calliope | Documentation | Review accuracy |
-| **Chronicler** ⭐ | Itihas | Release notes, versioning | Approve releases |
-| **Cost Estimator** | Plutus | Development + Ops costs, ROI | Validate estimates |
-| **Coordinator** | Foreman | Orchestrate pipeline | Manage flow |
-
----
-
-## ⭐ NEW: DevOps Engineer (Karma)
-
-### Infrastructure as Code, Automated
-
-Building at scale requires robust infrastructure. Karma handles:
-
-### 1. CI/CD Pipelines
-- Automated builds
-- Multi-stage deployments
-- Environment management
-- Rollback strategies
-
-### 2. Infrastructure as Code
-- Terraform/CloudFormation
-- Kubernetes configs
-- Docker containers
-- Serverless setups
-
-### 3. Cloud Architecture
-- Multi-region deployment
-- Auto-scaling rules
-- Load balancing
-- Disaster recovery
-
-### 4. Observability
-- Logging aggregation
-- Metrics collection
-- Tracing setup
-- Alerting rules
-
-### Example Output
-```
-🔧 DevOps Setup: Payment Gateway
-
-CI/CD Pipeline:
-  • Build: ✓ 3 minutes
-  • Test: ✓ 12 minutes  
-  • Security Scan: ✓ 5 minutes
-  • Deploy: ✓ 2 minutes
-
-Infrastructure:
-  • Kubernetes Cluster: 3 nodes
-  • Auto-scale: 2-10 nodes
-  • Multi-region: us-east, eu-west
-  • CDN: Cloudflare
-
-Observability:
-  • Logs: Datadog
-  • Metrics: Prometheus
-  • Tracing: Jaeger
-  • Alerts: PagerDuty
-
-🔄 [View Pipeline] [View Infra] [Manual Deploy]
-```
-
----
-
-## ⭐ NEW: VaPT Engineer (Themis)
-
-### Verification, Validation & Compliance
-
-Enterprise systems need formal verification. Themis handles:
-
-### 1. Verification
-- Formal code verification
-- Logic correctness proofs
-- Model checking
-- Property-based testing
-
-### 2. Validation
-- Requirements validation
-- Acceptance criteria
-- User acceptance testing
-- System integration tests
-
-### 3. Compliance
-- GDPR compliance
-- SOC 2 certification
-- ISO 27001
-- PCI-DSS for payments
-- HIPAA for healthcare
-
-### 4. Audit Readiness
-- Audit trails
-- Compliance reports
-- Documentation for auditors
-- Remediation plans
-
-### Example Output
-```
-⚖️ VaPT Report: Payment Gateway
-
-Verification:
-  ✓ Logic correctness: PASS
-  ✓ Property tests: 500/500 passed
-  ✓ Model checking: No violations
-
-Validation:
-  ✓ Requirements: 47/47 met
-  ✓ Integration: All APIs pass
-  ✓ UAT: 98% success rate
-
-Compliance:
-  ✓ PCI-DSS: Level 1 Ready
-  ✓ GDPR: Data handling compliant
-  ✓ SOC 2: Type II in progress
-
-📋 [View Full Report] [Remediation Plan] [Download Certs]
-```
-
----
-
-## ⭐ Performance Engineer (Tosh)
-
-### Scale Demands Stress Testing
-
-When you're building payment systems or AI agent engines, you need to know:
-
-**Can it handle the load?**
-
-Tosh handles:
-
-### 1. Load Testing
-- Simulate thousands of concurrent users
-- Measure response times
-- Identify bottlenecks
-
-### 2. Stress Testing
-- Push beyond normal capacity
-- Find breaking points
-- Recovery behavior
-
-### 3. Spike Testing
-- Sudden traffic spikes
-- Burst handling
-- Auto-scaling validation
-
-### 4. Endurance Testing
-- Long-running loads
-- Memory leak detection
-- Degradation over time
-
----
-
-## ⭐ Marketing Specialist (Kriti)
-
-### Build It. Tell the World.
-
-Great systems need great launches. Kriti handles:
-
-### 1. Positioning
-- Target audience analysis
-- Competitive differentiation
-- Key messaging
-
-### 2. Launch Strategy
-- Go-to-market plan
-- Channel selection
-- Timeline
-
-### 3. Content
-- Press releases
-- Product descriptions
-- Feature highlights
-
-### 4. Demo Generation
-- Auto-generate demo scenarios
-- Recording scripts
-- Showcase videos
-
----
-
-## ⭐ The Cost Estimator (Plutus)
-
-### Two Types of Costs
-
-#### 1. 💻 Cost of Development
-
-| Factor | Traditional | AIDE X |
-|--------|-------------|--------|
-| Team Size | 12+ humans | 17 AI agents |
-| Time to First Ship | 3-6 months | 2 days |
-| Development Cost | $75,000+ | ~$300-500 |
-
----
-
-#### 2. 🚀 Cost of Operations (Monthly)
-
-| Component | Typical Cost | Free Tier Available |
-|-----------|--------------|---------------------|
-| Hosting | $20-500/mo | ✅ Vercel, Render (free) |
-| Database | $0-200/mo | ✅ Supabase, Firebase (free) |
-| CDN | $0-50/mo | ✅ Cloudflare (free) |
-| Auth | $0-100/mo | ✅ Auth0, Supabase (free) |
-| Email | $0-50/mo | ✅ SendGrid (free) |
-| Storage | $0-100/mo | ✅ S3, Backblaze (free) |
-| Monitoring | $0-100/mo | ✅ Datadog (free) |
-
-**Plutus provides recommendations for FREE at scale**
-
----
-
-## Built-In Standards: Every Project
-
-✅ **User Management** — Auth, RBAC, audit logs  
-✅ **Logging** — Structured, searchable  
-✅ **Alerting** — Proactive notifications  
-✅ **Security** — Vulnerability scanning  
-✅ **Release Management** — Itihas  
-✅ **Cost Estimation** — Plutus (dev + ops)  
-✅ **DevOps** — Karma (CI/CD, infra)  
-✅ **VaPT** — Themis (verification, compliance)  
-✅ **Performance** — Tosh (load testing)  
-✅ **Marketing** — Kriti (optional)
-
-**Standard always-on. Scale agents when needed.**
-
----
-
-## The Pipeline
-
-```
-IDEA → RESEARCH → REQUIREMENTS → UI/UX → ARCHITECTURE 
-    → CODE → REVIEW → SECURITY → TESTS → DOCS 
-    → DEVOPS → VAPT → PERFORMANCE → COST ESTIMATE 
-    → RELEASE → MARKETING → DEPLOYMENT
-    
-Human approval at EVERY gate
-```
+Systems with millions of records, complex integrations, compliance requirements, high traffic, and real consequences when things break.
 
 ---
 
 ## Why AIDE X Wins
 
-| Traditional | AIDE X |
-|------------|--------|
-| Hire 12+ specialists | 17 AI agents |
-| 3-6 months to ship | 2 days to ship |
-| $75K+ in dev costs | ~$400 to ship |
-| $500+/mo operations | **$0/mo possible** |
-| Manual DevOps | Automated CI/CD |
-| No compliance | Built-in VaPT |
-| No scale testing | Built-in performance |
-| No launch strategy | Optional marketing |
-| Unpredictable quality | Guaranteed standards |
-| Need to know coding | Just describe what you want |
+| | Traditional Team | Vibe Coding | AIDE X |
+|-|-----------------|-------------|--------|
+| **Predictability** | Depends on people | Coin flip | Structured, controlled |
+| **Speed** | 3-6 months | Fast but fragile | Days, not months |
+| **Cost** | $75K+ | Low but hidden rework | ~$400 to ship |
+| **Operations** | $500+/mo | Unknown until live | $0/mo possible |
+| **Security** | Separate engagement | Usually skipped | Built-in, every build |
+| **Compliance** | Expensive audit | None | Automated verification |
+| **Change Management** | Expensive | Start over | Conversation |
+| **Human Control** | Full but slow | None | Decisions where they matter |
+| **Coding Required** | Yes | Some | No — just describe |
 
 ---
 
 ## The Vision
 
-**Building software shouldn't require building a team first.**
+**The problem isn't AI capability. It's AI predictability.**
 
 AIDE X gives you:
-- **Specialists on demand** — No recruiting
-- **Predictable results** — Not "surprise me"
-- **Human control** — AI proposes, you decide
-- **Built-in quality** — Standards always on
-- **Enterprise-ready** — DevOps + VaPT built-in
-- **Scale-ready** — Performance testing built-in
-- **Launch-ready** — Marketing support available
-- **Cost transparency** — Dev + Ops, with free options
 
-**The future of engineering is having an entire team in your pocket.**
+- **Predictable results** — Not "surprise me," not "vibe coding." Structured, controlled, verified.
+- **Human control** — AI proposes, you decide. Every important choice is yours.
+- **Cost transparency** — Know what it costs before you build, with free-tier paths.
+- **Security from day one** — Not a bolt-on. A standard.
+- **Change as a conversation** — After AI builds it, AI maintains it. Phase 8 never ends.
+- **See it before you build it** — Visual architecture at every zoom level.
+
+**Describe → Decide → Deliver.**
+
+**AIDE X — Where AI is your force multiplier.**
+
+---
+
+## The Evolution: Where This Is Going
+
+AIDE X is a protocol. The protocol stays the same. The force multiplier grows.
+
+**Today:** Humans imagine the product and steer every major decision. AI executes the work — code, tests, security, deployment. The human is at the wheel.
+
+**Tomorrow:** AI starts steering routine decisions autonomously — standard tech choices, common patterns, proven architectures. Humans steer only what's unique, creative, or high-stakes.
+
+**The Future:** Humans imagine. AI steers and delivers. The human role becomes pure vision and final approval. The force multiplier approaches infinity.
+
+The protocol doesn't change. The "X" just keeps getting bigger.
+
+> **Force multiplied by AI. Imagined and steered by humans. Until AI learns to steer too.**
 
 ---
 
@@ -408,13 +322,13 @@ AIDE X gives you:
 
 **Join us.**
 
-- ⭐ Star us on GitHub
-- 🍴 Fork to contribute
-- 📖 Read the docs
+- Star us on GitHub
+- Fork to contribute
+- Read the docs
 
 **AIDE X — Your AI Engineering Team, On Demand.**
 
 ---
 
-*Whitepaper v0.9 — With DevOps (Karma), VaPT (Themis), Performance (Tosh), Marketing (Kriti)*
+*Whitepaper v1.0 — Describe → Decide → Deliver*
 *February 2026 — Work in Progress — Contributions Invited*

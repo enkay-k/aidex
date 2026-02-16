@@ -57,54 +57,30 @@
             transition: all 0.3s;
         }
 
-        .dev-mode-badge.on {
-            background: #dbeafe;
-            color: #1d4ed8;
-            border: 1px solid #93c5fd;
-        }
-
-        .dev-mode-badge.off {
-            background: #f1f5f9;
-            color: #64748b;
-            border: 1px solid #e2e8f0;
-        }
+        .dev-mode-badge.on { background: #dbeafe; color: #1d4ed8; border: 1px solid #93c5fd; }
+        .dev-mode-badge.off { background: #f1f5f9; color: #64748b; border: 1px solid #e2e8f0; }
 
         .dev-toggle {
-            width: 32px;
-            height: 18px;
-            background: #cbd5e1;
-            border-radius: 9px;
-            position: relative;
-            transition: all 0.3s;
+            width: 32px; height: 18px;
+            background: #cbd5e1; border-radius: 9px;
+            position: relative; transition: all 0.3s;
         }
 
-        .dev-mode-badge.on .dev-toggle {
-            background: #3b82f6;
-        }
+        .dev-mode-badge.on .dev-toggle { background: #3b82f6; }
 
         .dev-toggle::after {
-            content: '';
-            position: absolute;
-            width: 14px;
-            height: 14px;
-            background: #fff;
-            border-radius: 50%;
-            top: 2px;
-            left: 2px;
-            transition: all 0.3s;
+            content: ''; position: absolute;
+            width: 14px; height: 14px;
+            background: #fff; border-radius: 50%;
+            top: 2px; left: 2px; transition: all 0.3s;
         }
 
-        .dev-mode-badge.on .dev-toggle::after {
-            left: 16px;
-        }
+        .dev-mode-badge.on .dev-toggle::after { left: 16px; }
 
         .settings-btn {
-            background: none;
-            border: none;
-            font-size: 1.25rem;
-            cursor: pointer;
-            padding: 0.5rem;
-            color: #64748b;
+            background: none; border: none;
+            font-size: 1.25rem; cursor: pointer;
+            padding: 0.5rem; color: #64748b;
         }
 
         /* Navigation */
@@ -113,22 +89,16 @@
             backdrop-filter: blur(10px);
             border-bottom: 1px solid #e2e8f0;
             padding: 1rem 2rem;
-            position: sticky;
-            top: 52px;
-            z-index: 99;
+            position: sticky; top: 52px; z-index: 99;
         }
 
         .nav-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            max-width: 1200px; margin: 0 auto;
+            display: flex; justify-content: space-between; align-items: center;
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
+            font-size: 1.5rem; font-weight: 700;
             background: linear-gradient(135deg, #0891b2, #7c3aed);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -136,26 +106,12 @@
 
         .logo span { font-weight: 300; }
 
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: #64748b;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a { color: #64748b; text-decoration: none; font-weight: 500; transition: color 0.3s; }
         .nav-links a:hover { color: #0891b2; }
-
         .nav-links a.cta {
             background: linear-gradient(135deg, #0891b2, #7c3aed);
-            padding: 0.5rem 1.5rem;
-            border-radius: 8px;
-            color: #fff;
+            padding: 0.5rem 1.5rem; border-radius: 8px; color: #fff;
         }
 
         /* Hero */
@@ -166,329 +122,434 @@
         }
 
         .hero-badge {
-            display: inline-block;
-            background: #dbeafe;
-            border: 1px solid #93c5fd;
-            padding: 0.5rem 1.5rem;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            color: #1d4ed8;
-            margin-bottom: 2rem;
-            font-weight: 500;
+            display: inline-block; background: #dbeafe;
+            border: 1px solid #93c5fd; padding: 0.5rem 1.5rem;
+            border-radius: 50px; font-size: 0.9rem;
+            color: #1d4ed8; margin-bottom: 2rem; font-weight: 500;
         }
 
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            line-height: 1.2;
-        }
-
+        .hero h1 { font-size: 3.5rem; font-weight: 700; margin-bottom: 1rem; line-height: 1.2; }
         .hero h1 .x-factor {
             background: linear-gradient(135deg, #0891b2, #7c3aed);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        .hero-tagline {
-            font-size: 1.5rem;
-            color: #0f172a;
-            max-width: 700px;
-            margin: 0 auto 1rem;
+        .hero-tagline { font-size: 1.5rem; color: #0f172a; max-width: 700px; margin: 0 auto 1rem; }
+        .hero-subtagline { font-size: 1.1rem; color: #64748b; max-width: 650px; margin: 0 auto 0.75rem; }
+
+        .hero-method {
+            display: inline-flex; gap: 0.5rem; align-items: center;
+            background: #fff; border: 2px solid #e2e8f0;
+            padding: 0.75rem 2rem; border-radius: 50px;
+            font-size: 1.1rem; font-weight: 600;
+            margin: 1.5rem auto 2rem; color: #0f172a;
         }
 
-        .hero-subtagline {
-            font-size: 1.1rem;
-            color: #64748b;
-            max-width: 600px;
-            margin: 0 auto 2rem;
-        }
+        .hero-method .arrow { color: #0891b2; font-size: 1.2rem; }
+        .hero-method .step-d { color: #7c3aed; }
+        .hero-method .step-de { color: #0891b2; }
+        .hero-method .step-del { color: #10b981; }
 
-        .hero-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-        }
+        .hero-buttons { display: flex; gap: 1rem; justify-content: center; }
 
         .btn {
-            padding: 1rem 2rem;
-            border-radius: 12px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s;
-            font-size: 1rem;
-            border: none;
-            cursor: pointer;
+            padding: 1rem 2rem; border-radius: 12px; font-weight: 600;
+            text-decoration: none; transition: all 0.3s;
+            font-size: 1rem; border: none; cursor: pointer;
         }
-
         .btn-primary {
-            background: linear-gradient(135deg, #0891b2, #7c3aed);
-            color: #fff;
+            background: linear-gradient(135deg, #0891b2, #7c3aed); color: #fff;
         }
-
         .btn-primary:hover {
             transform: translateY(-2px);
             box-shadow: 0 10px 30px rgba(8, 145, 178, 0.3);
         }
+        .btn-secondary { background: #fff; border: 1px solid #e2e8f0; color: #64748b; }
 
-        .btn-secondary {
-            background: #fff;
-            border: 1px solid #e2e8f0;
-            color: #64748b;
+        /* Section Headers */
+        .section-header {
+            text-align: center; max-width: 750px; margin: 0 auto 3rem;
+        }
+        .section-header h2 { font-size: 2.5rem; margin-bottom: 1rem; }
+        .section-header p { color: #64748b; font-size: 1.1rem; }
+        .section-header .highlight {
+            color: #0891b2; font-weight: 600;
         }
 
         /* Problem Section */
-        .problem {
-            padding: 5rem 2rem;
-            background: #fff;
-        }
+        .problem { padding: 5rem 2rem; background: #fff; }
 
         .problem-grid {
-            max-width: 1000px;
-            margin: 0 auto;
+            max-width: 1100px; margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-top: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem; margin-top: 3rem;
         }
 
         .problem-card {
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
-            border-radius: 16px;
-            padding: 2rem;
-            text-align: center;
+            background: #f8fafc; border: 1px solid #e2e8f0;
+            border-radius: 16px; padding: 2rem; text-align: center;
         }
+        .problem-card.danger { border-color: #fecaca; background: #fef2f2; }
+        .problem-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+        .problem-title { font-size: 1.15rem; font-weight: 600; margin-bottom: 0.5rem; }
+        .problem-desc { color: #64748b; font-size: 0.9rem; }
 
-        .problem-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
+        /* Journey Section — Notebook Grid */
+        .journey { padding: 5rem 2rem; background: #f8fafc; }
 
-        .problem-title {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .problem-desc {
-            color: #64748b;
-            font-size: 0.95rem;
-        }
-
-        /* The Old Way vs AIDE X */
-        .comparison {
-            padding: 5rem 2rem;
-            background: #f8fafc;
-        }
-
-        .comparison-grid {
-            max-width: 1100px;
-            margin: 3rem auto;
+        .journey-grid {
+            max-width: 1100px; margin: 0 auto;
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 0;
         }
 
-        .comparison-card {
+        .journey-cell {
             background: #fff;
-            border-radius: 20px;
-            padding: 2rem;
             border: 1px solid #e2e8f0;
-        }
-
-        .comparison-card.old {
-            border-left: 4px solid #ef4444;
-        }
-
-        .comparison-card.new {
-            border-left: 4px solid #10b981;
-        }
-
-        .comparison-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .comparison-card.old .comparison-title { color: #ef4444; }
-        .comparison-card.new .comparison-title { color: #10b981; }
-
-        .comparison-list {
-            list-style: none;
-        }
-
-        .comparison-list li {
-            padding: 0.75rem 0;
-            border-bottom: 1px solid #f1f5f9;
-            color: #475569;
-        }
-
-        .comparison-list li:last-child { border-bottom: none; }
-
-        /* Agents Grid */
-        .agents {
-            padding: 5rem 2rem;
-            background: #fff;
-        }
-
-        .section-header {
-            text-align: center;
-            max-width: 700px;
-            margin: 0 auto 3rem;
-        }
-
-        .section-header h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .section-header p {
-            color: #64748b;
-            font-size: 1.1rem;
-        }
-
-        .agents-grid {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-        }
-
-        .agent-card {
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
-            border-radius: 14px;
-            padding: 1.5rem;
+            padding: 1.75rem;
+            position: relative;
             transition: all 0.3s;
         }
 
-        .agent-card:hover {
+        .journey-cell:hover {
+            z-index: 2;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .journey-phase {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .phase-describe { color: #7c3aed; }
+        .phase-decide { color: #0891b2; }
+        .phase-deliver { color: #10b981; }
+        .phase-evolve { color: #f59e0b; }
+
+        .journey-title {
+            font-size: 1.05rem; font-weight: 600;
+            margin-bottom: 0.5rem; color: #0f172a;
+        }
+
+        .journey-ai {
+            font-size: 0.8rem; color: #64748b;
+            margin-bottom: 0.75rem; line-height: 1.5;
+        }
+
+        .journey-human {
+            font-size: 0.75rem; font-weight: 600;
+            padding: 0.35rem 0.6rem; border-radius: 6px;
+            display: inline-block;
+        }
+
+        .human-describe { background: #f3e8ff; color: #7c3aed; }
+        .human-decide { background: #e0f2fe; color: #0369a1; }
+        .human-deliver { background: #dcfce7; color: #166534; }
+        .human-evolve { background: #fef3c7; color: #92400e; }
+
+        .journey-time {
+            font-size: 0.7rem; color: #94a3b8;
+            margin-top: 0.5rem; font-style: italic;
+        }
+
+        .journey-output {
+            font-size: 0.7rem; color: #64748b;
+            margin-top: 0.4rem;
+            padding-top: 0.4rem;
+            border-top: 1px dashed #e2e8f0;
+        }
+
+        /* 3-Column Comparison */
+        .comparison { padding: 5rem 2rem; background: #fff; }
+
+        .comparison-grid {
+            max-width: 1100px; margin: 3rem auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .comparison-card {
+            background: #fff; border-radius: 20px;
+            padding: 2rem; border: 1px solid #e2e8f0;
+        }
+        .comparison-card.old { border-top: 4px solid #ef4444; }
+        .comparison-card.vibe { border-top: 4px solid #f59e0b; }
+        .comparison-card.aidex { border-top: 4px solid #10b981; }
+
+        .comparison-title {
+            font-size: 1.25rem; font-weight: 700;
+            margin-bottom: 1.5rem;
+            display: flex; align-items: center; gap: 0.5rem;
+        }
+        .comparison-card.old .comparison-title { color: #ef4444; }
+        .comparison-card.vibe .comparison-title { color: #f59e0b; }
+        .comparison-card.aidex .comparison-title { color: #10b981; }
+
+        .comparison-list { list-style: none; }
+        .comparison-list li {
+            padding: 0.6rem 0;
+            border-bottom: 1px solid #f1f5f9;
+            color: #475569; font-size: 0.9rem;
+        }
+        .comparison-list li:last-child { border-bottom: none; }
+
+        /* Sharp Features */
+        .sharp-features { padding: 5rem 2rem; background: #f8fafc; }
+
+        .features-grid {
+            max-width: 1100px; margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem; margin-top: 3rem;
+        }
+
+        .feature-card {
+            background: #fff; border: 1px solid #e2e8f0;
+            border-radius: 16px; padding: 2rem;
+            transition: all 0.3s;
+        }
+
+        .feature-card:hover {
             border-color: #0891b2;
             transform: translateY(-3px);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
         }
 
-        .agent-icon {
-            font-size: 2rem;
-            margin-bottom: 0.75rem;
+        .feature-icon { font-size: 2rem; margin-bottom: 0.75rem; }
+        .feature-name { font-weight: 600; font-size: 1.1rem; margin-bottom: 0.25rem; }
+        .feature-agent { font-size: 0.8rem; color: #7c3aed; font-weight: 500; margin-bottom: 0.5rem; }
+        .feature-desc { font-size: 0.85rem; color: #64748b; line-height: 1.5; }
+        .feature-highlight {
+            margin-top: 0.75rem; padding: 0.5rem 0.75rem;
+            background: #f0fdf4; border-radius: 8px;
+            font-size: 0.8rem; color: #166534; font-weight: 500;
         }
 
-        .agent-name {
-            font-weight: 600;
-            font-size: 1.1rem;
-            margin-bottom: 0.25rem;
+        /* Agents Tiered Grid */
+        .agents { padding: 5rem 2rem; background: #fff; }
+
+        .tier-section {
+            max-width: 1100px; margin: 0 auto 2rem;
         }
 
-        .agent-codename {
-            font-size: 0.8rem;
-            color: #7c3aed;
-            font-weight: 500;
-            margin-bottom: 0.5rem;
+        .tier-label {
+            font-size: 0.7rem; text-transform: uppercase;
+            letter-spacing: 0.1em; font-weight: 700;
+            margin-bottom: 1rem; padding-bottom: 0.5rem;
+            border-bottom: 2px solid #e2e8f0;
         }
 
-        .agent-desc {
-            font-size: 0.85rem;
-            color: #64748b;
+        .tier-1-label { color: #7c3aed; border-color: #7c3aed; }
+        .tier-2-label { color: #0891b2; border-color: #0891b2; }
+        .tier-3-label { color: #f59e0b; border-color: #f59e0b; }
+        .tier-4-label { color: #64748b; border-color: #94a3b8; }
+
+        .agents-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 0.75rem;
         }
+
+        .agent-card {
+            background: #f8fafc; border: 1px solid #e2e8f0;
+            border-radius: 12px; padding: 1.25rem;
+            transition: all 0.3s;
+        }
+
+        .agent-card:hover {
+            border-color: #0891b2;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+        }
+
+        .agent-icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
+        .agent-name { font-weight: 600; font-size: 0.95rem; margin-bottom: 0.15rem; }
+        .agent-codename { font-size: 0.75rem; color: #7c3aed; font-weight: 500; margin-bottom: 0.35rem; }
+        .agent-desc { font-size: 0.8rem; color: #64748b; }
+
+        /* Principles */
+        .principles { padding: 5rem 2rem; background: #f8fafc; }
+
+        .principles-grid {
+            max-width: 1100px; margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.25rem; margin-top: 3rem;
+        }
+
+        .principle-card {
+            background: #fff; border: 1px solid #e2e8f0;
+            border-radius: 14px; padding: 1.75rem;
+        }
+
+        .principle-number {
+            font-size: 0.7rem; font-weight: 700;
+            color: #0891b2; text-transform: uppercase;
+            letter-spacing: 0.05em; margin-bottom: 0.5rem;
+        }
+        .principle-title { font-weight: 600; font-size: 1.1rem; margin-bottom: 0.5rem; }
+        .principle-desc { font-size: 0.9rem; color: #64748b; line-height: 1.5; }
 
         /* Built-In Standards */
-        .standards {
-            padding: 5rem 2rem;
-            background: linear-gradient(180deg, #f0f9ff 0%, #f8fafc 100%);
-        }
+        .standards { padding: 5rem 2rem; background: #fff; }
 
         .standards-grid {
-            max-width: 900px;
-            margin: 0 auto;
+            max-width: 900px; margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin-top: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 0.75rem; margin-top: 2rem;
         }
 
         .standard-item {
+            background: #f0fdf4; border: 1px solid #bbf7d0;
+            border-radius: 10px; padding: 1rem;
+            text-align: center; font-weight: 500;
+            color: #166534; font-size: 0.9rem;
+        }
+
+        /* Phase 8 Hero */
+        .phase8 {
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #fff; text-align: center;
+        }
+
+        .phase8 h2 { font-size: 2.5rem; margin-bottom: 1rem; }
+        .phase8 .subtitle { color: #94a3b8; font-size: 1.1rem; max-width: 650px; margin: 0 auto 2rem; }
+
+        .phase8-examples {
+            max-width: 700px; margin: 0 auto;
+            display: flex; flex-direction: column; gap: 0.75rem;
+        }
+
+        .phase8-example {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px; padding: 1rem 1.5rem;
+            display: flex; align-items: center; gap: 1rem;
+            text-align: left;
+        }
+
+        .phase8-quote {
+            font-size: 0.95rem; color: #e2e8f0;
+            font-style: italic; flex: 1;
+        }
+
+        .phase8-result {
+            font-size: 0.8rem; color: #10b981;
+            font-weight: 600; white-space: nowrap;
+        }
+
+        /* Evolution */
+        .evolution {
+            padding: 5rem 2rem;
             background: #fff;
-            border: 1px solid #bae6fd;
-            border-radius: 12px;
-            padding: 1.25rem;
+        }
+
+        .evolution-timeline {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .evo-step {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 14px;
+            padding: 1.5rem;
+        }
+
+        .evo-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 700;
+            color: #0891b2;
+            margin-bottom: 0.75rem;
+        }
+
+        .evo-bar {
+            display: flex;
+            height: 36px;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 0.75rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .evo-human {
+            background: linear-gradient(135deg, #7c3aed, #a78bfa);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 60px;
+        }
+
+        .evo-ai {
+            background: linear-gradient(135deg, #0891b2, #22d3ee);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .evo-desc {
+            font-size: 0.85rem;
+            color: #64748b;
+            line-height: 1.5;
+        }
+
+        .evo-tagline {
             text-align: center;
-            font-weight: 500;
-            color: #0369a1;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #0f172a;
+            margin-top: 2rem;
+            font-style: italic;
         }
 
         /* CTA */
         .cta-section {
-            padding: 6rem 2rem;
-            background: #0f172a;
+            padding: 5rem 2rem; background: #f8fafc;
             text-align: center;
-            color: #fff;
         }
-
-        .cta-section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .cta-section p {
-            color: #94a3b8;
-            margin-bottom: 2rem;
-            font-size: 1.1rem;
-        }
+        .cta-section h2 { font-size: 2.5rem; margin-bottom: 1rem; color: #0f172a; }
+        .cta-section p { color: #64748b; margin-bottom: 2rem; font-size: 1.1rem; }
 
         /* Footer */
         footer {
-            padding: 2rem;
-            background: #f8fafc;
-            border-top: 1px solid #e2e8f0;
-            text-align: center;
-            color: #64748b;
+            padding: 2rem; background: #0f172a;
+            border-top: 1px solid #1e293b;
+            text-align: center; color: #64748b;
         }
-
         footer a { color: #0891b2; text-decoration: none; }
-
-        /* Release Panel */
-        .release-panel {
-            background: #f0f9ff;
-            border: 1px solid #bae6fd;
-            border-radius: 12px;
-            padding: 1rem;
-            margin-bottom: 1rem;
-            display: none;
-        }
-
-        .release-panel.show { display: block; }
-
-        .release-header {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 0.75rem;
-        }
-
-        .release-version {
-            font-family: 'JetBrains Mono', monospace;
-            font-weight: 600;
-            color: #0369a1;
-        }
-
-        .release-date { font-size: 0.75rem; color: #64748b; }
-
-        .release-item {
-            font-size: 0.8rem;
-            color: #475569;
-            padding: 0.5rem 0;
-            border-bottom: 1px solid #e0f2fe;
-        }
 
         /* Responsive */
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.5rem; }
             .comparison-grid { grid-template-columns: 1fr; }
+            .journey-grid { grid-template-columns: 1fr 1fr; }
             .nav-links { display: none; }
+            .hero-method { font-size: 0.9rem; padding: 0.5rem 1.25rem; }
+        }
+
+        @media (max-width: 480px) {
+            .journey-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -496,13 +557,13 @@
     <!-- Top Bar -->
     <div class="top-bar">
         <div class="version-info">
-            <span class="version-badge">2026.02.15.0001</span>
+            <span class="version-badge">2026.02.15.0002</span>
             <div class="dev-mode-badge off" id="devModeToggle" onclick="toggleDevMode()">
                 <span>Dev Mode</span>
                 <div class="dev-toggle"></div>
             </div>
         </div>
-        <button class="settings-btn" title="Settings">⚙️</button>
+        <button class="settings-btn" title="Settings">&#9881;&#65039;</button>
     </div>
 
     <nav>
@@ -510,8 +571,9 @@
             <div class="logo">AIDE <span>X</span></div>
             <ul class="nav-links">
                 <li><a href="#problem">The Problem</a></li>
+                <li><a href="#journey">The Journey</a></li>
                 <li><a href="#agents">Agents</a></li>
-                <li><a href="#standards">Built-In Standards</a></li>
+                <li><a href="#features">Sharp Features</a></li>
                 <li><a href="dashboard.html">Dashboard</a></li>
                 <li><a href="https://github.com/enkay-k/aidex">GitHub</a></li>
                 <li><a href="https://github.com/enkay-k/aidex" class="cta">Get Started</a></li>
@@ -519,216 +581,403 @@
         </div>
     </nav>
 
+    <!-- Hero -->
     <section class="hero">
-        <div class="hero-badge">🔧 Work in Progress — Contributions Invited</div>
+        <div class="hero-badge">Work in Progress — Contributions Invited</div>
         <h1>AI Driven Engineering <span class="x-factor">X</span></h1>
-        <p class="hero-tagline">Building software shouldn't require building a team first.</p>
-        <p class="hero-subtagline">13 specialized AI agents. No recruiting. No coding knowledge needed. Just describe what you want.</p>
+        <p class="hero-tagline">The problem isn't AI capability. It's AI predictability.</p>
+        <p class="hero-subtagline">A protocol for developing industrial-strength solutions — force multiplied by AI, imagined and steered by humans.</p>
+        <div class="hero-method">
+            <span class="step-d">Describe</span>
+            <span class="arrow">&rarr;</span>
+            <span class="step-de">Decide</span>
+            <span class="arrow">&rarr;</span>
+            <span class="step-del">Deliver</span>
+        </div>
         <div class="hero-buttons">
             <a href="https://github.com/enkay-k/aidex" class="btn btn-primary">View on GitHub</a>
-            <a href="#problem" class="btn btn-secondary">Learn More</a>
+            <a href="#journey" class="btn btn-secondary">See the Journey</a>
         </div>
     </section>
 
+    <!-- Problem -->
     <section class="problem" id="problem">
         <div class="section-header">
-            <h2>The Old Way is Broken</h2>
-            <p>Want to build industrial-strength software? Here's what you traditionally need...</p>
+            <h2>Two Broken Ways to Build Software</h2>
+            <p>The old way requires a team you can't afford. The new way — "vibe coding" — is a <span class="highlight">coin flip</span>.</p>
         </div>
         <div class="problem-grid">
             <div class="problem-card">
-                <div class="problem-icon">👥</div>
-                <div class="problem-title">10+ Specialists</div>
-                <div class="problem-desc">Product Manager, Designer, Architect, Engineers, Reviewers, Testers, Writers, and more...</div>
+                <div class="problem-icon">&#128101;</div>
+                <div class="problem-title">12+ Specialists Needed</div>
+                <div class="problem-desc">PM, Designer, Architect, Engineers, Testers, DevOps, Security... Months to hire, years to train.</div>
             </div>
             <div class="problem-card">
-                <div class="problem-icon">⏱️</div>
-                <div class="problem-title">Months to Hire</div>
-                <div class="problem-desc">Recruiting takes 3-6 months per role. Training takes years.</div>
+                <div class="problem-icon">&#128176;</div>
+                <div class="problem-title">$50K+/Month</div>
+                <div class="problem-desc">Salaries, benefits, overhead. And projects still fail, ship late, or go over budget.</div>
             </div>
-            <div class="problem-card">
-                <div class="problem-icon">💰</div>
-                <div class="problem-title">Expensive</div>
-                <div class="problem-desc">Salaries, benefits, overhead. A team costs $50K+ per month.</div>
+            <div class="problem-card danger">
+                <div class="problem-icon">&#127922;</div>
+                <div class="problem-title">Vibe Coding = Coin Flip</div>
+                <div class="problem-desc">"Build me a system." Sometimes magic, sometimes garbage. AI picks your tech, your design, your architecture — without asking.</div>
             </div>
-            <div class="problem-card">
-                <div class="problem-icon">🤷</div>
-                <div class="problem-title">"Surprise Me"</div>
-                <div class="problem-desc">Asking AI "build me a system" is like saying "surprise me" — unpredictable results.</div>
+            <div class="problem-card danger">
+                <div class="problem-icon">&#10067;</div>
+                <div class="problem-title">AI PRDs Are Unpredictable</div>
+                <div class="problem-desc">Nobody asked if you wanted React or Vue. Nobody checked if the design matches your brand. AI decided for you.</div>
             </div>
         </div>
     </section>
 
-    <section class="comparison">
+    <!-- Journey — Notebook Grid -->
+    <section class="journey" id="journey">
         <div class="section-header">
-            <h2>The AIDE X Way</h2>
-            <p>Whole team. No hiring. Predictable results.</p>
+            <h2>The Journey: Idea to Production</h2>
+            <p>Here's exactly what happens when you bring an idea to AIDE X.</p>
+        </div>
+        <div class="journey-grid">
+            <!-- Phase 1 -->
+            <div class="journey-cell">
+                <div class="journey-phase phase-describe">&#9679; DESCRIBE &mdash; Phase 1</div>
+                <div class="journey-title">Idea to Clarity</div>
+                <div class="journey-ai">You describe your pain point in plain language. AI asks targeted questions to remove ambiguity.</div>
+                <span class="journey-human human-describe">You clarify intent</span>
+                <div class="journey-output">&#10132; Problem statement + project guardrails</div>
+                <div class="journey-time">~15 min conversation</div>
+            </div>
+
+            <!-- Phase 2 -->
+            <div class="journey-cell">
+                <div class="journey-phase phase-describe">&#9679; DESCRIBE &mdash; Phase 2</div>
+                <div class="journey-title">Clarity to Requirements</div>
+                <div class="journey-ai">AI expands into structured requirements — what it does, how well, edge cases, priorities.</div>
+                <span class="journey-human human-describe">You approve scope</span>
+                <div class="journey-output">&#10132; Complete requirements document</div>
+                <div class="journey-time">~30 min review</div>
+            </div>
+
+            <!-- Phase 3 -->
+            <div class="journey-cell">
+                <div class="journey-phase phase-decide">&#9679; DECIDE &mdash; Phase 3</div>
+                <div class="journey-title">Architecture & Visualization</div>
+                <div class="journey-ai">AI designs the system with visual diagrams. Tech choices explained with trade-offs.</div>
+                <span class="journey-human human-decide">You approve architecture</span>
+                <div class="journey-output">&#10132; Architecture + system diagrams</div>
+                <div class="journey-time">~20 min review</div>
+            </div>
+
+            <!-- Phase 4 -->
+            <div class="journey-cell">
+                <div class="journey-phase phase-decide">&#9679; DECIDE &mdash; Phase 4</div>
+                <div class="journey-title">Look & Feel</div>
+                <div class="journey-ai">AI generates design alternatives with trade-offs. Not one option — choices.</div>
+                <span class="journey-human human-decide">You pick the design</span>
+                <div class="journey-output">&#10132; Approved design direction</div>
+                <div class="journey-time">Your pace — never rushes</div>
+            </div>
+
+            <!-- Phase 5 -->
+            <div class="journey-cell">
+                <div class="journey-phase phase-deliver">&#9679; DELIVER &mdash; Phase 5</div>
+                <div class="journey-title">Build</div>
+                <div class="journey-ai">AI breaks work into atomic tasks. Each runs in fresh context. Parallel execution. Code + tests + docs.</div>
+                <span class="journey-human human-deliver">You review features</span>
+                <div class="journey-output">&#10132; Working code + tests + docs</div>
+                <div class="journey-time">Minutes to hours</div>
+            </div>
+
+            <!-- Phase 6 -->
+            <div class="journey-cell">
+                <div class="journey-phase phase-deliver">&#9679; DELIVER &mdash; Phase 6</div>
+                <div class="journey-title">Verify & Secure</div>
+                <div class="journey-ai">Security scan, code review, performance tests, compliance checks — all automated.</div>
+                <span class="journey-human human-deliver">You accept risk assessment</span>
+                <div class="journey-output">&#10132; Quality-verified codebase</div>
+                <div class="journey-time">Minutes (automated)</div>
+            </div>
+
+            <!-- Phase 7 -->
+            <div class="journey-cell">
+                <div class="journey-phase phase-deliver">&#9679; DELIVER &mdash; Phase 7</div>
+                <div class="journey-title">Deploy</div>
+                <div class="journey-ai">CI/CD pipeline, infrastructure, monitoring, alerting — all configured automatically.</div>
+                <span class="journey-human human-deliver">You give final go/no-go</span>
+                <div class="journey-output">&#10132; Running app with monitoring</div>
+                <div class="journey-time">Minutes</div>
+            </div>
+
+            <!-- Phase 8 -->
+            <div class="journey-cell" style="background: linear-gradient(135deg, #fefce8, #fff);">
+                <div class="journey-phase phase-evolve">&#9733; EVOLVE &mdash; Phase 8</div>
+                <div class="journey-title">The Force Multiplier</div>
+                <div class="journey-ai">AI built it, AI knows it. Bug fixes, features, refactors — conversations, not projects.</div>
+                <span class="journey-human human-evolve">You say what's next</span>
+                <div class="journey-output">&#10132; Continuous evolution</div>
+                <div class="journey-time">Never ends</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3-Column Comparison -->
+    <section class="comparison" id="comparison">
+        <div class="section-header">
+            <h2>Why AIDE X Wins</h2>
+            <p>Three ways to build. Only one is predictable, fast, and controlled.</p>
         </div>
         <div class="comparison-grid">
             <div class="comparison-card old">
-                <div class="comparison-title">❌ The Old Way</div>
+                <div class="comparison-title">Traditional Team</div>
                 <ul class="comparison-list">
-                    <li>🔴 Post job listings</li>
-                    <li>🔴 Conduct interviews</li>
-                    <li>🔴 Negotiate salaries</li>
-                    <li>🔴 Manage HR</li>
-                    <li>🔴 Coordinate teams</li>
-                    <li>🔴 Hope for quality</li>
-                    <li>🔴 3-6 months to ship</li>
-                    <li>🔴 $50K+ in costs</li>
+                    <li>&#128308; 3-6 months to ship</li>
+                    <li>&#128308; $75K+ development cost</li>
+                    <li>&#128308; $500+/mo operations</li>
+                    <li>&#128308; Security = separate engagement</li>
+                    <li>&#128308; Compliance = expensive audit</li>
+                    <li>&#128308; Changes = expensive</li>
+                    <li>&#128308; Predictable but slow</li>
                 </ul>
             </div>
-            <div class="comparison-card new">
-                <div class="comparison-title">✅ With AIDE X</div>
+            <div class="comparison-card vibe">
+                <div class="comparison-title">Vibe Coding</div>
                 <ul class="comparison-list">
-                    <li>🟢 13 AI agents</li>
-                    <li>🟢 Ready instantly</li>
-                    <li>🟢 No salaries</li>
-                    <li>🟢 Auto-coordinated</li>
-                    <li>🟢 Guaranteed standards</li>
-                    <li>🟢 2 days to ship</li>
-                    <li>🟢 &lt;$1K in compute</li>
-                    <li>🟢 Human in control</li>
+                    <li>&#128992; Fast but fragile</li>
+                    <li>&#128992; Low cost, hidden rework</li>
+                    <li>&#128992; Ops cost = unknown</li>
+                    <li>&#128992; Security = usually skipped</li>
+                    <li>&#128992; Compliance = none</li>
+                    <li>&#128992; Changes = start over</li>
+                    <li>&#128992; Unpredictable quality</li>
+                </ul>
+            </div>
+            <div class="comparison-card aidex">
+                <div class="comparison-title">AIDE X</div>
+                <ul class="comparison-list">
+                    <li>&#128994; Days, not months</li>
+                    <li>&#128994; ~$400 to ship</li>
+                    <li>&#128994; $0/mo possible</li>
+                    <li>&#128994; Security = built-in, every build</li>
+                    <li>&#128994; Compliance = automated</li>
+                    <li>&#128994; Changes = conversation</li>
+                    <li>&#128994; Predictable + controlled</li>
                 </ul>
             </div>
         </div>
     </section>
 
+    <!-- Sharp Features -->
+    <section class="sharp-features" id="features">
+        <div class="section-header">
+            <h2>What You Usually Pay Extra For</h2>
+            <p>These are built into every AIDE X project. No add-ons. No extra vendors.</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">&#128176;</div>
+                <div class="feature-name">Cost Transparency</div>
+                <div class="feature-agent">Plutus</div>
+                <div class="feature-desc">Know what it costs before you build. Dev cost + ops cost estimated upfront, with free-tier recommendations.</div>
+                <div class="feature-highlight">Traditional: $75K+ &rarr; AIDE X: ~$400</div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">&#128737;&#65039;</div>
+                <div class="feature-name">Security Analysis</div>
+                <div class="feature-agent">Ares</div>
+                <div class="feature-desc">OWASP Top 10, dependency audits, secrets detection, compliance checks on every single build.</div>
+                <div class="feature-highlight">Not a bolt-on. A standard.</div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">&#128260;</div>
+                <div class="feature-name">Change Management</div>
+                <div class="feature-agent">Itihas</div>
+                <div class="feature-desc">Every change versioned and traceable. Auto-generated release notes. One-command rollback.</div>
+                <div class="feature-highlight">"What changed?" — answered instantly.</div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">&#9878;&#65039;</div>
+                <div class="feature-name">Compliance & Verification</div>
+                <div class="feature-agent">Themis</div>
+                <div class="feature-desc">GDPR, SOC 2, ISO 27001, PCI-DSS, HIPAA — verified automatically with audit trails.</div>
+                <div class="feature-highlight">Not a separate vendor. Built-in.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Agents by Tier -->
     <section class="agents" id="agents">
         <div class="section-header">
             <h2>Your AI Team</h2>
-            <p>13 specialized agents. Each an expert in their domain.</p>
+            <p>17 agents. Start with the core 4. Scale up as your project demands.</p>
         </div>
-        <div class="agents-grid">
-            <div class="agent-card">
-                <div class="agent-icon">🔍</div>
-                <div class="agent-name">Researcher</div>
-                <div class="agent-codename">Hermes</div>
-                <div class="agent-desc">Data gathering, market analysis, tech research</div>
+
+        <div class="tier-section">
+            <div class="tier-label tier-1-label">Tier 1 — Core (Always Active)</div>
+            <div class="agents-grid">
+                <div class="agent-card"><div class="agent-icon">&#128119;</div><div class="agent-name">Coordinator</div><div class="agent-codename">Foreman</div><div class="agent-desc">Orchestrates the entire pipeline</div></div>
+                <div class="agent-card"><div class="agent-icon">&#128208;</div><div class="agent-name">Architect</div><div class="agent-codename">Daedalus</div><div class="agent-desc">System design, trade-offs, diagrams</div></div>
+                <div class="agent-card"><div class="agent-icon">&#128296;</div><div class="agent-name">Engineer</div><div class="agent-codename">Hephaestus</div><div class="agent-desc">Write production code</div></div>
+                <div class="agent-card"><div class="agent-icon">&#128269;</div><div class="agent-name">Reviewer</div><div class="agent-codename">Athena</div><div class="agent-desc">Quality, best practices</div></div>
             </div>
-            <div class="agent-card">
-                <div class="agent-icon">📋</div>
-                <div class="agent-name">Product Manager</div>
-                <div class="agent-codename">Apollo</div>
-                <div class="agent-desc">Vision, scope, priorities</div>
+        </div>
+
+        <div class="tier-section">
+            <div class="tier-label tier-2-label">Tier 2 — Standard (Per Project)</div>
+            <div class="agents-grid">
+                <div class="agent-card"><div class="agent-icon">&#128203;</div><div class="agent-name">Product Manager</div><div class="agent-codename">Apollo</div><div class="agent-desc">Vision, scope, priorities</div></div>
+                <div class="agent-card"><div class="agent-icon">&#9989;</div><div class="agent-name">Tester</div><div class="agent-codename">Cassandra</div><div class="agent-desc">Tests, validation</div></div>
+                <div class="agent-card"><div class="agent-icon">&#128214;</div><div class="agent-name">Docs</div><div class="agent-codename">Calliope</div><div class="agent-desc">Documentation</div></div>
+                <div class="agent-card"><div class="agent-icon">&#128737;&#65039;</div><div class="agent-name">Security</div><div class="agent-codename">Ares</div><div class="agent-desc">Vulnerability scanning, OWASP</div></div>
             </div>
-            <div class="agent-card">
-                <div class="agent-icon">💡</div>
-                <div class="agent-name">Business Analyst</div>
-                <div class="agent-codename">Oracle</div>
-                <div class="agent-desc">Requirements, feasibility</div>
+        </div>
+
+        <div class="tier-section">
+            <div class="tier-label tier-3-label">Tier 3 — Enterprise Scale</div>
+            <div class="agents-grid">
+                <div class="agent-card"><div class="agent-icon">&#9881;&#65039;</div><div class="agent-name">DevOps</div><div class="agent-codename">Karma</div><div class="agent-desc">CI/CD, infrastructure</div></div>
+                <div class="agent-card"><div class="agent-icon">&#9878;&#65039;</div><div class="agent-name">VaPT</div><div class="agent-codename">Themis</div><div class="agent-desc">Verification, compliance</div></div>
+                <div class="agent-card"><div class="agent-icon">&#9889;</div><div class="agent-name">Performance</div><div class="agent-codename">Tosh</div><div class="agent-desc">Load testing, stress testing</div></div>
+                <div class="agent-card"><div class="agent-icon">&#128176;</div><div class="agent-name">Cost Estimator</div><div class="agent-codename">Plutus</div><div class="agent-desc">Dev + Ops costs, ROI</div></div>
             </div>
-            <div class="agent-card">
-                <div class="agent-icon">📐</div>
-                <div class="agent-name">Architect</div>
-                <div class="agent-codename">Daedalus</div>
-                <div class="agent-desc">System design, trade-offs</div>
-            </div>
-            <div class="agent-card">
-                <div class="agent-icon">🎨</div>
-                <div class="agent-name">Designer</div>
-                <div class="agent-codename">Aphrodite</div>
-                <div class="agent-desc">Mockups, options (you choose)</div>
-            </div>
-            <div class="agent-card">
-                <div class="agent-icon">🔨</div>
-                <div class="agent-name">Engineer</div>
-                <div class="agent-codename">Hephaestus</div>
-                <div class="agent-desc">Write production code</div>
-            </div>
-            <div class="agent-card">
-                <div class="agent-icon">🔍</div>
-                <div class="agent-name">Reviewer</div>
-                <div class="agent-codename">Athena</div>
-                <div class="agent-desc">Quality, best practices</div>
-            </div>
-            <div class="agent-card">
-                <div class="agent-icon">🛡️</div>
-                <div class="agent-name">Security</div>
-                <div class="agent-codename">Ares</div>
-                <div class="agent-desc">Vulnerability scanning</div>
-            </div>
-            <div class="agent-card">
-                <div class="agent-icon">✅</div>
-                <div class="agent-name">Tester</div>
-                <div class="agent-codename">Cassandra</div>
-                <div class="agent-desc">Tests, validation</div>
-            </div>
-            <div class="agent-card">
-                <div class="agent-icon">📖</div>
-                <div class="agent-name">Docs</div>
-                <div class="agent-codename">Calliope</div>
-                <div class="agent-desc">Documentation</div>
-            </div>
-            <div class="agent-card">
-                <div class="agent-icon">📦</div>
-                <div class="agent-name">Chronicler</div>
-                <div class="agent-codename">Itihas</div>
-                <div class="agent-desc">Release notes, versioning</div>
-            </div>
-            <div class="agent-card">
-                <div class="agent-icon">💰</div>
-                <div class="agent-name">Cost Estimator</div>
-                <div class="agent-codename">Plutus</div>
-                <div class="agent-desc">Infra costs, ROI projection</div>
-            </div>
-            <div class="agent-card">
-                <div class="agent-icon">⚙️</div>
-                <div class="agent-name">DevOps</div>
-                <div class="agent-codename">Karma</div>
-                <div class="agent-desc">CI/CD, infrastructure</div>
-            </div>
-            <div class="agent-card">
-                <div class="agent-icon">⚖️</div>
-                <div class="agent-name">VaPT</div>
-                <div class="agent-codename">Themis</div>
-                <div class="agent-desc">Verification, validation, compliance</div>
-            </div>
-            <div class="agent-card">
-                <div class="agent-icon">⚡</div>
-                <div class="agent-name">Performance</div>
-                <div class="agent-codename">Tosh</div>
-                <div class="agent-desc">Load testing, stress testing</div>
-            </div>
-            <div class="agent-card">
-                <div class="agent-icon">📢</div>
-                <div class="agent-name">Marketing</div>
-                <div class="agent-codename">Kriti</div>
-                <div class="agent-desc">Positioning, launch strategy</div>
-            </div>
-            <div class="agent-card">
-                <div class="agent-icon">👷</div>
-                <div class="agent-name">Coordinator</div>
-                <div class="agent-codename">Foreman</div>
-                <div class="agent-desc">Orchestrate pipeline</div>
+        </div>
+
+        <div class="tier-section">
+            <div class="tier-label tier-4-label">Tier 4 — On Demand</div>
+            <div class="agents-grid">
+                <div class="agent-card"><div class="agent-icon">&#128269;</div><div class="agent-name">Researcher</div><div class="agent-codename">Hermes</div><div class="agent-desc">Market analysis, tech research</div></div>
+                <div class="agent-card"><div class="agent-icon">&#128161;</div><div class="agent-name">Business Analyst</div><div class="agent-codename">Oracle</div><div class="agent-desc">Requirements, feasibility</div></div>
+                <div class="agent-card"><div class="agent-icon">&#127912;</div><div class="agent-name">Designer</div><div class="agent-codename">Aphrodite</div><div class="agent-desc">Mockups, options (you choose)</div></div>
+                <div class="agent-card"><div class="agent-icon">&#128226;</div><div class="agent-name">Marketing</div><div class="agent-codename">Kriti</div><div class="agent-desc">Positioning, launch strategy</div></div>
+                <div class="agent-card"><div class="agent-icon">&#128230;</div><div class="agent-name">Chronicler</div><div class="agent-codename">Itihas</div><div class="agent-desc">Release notes, change tracking</div></div>
             </div>
         </div>
     </section>
 
+    <!-- Principles -->
+    <section class="principles" id="principles">
+        <div class="section-header">
+            <h2>The Principles</h2>
+            <p>How AIDE X makes AI predictable.</p>
+        </div>
+        <div class="principles-grid">
+            <div class="principle-card">
+                <div class="principle-number">Principle 1</div>
+                <div class="principle-title">Describe It, Then Build It</div>
+                <div class="principle-desc">Nothing gets built until both sides agree on what "done" looks like. AI asks the right questions first.</div>
+            </div>
+            <div class="principle-card">
+                <div class="principle-number">Principle 2</div>
+                <div class="principle-title">Your Rules, Always</div>
+                <div class="principle-desc">Your preferred tech, design standards, security requirements. AI operates within YOUR guardrails.</div>
+            </div>
+            <div class="principle-card">
+                <div class="principle-number">Principle 3</div>
+                <div class="principle-title">See It Before You Build It</div>
+                <div class="principle-desc">Visual architecture at every zoom level. You understand what you're getting before code is written.</div>
+            </div>
+            <div class="principle-card">
+                <div class="principle-number">Principle 4</div>
+                <div class="principle-title">Fresh Eyes on Every Task</div>
+                <div class="principle-desc">No degrading quality. Each task gets a clean start. The 50th task is as sharp as the 1st.</div>
+            </div>
+            <div class="principle-card">
+                <div class="principle-number">Principle 5</div>
+                <div class="principle-title">Pause Where It Matters</div>
+                <div class="principle-desc">AI moves fast where it can, stops where it should. Design, architecture, go-live — always your call.</div>
+            </div>
+            <div class="principle-card">
+                <div class="principle-number">Principle 6</div>
+                <div class="principle-title">AI Builds It, AI Knows It</div>
+                <div class="principle-desc">After deployment, bug fixes and features are conversations. Phase 8 never ends.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Built-In Standards -->
     <section class="standards" id="standards">
         <div class="section-header">
             <h2>Built-In Standards</h2>
-            <p>Every project comes with these. No add-ons needed.</p>
+            <p>Every project ships with these. Always on. No add-ons.</p>
         </div>
         <div class="standards-grid">
-            <div class="standard-item">👥 User Management</div>
-            <div class="standard-item">📝 Logging</div>
-            <div class="standard-item">🔔 Alerting</div>
-            <div class="standard-item">🔒 Security</div>
-            <div class="standard-item">📦 Release Notes</div>
-            <div class="standard-item">💰 Cost Estimation</div>
+            <div class="standard-item">&#128101; User Management</div>
+            <div class="standard-item">&#128221; Logging</div>
+            <div class="standard-item">&#128276; Alerting</div>
+            <div class="standard-item">&#128274; Security Scanning</div>
+            <div class="standard-item">&#128176; Cost Estimation</div>
+            <div class="standard-item">&#128260; Change Tracking</div>
+            <div class="standard-item">&#128202; Visual Architecture</div>
         </div>
     </section>
 
+    <!-- Phase 8 Hero -->
+    <section class="phase8">
+        <h2>Phase 8: The Real Force Multiplier</h2>
+        <p class="subtitle">AI built your system. AI knows your system. Changes aren't projects — they're conversations.</p>
+        <div class="phase8-examples">
+            <div class="phase8-example">
+                <div class="phase8-quote">"Add a payment option for UPI."</div>
+                <div class="phase8-result">&rarr; Done in hours</div>
+            </div>
+            <div class="phase8-example">
+                <div class="phase8-quote">"The login times out too fast. Fix it."</div>
+                <div class="phase8-result">&rarr; Done in minutes</div>
+            </div>
+            <div class="phase8-example">
+                <div class="phase8-quote">"Support Spanish and Hindi."</div>
+                <div class="phase8-result">&rarr; Done in hours</div>
+            </div>
+            <div class="phase8-example">
+                <div class="phase8-quote">"What changed in the last release?"</div>
+                <div class="phase8-result">&rarr; Answer instantly</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Evolution -->
+    <section class="evolution">
+        <div class="section-header">
+            <h2>The Evolution: Where This Is Going</h2>
+            <p>The protocol stays the same. The force multiplier grows.</p>
+        </div>
+        <div class="evolution-timeline">
+            <div class="evo-step">
+                <div class="evo-label">Today</div>
+                <div class="evo-bar">
+                    <div class="evo-human" style="width: 40%;">Human steers</div>
+                    <div class="evo-ai" style="width: 60%;">AI executes</div>
+                </div>
+                <div class="evo-desc">Humans imagine the product and steer every major decision. AI does the heavy lifting.</div>
+            </div>
+            <div class="evo-step">
+                <div class="evo-label">Tomorrow</div>
+                <div class="evo-bar">
+                    <div class="evo-human" style="width: 20%;">Human steers</div>
+                    <div class="evo-ai" style="width: 80%;">AI steers + executes</div>
+                </div>
+                <div class="evo-desc">AI handles routine decisions autonomously. Humans steer only what's unique, creative, or high-stakes.</div>
+            </div>
+            <div class="evo-step">
+                <div class="evo-label">The Future</div>
+                <div class="evo-bar">
+                    <div class="evo-human" style="width: 8%;">Vision</div>
+                    <div class="evo-ai" style="width: 92%;">AI steers + delivers</div>
+                </div>
+                <div class="evo-desc">Humans imagine. AI steers and delivers. The force multiplier approaches infinity.</div>
+            </div>
+        </div>
+        <p class="evo-tagline">Force multiplied by AI. Imagined and steered by humans. Until AI learns to steer too.</p>
+    </section>
+
+    <!-- CTA -->
     <section class="cta-section">
-        <h2>Build Faster. Scale Smarter.</h2>
-        <p>No team needed. Just describe what you want. AI does the rest.</p>
-        <a href="https://github.com/enkay-k/aidex" class="btn btn-primary">Get Started</a>
-        <p style="margin-top: 2rem; font-size: 0.9rem; opacity: 0.7;">⭐ Star us on GitHub | 🍴 Fork to contribute | 📖 Read the docs</p>
+        <h2>Describe &rarr; Decide &rarr; Deliver</h2>
+        <p>The problem isn't AI capability. It's AI predictability. AIDE X fixes that.</p>
+        <a href="https://github.com/enkay-k/aidex" class="btn btn-primary">Get Started on GitHub</a>
+        <p style="margin-top: 2rem; font-size: 0.9rem; color: #94a3b8;">Star us on GitHub &middot; Fork to contribute &middot; Read the docs</p>
     </section>
 
     <footer>
-        <p>AIDE X — AI Driven Engineering X — <a href="https://github.com/enkay-k/aidex">GitHub</a></p>
+        <p>AIDE X &mdash; AI Driven Engineering X &mdash; <a href="https://github.com/enkay-k/aidex">GitHub</a></p>
     </footer>
 
     <script>
