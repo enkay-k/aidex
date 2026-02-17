@@ -1,24 +1,86 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AIDE X Control Center - Dashboard</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --db-bg: #0a0f1a;
+            --db-bg2: #0f172a;
+            --db-card: #111827;
+            --db-card-hover: #1a2332;
+            --db-border: rgba(255, 255, 255, 0.08);
+            --db-text: #f1f5f9;
+            --db-text2: #94a3b8;
+            --db-text3: #64748b;
+            --db-input-bg: #0f172a;
+            --db-accent: #0891b2;
+            --db-decision-bg: rgba(245, 158, 11, 0.08);
+            --db-decision-border: rgba(245, 158, 11, 0.3);
+            --db-decision-label: #f59e0b;
+            --db-release-bg: rgba(8, 145, 178, 0.08);
+            --db-release-border: rgba(8, 145, 178, 0.2);
+            --db-release-text: #0891b2;
+            --db-std-bg: rgba(16, 185, 129, 0.08);
+            --db-std-border: rgba(16, 185, 129, 0.2);
+            --db-std-text: #10b981;
+            --db-cost-dev-bg: rgba(8, 145, 178, 0.08);
+            --db-cost-dev-border: rgba(8, 145, 178, 0.2);
+            --db-cost-ops-bg: rgba(16, 185, 129, 0.08);
+            --db-cost-ops-border: rgba(16, 185, 129, 0.2);
+            --db-tag-bg: rgba(255, 255, 255, 0.05);
+        }
+
+        [data-theme="light"] {
+            --db-bg: #f8fafc;
+            --db-bg2: #ffffff;
+            --db-card: #ffffff;
+            --db-card-hover: #f1f5f9;
+            --db-border: #e2e8f0;
+            --db-text: #0f172a;
+            --db-text2: #475569;
+            --db-text3: #64748b;
+            --db-input-bg: #f8fafc;
+            --db-accent: #0891b2;
+            --db-decision-bg: #fffbeb;
+            --db-decision-border: #fcd34d;
+            --db-decision-label: #d97706;
+            --db-release-bg: #f0f9ff;
+            --db-release-border: #bae6fd;
+            --db-release-text: #0369a1;
+            --db-std-bg: #f0fdf4;
+            --db-std-border: #bbf7d0;
+            --db-std-text: #16a34a;
+            --db-cost-dev-bg: #f0f9ff;
+            --db-cost-dev-border: #bae6fd;
+            --db-cost-ops-bg: #f0fdf4;
+            --db-cost-ops-border: #bbf7d0;
+            --db-tag-bg: #f1f5f9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
         body {
             font-family: 'Inter', sans-serif;
-            background: #f8fafc;
-            color: #0f172a;
+            background: var(--db-bg);
+            color: var(--db-text);
             min-height: 100vh;
+            transition: background 0.4s, color 0.4s;
         }
 
         /* Top Bar */
         .top-bar {
-            background: #fff;
-            border-bottom: 1px solid #e2e8f0;
+            background: var(--db-bg2);
+            border-bottom: 1px solid var(--db-border);
             padding: 0.75rem 1.5rem;
             display: flex;
             justify-content: space-between;
@@ -26,6 +88,7 @@
             position: sticky;
             top: 0;
             z-index: 100;
+            transition: background 0.4s, border-color 0.4s;
         }
 
         .version-info {
@@ -57,15 +120,15 @@
         }
 
         .dev-mode-badge.on {
-            background: #dbeafe;
-            color: #1d4ed8;
-            border: 1px solid #93c5fd;
+            background: rgba(8, 145, 178, 0.15);
+            color: var(--db-accent);
+            border: 1px solid rgba(8, 145, 178, 0.3);
         }
 
         .dev-mode-badge.off {
-            background: #f1f5f9;
-            color: #64748b;
-            border: 1px solid #e2e8f0;
+            background: var(--db-card);
+            color: var(--db-text3);
+            border: 1px solid var(--db-border);
         }
 
         .dev-toggle {
@@ -103,12 +166,32 @@
             font-size: 1.25rem;
             cursor: pointer;
             padding: 0.5rem;
-            color: #64748b;
+            color: var(--db-text3);
             transition: color 0.3s;
         }
 
         .settings-btn:hover {
-            color: #0891b2;
+            color: var(--db-accent);
+        }
+
+        .db-theme-toggle {
+            background: none;
+            border: 1px solid var(--db-border);
+            color: var(--db-text2);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .db-theme-toggle:hover {
+            border-color: var(--db-accent);
+            color: var(--db-accent);
         }
 
         /* Layout */
@@ -120,12 +203,13 @@
 
         /* Sidebar */
         .sidebar {
-            background: #ffffff;
-            border-right: 1px solid #e2e8f0;
+            background: var(--db-bg2);
+            border-right: 1px solid var(--db-border);
             padding: 1.5rem;
             display: flex;
             flex-direction: column;
             gap: 1.5rem;
+            transition: background 0.4s, border-color 0.4s;
         }
 
         .logo {
@@ -135,15 +219,18 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             padding-bottom: 1rem;
-            border-bottom: 1px solid #e2e8f0;
+            border-bottom: 1px solid var(--db-border);
         }
 
-        .nav-section { margin-bottom: 1rem; }
+        .nav-section {
+            margin-bottom: 1rem;
+        }
+
         .nav-label {
             font-size: 0.7rem;
             text-transform: uppercase;
             letter-spacing: 0.1em;
-            color: #64748b;
+            color: var(--db-text3);
             margin-bottom: 0.75rem;
         }
 
@@ -153,7 +240,7 @@
             gap: 0.75rem;
             padding: 0.75rem 1rem;
             border-radius: 10px;
-            color: #64748b;
+            color: var(--db-text3);
             text-decoration: none;
             transition: all 0.3s;
             margin-bottom: 0.25rem;
@@ -161,9 +248,10 @@
             font-size: 0.9rem;
         }
 
-        .nav-item:hover, .nav-item.active {
+        .nav-item:hover,
+        .nav-item.active {
             background: rgba(8, 145, 178, 0.1);
-            color: #0891b2;
+            color: var(--db-accent);
         }
 
         .nav-item .badge {
@@ -176,13 +264,16 @@
             font-weight: 600;
         }
 
-        .nav-icon { font-size: 1.2rem; }
+        .nav-icon {
+            font-size: 1.2rem;
+        }
 
         /* Main Content */
         .main {
             padding: 1.5rem;
             overflow-y: auto;
-            background: #f8fafc;
+            background: var(--db-bg);
+            transition: background 0.4s;
         }
 
         .header {
@@ -190,13 +281,17 @@
             justify-content: space-between;
             align-items: center;
             margin-bottom: 1.5rem;
-            background: #fff;
+            background: var(--db-card);
             padding: 1rem 1.5rem;
             border-radius: 12px;
-            border: 1px solid #e2e8f0;
+            border: 1px solid var(--db-border);
+            transition: background 0.4s, border-color 0.4s;
         }
 
-        .header h1 { font-size: 1.5rem; color: #0f172a; }
+        .header h1 {
+            font-size: 1.5rem;
+            color: var(--db-text);
+        }
 
         .header-actions {
             display: flex;
@@ -224,17 +319,17 @@
         }
 
         .btn-secondary {
-            background: #fff;
-            border: 1px solid #e2e8f0;
-            color: #64748b;
+            background: var(--db-card);
+            border: 1px solid var(--db-border);
+            color: var(--db-text2);
         }
 
         /* Filters */
         .filters-bar {
-            background: #fff;
+            background: var(--db-card);
             padding: 1rem 1.5rem;
             border-radius: 12px;
-            border: 1px solid #e2e8f0;
+            border: 1px solid var(--db-border);
             margin-bottom: 1.5rem;
             display: flex;
             gap: 0.75rem;
@@ -245,29 +340,31 @@
         .search {
             flex: 1;
             min-width: 200px;
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
+            background: var(--db-input-bg);
+            border: 1px solid var(--db-border);
             padding: 0.5rem 1rem;
             border-radius: 8px;
-            color: #0f172a;
+            color: var(--db-text);
             font-size: 0.9rem;
+            transition: background 0.4s, border-color 0.4s;
         }
 
         .filter {
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
+            background: var(--db-input-bg);
+            border: 1px solid var(--db-border);
             padding: 0.5rem 1rem;
             border-radius: 8px;
             font-size: 0.85rem;
-            color: #64748b;
+            color: var(--db-text3);
             cursor: pointer;
             transition: all 0.3s;
         }
 
-        .filter:hover, .filter.active {
-            border-color: #0891b2;
-            color: #0891b2;
-            background: rgba(8, 145, 178, 0.05);
+        .filter:hover,
+        .filter.active {
+            border-color: var(--db-accent);
+            color: var(--db-accent);
+            background: rgba(8, 145, 178, 0.08);
         }
 
         /* Pipeline Tabs */
@@ -275,7 +372,7 @@
             display: flex;
             gap: 0.5rem;
             margin-bottom: 1.5rem;
-            border-bottom: 2px solid #e2e8f0;
+            border-bottom: 2px solid var(--db-border);
             padding-bottom: 0;
             overflow-x: auto;
         }
@@ -283,7 +380,7 @@
         .pipeline-tab {
             padding: 0.75rem 1.25rem;
             border-radius: 8px 8px 0 0;
-            color: #64748b;
+            color: var(--db-text3);
             cursor: pointer;
             transition: all 0.3s;
             white-space: nowrap;
@@ -291,10 +388,11 @@
             font-size: 0.9rem;
         }
 
-        .pipeline-tab:hover, .pipeline-tab.active {
-            background: #fff;
-            color: #0891b2;
-            border-bottom: 2px solid #0891b2;
+        .pipeline-tab:hover,
+        .pipeline-tab.active {
+            background: var(--db-card);
+            color: var(--db-accent);
+            border-bottom: 2px solid var(--db-accent);
             margin-bottom: -2px;
         }
 
@@ -306,17 +404,17 @@
         }
 
         .card {
-            background: #fff;
-            border: 1px solid #e2e8f0;
+            background: var(--db-card);
+            border: 1px solid var(--db-border);
             border-radius: 14px;
             padding: 1.25rem;
             transition: all 0.3s;
         }
 
         .card:hover {
-            border-color: #0891b2;
+            border-color: var(--db-accent);
             transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
 
         .card-header {
@@ -330,12 +428,12 @@
             font-size: 1rem;
             font-weight: 600;
             margin-bottom: 0.25rem;
-            color: #0f172a;
+            color: var(--db-text);
         }
 
         .card-subtitle {
             font-size: 0.8rem;
-            color: #64748b;
+            color: var(--db-text3);
         }
 
         .card-status {
@@ -345,10 +443,25 @@
             font-weight: 600;
         }
 
-        .status-running { background: rgba(8, 145, 178, 0.15); color: #0891b2; }
-        .status-complete { background: rgba(16, 185, 129, 0.15); color: #059669; }
-        .status-pending { background: rgba(245, 158, 11, 0.15); color: #d97706; }
-        .status-blocked { background: rgba(239, 68, 68, 0.15); color: #dc2626; }
+        .status-running {
+            background: rgba(8, 145, 178, 0.15);
+            color: #0891b2;
+        }
+
+        .status-complete {
+            background: rgba(16, 185, 129, 0.15);
+            color: #059669;
+        }
+
+        .status-pending {
+            background: rgba(245, 158, 11, 0.15);
+            color: #d97706;
+        }
+
+        .status-blocked {
+            background: rgba(239, 68, 68, 0.15);
+            color: #dc2626;
+        }
 
         .card-stages {
             display: flex;
@@ -360,20 +473,28 @@
             flex: 1;
             height: 6px;
             border-radius: 3px;
-            background: #e2e8f0;
+            background: var(--db-border);
         }
 
-        .stage.complete { background: #10b981; }
-        .stage.current { background: #0891b2; }
-        .stage.error { background: #ef4444; }
+        .stage.complete {
+            background: #10b981;
+        }
+
+        .stage.current {
+            background: #0891b2;
+        }
+
+        .stage.error {
+            background: #ef4444;
+        }
 
         .card-meta {
             display: flex;
             justify-content: space-between;
             font-size: 0.75rem;
-            color: #64748b;
+            color: var(--db-text3);
             padding-top: 0.75rem;
-            border-top: 1px solid #f1f5f9;
+            border-top: 1px solid var(--db-border);
         }
 
         .card-tags {
@@ -387,16 +508,17 @@
             font-size: 0.7rem;
             padding: 0.2rem 0.5rem;
             border-radius: 4px;
-            background: #f1f5f9;
-            color: #64748b;
+            background: var(--db-tag-bg);
+            color: var(--db-text3);
         }
 
         /* Right Panel */
         .activity-panel {
-            background: #ffffff;
-            border-left: 1px solid #e2e8f0;
+            background: var(--db-bg2);
+            border-left: 1px solid var(--db-border);
             padding: 1.5rem;
             overflow-y: auto;
+            transition: background 0.4s, border-color 0.4s;
         }
 
         .panel-section {
@@ -407,7 +529,7 @@
             font-size: 0.7rem;
             text-transform: uppercase;
             letter-spacing: 0.1em;
-            color: #64748b;
+            color: var(--db-text3);
             margin-bottom: 1rem;
             display: flex;
             align-items: center;
@@ -416,16 +538,17 @@
 
         /* Decision Card */
         .decision-card {
-            background: #fffbeb;
-            border: 1px solid #fcd34d;
+            background: var(--db-decision-bg);
+            border: 1px solid var(--db-decision-border);
             border-radius: 12px;
             padding: 1rem;
             margin-bottom: 1rem;
+            transition: background 0.4s, border-color 0.4s;
         }
 
         .decision-label {
             font-size: 0.7rem;
-            color: #d97706;
+            color: var(--db-decision-label);
             text-transform: uppercase;
             font-weight: 600;
             margin-bottom: 0.5rem;
@@ -439,7 +562,7 @@
 
         .decision-context {
             font-size: 0.8rem;
-            color: #64748b;
+            color: var(--db-text3);
             margin-bottom: 0.75rem;
             line-height: 1.5;
         }
@@ -459,30 +582,41 @@
             cursor: pointer;
         }
 
-        .btn-approve { background: #10b981; color: #fff; }
-        .btn-deny { background: #ef4444; color: #fff; }
-        .btn-hold { background: #e2e8f0; color: #64748b; }
+        .btn-approve {
+            background: #10b981;
+            color: #fff;
+        }
+
+        .btn-deny {
+            background: #ef4444;
+            color: #fff;
+        }
+
+        .btn-hold {
+            background: var(--db-border);
+            color: var(--db-text3);
+        }
 
         /* Activity Item */
         .activity-item {
             padding: 0.75rem 0;
-            border-bottom: 1px solid #f1f5f9;
+            border-bottom: 1px solid var(--db-border);
         }
 
         .activity-time {
             font-size: 0.7rem;
-            color: #94a3b8;
+            color: var(--db-text2);
             margin-bottom: 0.25rem;
         }
 
         .activity-text {
             font-size: 0.85rem;
             line-height: 1.4;
-            color: #475569;
+            color: var(--db-text2);
         }
 
         .activity-text .highlight {
-            color: #0891b2;
+            color: var(--db-accent);
             font-weight: 500;
         }
 
@@ -495,11 +629,12 @@
         }
 
         .stat-card {
-            background: #fff;
-            border: 1px solid #e2e8f0;
+            background: var(--db-card);
+            border: 1px solid var(--db-border);
             border-radius: 12px;
             padding: 1rem;
             text-align: center;
+            transition: background 0.4s, border-color 0.4s;
         }
 
         .stat-number {
@@ -512,7 +647,7 @@
 
         .stat-label {
             font-size: 0.75rem;
-            color: #64748b;
+            color: var(--db-text3);
             margin-top: 0.25rem;
         }
 
@@ -528,19 +663,20 @@
             font-size: 0.7rem;
             padding: 0.3rem 0.6rem;
             border-radius: 6px;
-            background: #f0fdf4;
-            color: #16a34a;
+            background: var(--db-std-bg);
+            color: var(--db-std-text);
             font-weight: 500;
-            border: 1px solid #bbf7d0;
+            border: 1px solid var(--db-std-border);
         }
 
         /* Release Notes Panel */
         .release-panel {
-            background: #f0f9ff;
-            border: 1px solid #bae6fd;
+            background: var(--db-release-bg);
+            border: 1px solid var(--db-release-border);
             border-radius: 12px;
             padding: 1rem;
             margin-bottom: 1rem;
+            transition: background 0.4s, border-color 0.4s;
         }
 
         .release-header {
@@ -553,19 +689,19 @@
         .release-version {
             font-family: 'JetBrains Mono', monospace;
             font-weight: 600;
-            color: #0369a1;
+            color: var(--db-release-text);
         }
 
         .release-date {
             font-size: 0.75rem;
-            color: #64748b;
+            color: var(--db-text3);
         }
 
         .release-item {
             font-size: 0.8rem;
-            color: #475569;
+            color: var(--db-text2);
             padding: 0.5rem 0;
-            border-bottom: 1px solid #e0f2fe;
+            border-bottom: 1px solid var(--db-border);
         }
 
         .release-item:last-child {
@@ -573,7 +709,7 @@
         }
 
         .release-item a {
-            color: #0891b2;
+            color: var(--db-accent);
             text-decoration: none;
         }
 
@@ -583,12 +719,22 @@
 
         /* Responsive */
         @media (max-width: 1200px) {
-            .dashboard { grid-template-columns: 1fr; }
-            .sidebar, .activity-panel { display: none; }
-            .stats-row { grid-template-columns: repeat(2, 1fr); }
+            .dashboard {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar,
+            .activity-panel {
+                display: none;
+            }
+
+            .stats-row {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
     </style>
 </head>
+
 <body>
     <!-- Top Bar -->
     <div class="top-bar">
@@ -599,14 +745,20 @@
                 <div class="dev-toggle"></div>
             </div>
         </div>
-        <button class="settings-btn" title="Settings">⚙️</button>
+        <div style="display:flex;align-items:center;gap:0.75rem;">
+            <a href="index.html"
+                style="color:var(--db-text3);text-decoration:none;font-size:0.85rem;font-weight:500;transition:color 0.3s;">←
+                Home</a>
+            <button class="db-theme-toggle" id="dbThemeToggle" title="Toggle theme">🌙</button>
+            <button class="settings-btn" title="Settings">⚙️</button>
+        </div>
     </div>
 
     <div class="dashboard">
         <!-- Sidebar -->
         <div class="sidebar">
             <div class="logo">AIDE X</div>
-            
+
             <div class="nav-section">
                 <div class="nav-label">Overview</div>
                 <div class="nav-item active">
@@ -825,7 +977,7 @@
 
             <div class="panel-section">
                 <div class="panel-title">⚡ Pending Human Decisions</div>
-                
+
                 <div class="decision-card">
                     <div class="decision-label">🎨 UI/UX Design Approval</div>
                     <div class="decision-title">API Gateway Service</div>
@@ -855,7 +1007,7 @@
 
             <div class="panel-section">
                 <div class="panel-title">📜 Recent Activity</div>
-                
+
                 <div class="activity-item">
                     <div class="activity-time">2 min ago</div>
                     <div class="activity-text">
@@ -903,28 +1055,40 @@
 
             <div class="panel-section">
                 <div class="panel-title">💰 Cost Estimates (Built-In)</div>
-                
+
                 <!-- Development Cost -->
-                <div style="background: #f0f9ff; border: 1px solid #bae6fd; border-radius: 8px; padding: 0.75rem; margin-bottom: 0.75rem;">
-                    <div style="font-weight: 600; font-size: 0.85rem; color: #0369a1; margin-bottom: 0.5rem;">💻 Development Cost</div>
+                <div
+                    style="background: #f0f9ff; border: 1px solid #bae6fd; border-radius: 8px; padding: 0.75rem; margin-bottom: 0.75rem;">
+                    <div style="font-weight: 600; font-size: 0.85rem; color: #0369a1; margin-bottom: 0.5rem;">💻
+                        Development Cost</div>
                     <div style="font-size: 0.75rem; color: #64748b;">
                         <div>AI Compute: <span style="color: #0369a1;">~$150</span></div>
                         <div>Human Review: <span style="color: #0369a1;">~$50</span></div>
-                        <div style="margin-top: 0.5rem; font-weight: 600;">Total to Ship: <span style="color: #0369a1;">~$200</span></div>
+                        <div style="margin-top: 0.5rem; font-weight: 600;">Total to Ship: <span
+                                style="color: #0369a1;">~$200</span></div>
                     </div>
                 </div>
-                
+
                 <!-- Operations Cost -->
-                <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 0.75rem; margin-bottom: 0.75rem;">
-                    <div style="font-weight: 600; font-size: 0.85rem; color: #166534; margin-bottom: 0.5rem;">⚡ Operations (Monthly)</div>
+                <div
+                    style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 0.75rem; margin-bottom: 0.75rem;">
+                    <div style="font-weight: 600; font-size: 0.85rem; color: #166534; margin-bottom: 0.5rem;">⚡
+                        Operations (Monthly)</div>
                     <div style="font-size: 0.75rem; color: #64748b;">
-                        <div>Hosting: <span style="color: #059669;">$0</span> <span style="background: #dcfce7; padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.65rem;">Vercel Free</span></div>
-                        <div>Database: <span style="color: #059669;">$0</span> <span style="background: #dcfce7; padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.65rem;">Supabase</span></div>
-                        <div>CDN: <span style="color: #059669;">$0</span> <span style="background: #dcfce7; padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.65rem;">Cloudflare</span></div>
-                        <div style="margin-top: 0.5rem; font-weight: 600;">Total Ops: <span style="color: #059669;">$0/mo ✓</span></div>
+                        <div>Hosting: <span style="color: #059669;">$0</span> <span
+                                style="background: #dcfce7; padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.65rem;">Vercel
+                                Free</span></div>
+                        <div>Database: <span style="color: #059669;">$0</span> <span
+                                style="background: #dcfce7; padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.65rem;">Supabase</span>
+                        </div>
+                        <div>CDN: <span style="color: #059669;">$0</span> <span
+                                style="background: #dcfce7; padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.65rem;">Cloudflare</span>
+                        </div>
+                        <div style="margin-top: 0.5rem; font-weight: 600;">Total Ops: <span
+                                style="color: #059669;">$0/mo ✓</span></div>
                     </div>
                 </div>
-                
+
                 <!-- ROI -->
                 <div class="activity-item" style="margin-top: 0.5rem;">
                     <div class="activity-time">ROI vs Traditional</div>
@@ -938,10 +1102,25 @@
     </div>
 
     <script>
+        // Theme toggle synced with marketing page
+        (function () {
+            const html = document.documentElement;
+            const btn = document.getElementById('dbThemeToggle');
+            function setTheme(t) {
+                html.setAttribute('data-theme', t);
+                localStorage.setItem('aidex-theme', t);
+                btn.textContent = t === 'dark' ? '🌙' : '☀️';
+            }
+            setTheme(localStorage.getItem('aidex-theme') || 'dark');
+            btn.addEventListener('click', () => {
+                setTheme(html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+            });
+        })();
+
         function toggleDevMode() {
             const toggle = document.getElementById('devModeToggle');
             const releasePanel = document.getElementById('releasePanel');
-            
+
             if (toggle.classList.contains('off')) {
                 toggle.classList.remove('off');
                 toggle.classList.add('on');
@@ -954,4 +1133,5 @@
         }
     </script>
 </body>
+
 </html>

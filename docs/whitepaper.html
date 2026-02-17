@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIDE X — Whitepaper v1.0</title>
+    <meta name="description"
+        content="AIDE X Whitepaper — A protocol for developing industrial-strength solutions, force multiplied by AI.">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Whitepaper-specific styles */
+        .wp-layout {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .wp-sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 280px;
+            background: var(--bg-secondary);
+            border-right: 1px solid var(--border-color);
+            padding: 5rem 1.5rem 2rem;
+            overflow-y: auto;
+            z-index: 100;
+            transition: background 0.5s ease, border-color 0.5s ease;
+        }
+
+        .wp-sidebar-title {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--text-muted);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .wp-toc {
+            list-style: none;
+        }
+
+        .wp-toc li {
+            margin-bottom: 0.25rem;
+        }
+
+        .wp-toc a {
+            display: block;
+            padding: 0.4rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: all 0.3s;
+            border-left: 2px solid transparent;
+        }
+
+        .wp-toc a:hover {
+            color: var(--text-primary);
+            background: var(--bg-card);
+        }
+
+        .wp-toc a.active {
+            color: var(--accent-cyan);
+            border-left-color: var(--accent-cyan);
+            background: rgba(8, 145, 178, 0.08);
+        }
+
+        .wp-toc .sub {
+            padding-left: 1.5rem;
+            font-size: 0.8rem;
+        }
+
+        .wp-content {
+            margin-left: 280px;
+            padding: 6rem 3rem 4rem;
+            max-width: 900px;
+        }
+
+        .wp-header {
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .wp-header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.03em;
+        }
+
+        .wp-header .wp-version {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .wp-header blockquote {
+            margin-top: 1.5rem;
+            padding: 1.25rem 1.5rem;
+            background: rgba(8, 145, 178, 0.08);
+            border-left: 3px solid var(--accent-cyan);
+            border-radius: 0 8px 8px 0;
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            font-style: italic;
+            line-height: 1.7;
+        }
+
+        .wp-section {
+            margin-bottom: 3rem;
+            scroll-margin-top: 5rem;
+        }
+
+        .wp-section h2 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 1.25rem;
+            letter-spacing: -0.02em;
+            padding-top: 1rem;
+        }
+
+        .wp-section h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            margin-top: 1.5rem;
+            color: var(--accent-cyan);
+        }
+
+        .wp-section h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .wp-section p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .wp-section strong {
+            color: var(--text-primary);
+        }
+
+        .wp-section ul,
+        .wp-section ol {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+        }
+
+        .wp-section li {
+            margin-bottom: 0.35rem;
+        }
+
+        .wp-section hr {
+            border: none;
+            border-top: 1px solid var(--border-color);
+            margin: 2rem 0;
+        }
+
+        /* Tables */
+        .wp-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.88rem;
+        }
+
+        .wp-table th {
+            background: var(--bg-card);
+            padding: 0.75rem 1rem;
+            text-align: left;
+            font-weight: 700;
+            border-bottom: 2px solid var(--border-color);
+            color: var(--text-primary);
+        }
+
+        .wp-table td {
+            padding: 0.6rem 1rem;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-secondary);
+        }
+
+        .wp-table tr:hover td {
+            background: var(--bg-card);
+        }
+
+        /* Back link */
+        .wp-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            color: var(--accent-cyan);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
+
+        .wp-back:hover {
+            text-decoration: underline;
+        }
+
+        /* Mobile sidebar toggle */
+        .wp-sidebar-toggle {
+            display: none;
+            position: fixed;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            z-index: 200;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--gradient-main);
+            border: none;
+            color: #fff;
+            font-size: 1.2rem;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(8, 145, 178, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .wp-sidebar {
+                transform: translateX(-100%);
+                transition: transform 0.3s ease, background 0.5s ease;
+                width: 260px;
+            }
+
+            .wp-sidebar.open {
+                transform: translateX(0);
+            }
+
+            .wp-content {
+                margin-left: 0;
+                padding: 5rem 1.5rem 3rem;
+            }
+
+            .wp-sidebar-toggle {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .wp-header h1 {
+                font-size: 2rem;
+            }
+        }
+
+        @media print {
+
+            .wp-sidebar,
+            .top-bar,
+            .wp-sidebar-toggle {
+                display: none !important;
+            }
+
+            .wp-content {
+                margin-left: 0;
+                padding: 1rem;
+            }
+
+            body {
+                background: #fff;
+                color: #000;
+            }
+
+            .wp-section p,
+            .wp-section li,
+            .wp-table td {
+                color: #333;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar scrolled" id="topBar">
+        <a href="index.html" class="logo">AIDE <span>X</span></a>
+        <div class="top-bar-right">
+            <a href="index.html" class="btn btn-ghost" style="padding:0.5rem 1rem;font-size:0.8rem;">← Home</a>
+            <button class="theme-toggle" id="themeToggle" title="Toggle theme"
+                aria-label="Toggle dark/light mode">🌙</button>
+        </div>
+    </div>
+
+    <!-- TOC Sidebar -->
+    <aside class="wp-sidebar" id="wpSidebar">
+        <div class="wp-sidebar-title">Table of Contents</div>
+        <ul class="wp-toc" id="wpToc">
+            <li><a href="#real-problem" class="active">The Real Problem</a></li>
+            <li><a href="#aidex-way">The AIDE X Way</a></li>
+            <li><a href="#the-journey">The Journey</a></li>
+            <li><a href="#the-journey" class="sub">Phase 1–2: Describe</a></li>
+            <li><a href="#the-journey" class="sub">Phase 3–4: Decide</a></li>
+            <li><a href="#the-journey" class="sub">Phase 5–8: Deliver & Evolve</a></li>
+            <li><a href="#principles">The Principles</a></li>
+            <li><a href="#built-in">Built-In Features</a></li>
+            <li><a href="#agent-team">The Agent Team</a></li>
+            <li><a href="#not-for-small">Not for Small Apps</a></li>
+            <li><a href="#why-wins">Why AIDE X Wins</a></li>
+            <li><a href="#vision">The Vision</a></li>
+            <li><a href="#wp-evolution">The Evolution</a></li>
+            <li><a href="#cta">Call to Action</a></li>
+        </ul>
+    </aside>
+
+    <button class="wp-sidebar-toggle" id="sidebarToggle" aria-label="Toggle table of contents">☰</button>
+
+    <!-- Content -->
+    <main class="wp-content">
+        <a href="index.html" class="wp-back">← Back to AIDE X</a>
+
+        <div class="wp-header">
+            <h1>AIDE X — AI Driven Engineering <span class="gradient-text">X</span></h1>
+            <div class="wp-version">Whitepaper v1.0 · February 2026 · X = Force Multiplier</div>
+            <blockquote>AIDE X is a protocol for developing industrial-strength solutions — force multiplied by AI,
+                imagined and steered by humans.</blockquote>
+            <p style="margin-top:1rem;color:var(--text-secondary);font-size:0.95rem;">This is not just theory. AIDE X is
+                evolving into a living tool — an operating system for building real products. And as AI grows more
+                capable, the steering itself becomes increasingly automatic. Today, humans imagine and steer most
+                decisions. Tomorrow, AI handles more. Eventually, the human role is pure imagination and final approval
+                — and the force multiplier keeps growing.</p>
+        </div>
+
+        <!-- The Real Problem -->
+        <section class="wp-section" id="real-problem">
+            <h2>The Real Problem: Unpredictability</h2>
+            <h3>Two Broken Ways to Build Software</h3>
+            <h4>The Old Way — Build a Team First</h4>
+            <p>Want to build an industrial-strength system? Traditionally, you need 12-15 specialists: Product Manager,
+                Business Analyst, Designer, Architect, Engineers, Reviewers, Security Analyst, Tester, DevOps,
+                Performance Engineer, Technical Writer, Release Manager, and more.</p>
+            <p>Finding these people takes months. Training takes years. Salaries cost $50K+ per month. Coordination is a
+                nightmare. And even with all of that — projects still fail, ship late, or go over budget.</p>
+            <h4>The New Broken Way — "Vibe Coding"</h4>
+            <p>Go to an AI and say "build me a system." Sometimes you get magic. Sometimes you get garbage. It's a coin
+                flip.</p>
+            <p>But the problem goes deeper than bad code. Even AI-generated PRDs, architecture documents, and designs
+                are unpredictable. Nobody asked you if you wanted React or Vue. Nobody asked if you prefer PostgreSQL or
+                MongoDB. Nobody checked if the design matches your brand. The AI just... decided. For you. Without
+                asking.</p>
+            <p>The result? You spend hours fixing choices you never made. Or you throw the whole thing away and start
+                over.</p>
+            <p><strong>The core problem isn't AI capability. It's AI predictability.</strong></p>
+        </section>
+
+        <!-- The AIDE X Way -->
+        <section class="wp-section" id="aidex-way">
+            <h2>The AIDE X Way: Describe → Decide → Deliver</h2>
+            <p><strong>What if AI was predictable, controllable, and still fast?</strong></p>
+            <p>AIDE X doesn't make AI smarter — it makes AI <em>controllable</em>. It surfaces every important decision,
+                asks you at the right moment, and ensures nothing gets decided by accident.</p>
+            <p>You describe what you want. AI asks the right questions. You make the decisions that matter. AI delivers
+                — in minutes, not months.</p>
+        </section>
+
+        <!-- The Journey -->
+        <section class="wp-section" id="the-journey">
+            <h2>The Journey: From Idea to Running Product</h2>
+            <p>Here's exactly what happens when you bring an idea to AIDE X:</p>
+
+            <h3>Phase 1: Describe — From Idea to Clarity</h3>
+            <p>You describe your pain point in plain language. Not code. Not requirements. Just what you need. AI asks
+                targeted questions: Who is this for? What's the most important thing? What are the constraints?</p>
+            <p><strong>You decide:</strong> "Yes, that's what I mean" or "No, let me clarify."</p>
+            <p><strong>Output:</strong> Clear problem statement + project guardrails. <strong>Time:</strong> ~15
+                minutes.</p>
+
+            <h3>Phase 2: Describe — From Clarity to Requirements</h3>
+            <p>AI expands your problem into structured requirements. Functional requirements, non-functional
+                requirements, edge cases, and priorities.</p>
+            <p><strong>You decide:</strong> Approve scope, cut features, add features, set priorities.</p>
+            <p><strong>Output:</strong> Complete requirements document. <strong>Time:</strong> ~30 minutes.</p>
+
+            <h3>Phase 3: Decide — Architecture & Visualization</h3>
+            <p>AI designs the system with visual diagrams. You see the building blocks, data flows, and technology
+                choices — presented visually at different zoom levels.</p>
+            <p><strong>You decide:</strong> Approve the architecture, request changes, ask questions. Every technology
+                choice is explained with trade-offs.</p>
+            <p><strong>Output:</strong> Architecture document + system diagrams. <strong>Time:</strong> ~20 minutes.</p>
+
+            <h3>Phase 4: Decide — Look & Feel</h3>
+            <p>AI generates design options — not one take-it-or-leave-it, but alternatives with trade-offs explained.
+            </p>
+            <p><strong>You decide:</strong> Pick the design direction. This is ALWAYS a human choice. Design is taste,
+                not logic.</p>
+            <p><strong>Output:</strong> Approved design direction. <strong>Time:</strong> Your pace — this gate never
+                rushes.</p>
+
+            <h3>Phase 5: Deliver — Build</h3>
+            <p>AI breaks work into small, atomic tasks — each in a fresh context so quality never degrades. Tasks run in
+                parallel. Every task produces code, tests, and documentation.</p>
+            <p><strong>You decide:</strong> Review at the feature level, not line-by-line.</p>
+            <p><strong>Output:</strong> Working code + tests + documentation. <strong>Time:</strong> Minutes to hours.
+            </p>
+
+            <h3>Phase 6: Deliver — Verify & Secure</h3>
+            <p>Security scanning, code review, performance testing, compliance checks — all automated.</p>
+            <p><strong>You decide:</strong> Accept the risk assessment or request fixes.</p>
+            <p><strong>Output:</strong> Quality-verified, security-scanned codebase. <strong>Time:</strong> Minutes.</p>
+
+            <h3>Phase 7: Deliver — Deploy</h3>
+            <p>CI/CD pipeline setup, infrastructure configuration, monitoring and alerting — all automated.</p>
+            <p><strong>You decide:</strong> Final go/no-go for production.</p>
+            <p><strong>Output:</strong> Running application with monitoring. <strong>Time:</strong> Minutes.</p>
+
+            <h3>Phase 8: Evolve — The Real Force Multiplier</h3>
+            <p>Since AI built your system, AI <em>knows</em> your system. Every design decision, every architecture
+                choice, every line of code — it's all tracked and understood.</p>
+            <p>Bug fixes aren't fire drills. New features aren't new projects. They're conversations. "Add a payment
+                option." "Fix the login timeout." "Support Spanish." Each change flows through the same pipeline.</p>
+            <p><strong>Traditional dev shops charge you again for every change. AIDE X makes change nearly
+                    free.</strong></p>
+            <p><strong>This is Phase 8. And it never ends.</strong></p>
+        </section>
+
+        <!-- Principles -->
+        <section class="wp-section" id="principles">
+            <h2>The Principles</h2>
+            <h3>1. Describe It, Then Build It</h3>
+            <p>You describe what you want in plain language. AI asks the right questions. Nothing gets built until both
+                sides agree on what "done" looks like.</p>
+            <h3>2. Your Rules, Always</h3>
+            <p>Every project has guardrails — your preferred technologies, design standards, security requirements,
+                budget limits. AI operates within YOUR rules.</p>
+            <h3>3. See It Before You Build It</h3>
+            <p>Every architecture decision, every system design, every data flow is visual. Multiple zoom levels —
+                executives see the big picture, developers see the internals.</p>
+            <h3>4. Fresh Eyes on Every Task</h3>
+            <p>Each piece of work gets a clean start. No accumulated confusion. No degrading quality. The 50th task is
+                as sharp as the 1st.</p>
+            <h3>5. Pause Where It Matters</h3>
+            <p>AI moves fast where it can, stops where it should. Design choices, architecture approvals, go-live
+                decisions — always yours.</p>
+            <h3>6. AI Builds It, AI Knows It</h3>
+            <p>After deployment, your AI team remembers everything. Bug fixes, new features, refactors — they're
+                conversations, not projects.</p>
+        </section>
+
+        <!-- Built-In Features -->
+        <section class="wp-section" id="built-in">
+            <h2>What You Usually Pay Extra For</h2>
+
+            <h3>Cost Transparency — Plutus</h3>
+            <p>Most teams don't know what their app will cost to run until it's running. AIDE X tells you <em>before you
+                    build</em>.</p>
+            <table class="wp-table">
+                <tr>
+                    <th>Component</th>
+                    <th>Typical Cost</th>
+                    <th>AIDE X Recommendation</th>
+                </tr>
+                <tr>
+                    <td>Hosting</td>
+                    <td>$20-500/mo</td>
+                    <td>Vercel, Render (free tier)</td>
+                </tr>
+                <tr>
+                    <td>Database</td>
+                    <td>$0-200/mo</td>
+                    <td>Supabase, Firebase (free tier)</td>
+                </tr>
+                <tr>
+                    <td>CDN</td>
+                    <td>$0-50/mo</td>
+                    <td>Cloudflare (free tier)</td>
+                </tr>
+                <tr>
+                    <td>Auth</td>
+                    <td>$0-100/mo</td>
+                    <td>Auth0, Supabase (free tier)</td>
+                </tr>
+                <tr>
+                    <td>Storage</td>
+                    <td>$0-100/mo</td>
+                    <td>S3, Backblaze (free tier)</td>
+                </tr>
+                <tr>
+                    <td>Monitoring</td>
+                    <td>$0-100/mo</td>
+                    <td>Datadog (free tier)</td>
+                </tr>
+            </table>
+            <p><strong>Development cost:</strong> Traditional team ($75K+) vs. AIDE X (~$300-500 in AI compute).</p>
+
+            <h3>Security Analysis — Ares</h3>
+            <p>Most startups skip security until they get hacked. AIDE X bakes vulnerability scanning into every build.
+                OWASP Top 10, dependency audits, secrets detection — automatic, not optional.</p>
+
+            <h3>Change Management — Itihas</h3>
+            <p>Every change is versioned and traceable. Release notes are auto-generated. Rollback is one command. When
+                regulators ask "what changed in the last release?" — you have the answer instantly.</p>
+
+            <h3>Compliance & Verification — Themis</h3>
+            <p>GDPR, SOC 2, ISO 27001, PCI-DSS, HIPAA — verified automatically. Audit trails, compliance reports, and
+                remediation plans generated as part of the pipeline.</p>
+        </section>
+
+        <!-- Agent Team -->
+        <section class="wp-section" id="agent-team">
+            <h2>The Agent Team</h2>
+            <p>17 specialized AI agents, organized by when they activate.</p>
+
+            <h3>Tier 1 — Core (Always Active)</h3>
+            <table class="wp-table">
+                <tr>
+                    <th>Agent</th>
+                    <th>Codename</th>
+                    <th>What They Do</th>
+                    <th>You Decide</th>
+                </tr>
+                <tr>
+                    <td><strong>Coordinator</strong></td>
+                    <td>Foreman</td>
+                    <td>Orchestrates the pipeline</td>
+                    <td>Manage flow</td>
+                </tr>
+                <tr>
+                    <td><strong>Architect</strong></td>
+                    <td>Daedalus</td>
+                    <td>System design, trade-offs</td>
+                    <td>Approve architecture</td>
+                </tr>
+                <tr>
+                    <td><strong>Engineer</strong></td>
+                    <td>Hephaestus</td>
+                    <td>Write production code</td>
+                    <td>Review at feature level</td>
+                </tr>
+                <tr>
+                    <td><strong>Reviewer</strong></td>
+                    <td>Athena</td>
+                    <td>Quality, best practices</td>
+                    <td>Approve changes</td>
+                </tr>
+            </table>
+
+            <h3>Tier 2 — Standard (Per Project)</h3>
+            <table class="wp-table">
+                <tr>
+                    <th>Agent</th>
+                    <th>Codename</th>
+                    <th>What They Do</th>
+                    <th>You Decide</th>
+                </tr>
+                <tr>
+                    <td><strong>Product Manager</strong></td>
+                    <td>Apollo</td>
+                    <td>Vision, scope, priorities</td>
+                    <td>Approve direction</td>
+                </tr>
+                <tr>
+                    <td><strong>Tester</strong></td>
+                    <td>Cassandra</td>
+                    <td>Tests, validation</td>
+                    <td>Approve coverage</td>
+                </tr>
+                <tr>
+                    <td><strong>Docs</strong></td>
+                    <td>Calliope</td>
+                    <td>Documentation</td>
+                    <td>Review accuracy</td>
+                </tr>
+                <tr>
+                    <td><strong>Security</strong></td>
+                    <td>Ares</td>
+                    <td>Vulnerability scanning</td>
+                    <td>Review findings</td>
+                </tr>
+            </table>
+
+            <h3>Tier 3 — Enterprise Scale</h3>
+            <table class="wp-table">
+                <tr>
+                    <th>Agent</th>
+                    <th>Codename</th>
+                    <th>What They Do</th>
+                    <th>You Decide</th>
+                </tr>
+                <tr>
+                    <td><strong>DevOps</strong></td>
+                    <td>Karma</td>
+                    <td>CI/CD, infrastructure</td>
+                    <td>Validate pipeline</td>
+                </tr>
+                <tr>
+                    <td><strong>VaPT</strong></td>
+                    <td>Themis</td>
+                    <td>Verification, compliance</td>
+                    <td>Approve certification</td>
+                </tr>
+                <tr>
+                    <td><strong>Performance</strong></td>
+                    <td>Tosh</td>
+                    <td>Load testing</td>
+                    <td>Validate scalability</td>
+                </tr>
+                <tr>
+                    <td><strong>Cost Estimator</strong></td>
+                    <td>Plutus</td>
+                    <td>Dev + Ops costs, ROI</td>
+                    <td>Validate estimates</td>
+                </tr>
+            </table>
+
+            <h3>Tier 4 — On Demand</h3>
+            <table class="wp-table">
+                <tr>
+                    <th>Agent</th>
+                    <th>Codename</th>
+                    <th>What They Do</th>
+                    <th>You Decide</th>
+                </tr>
+                <tr>
+                    <td><strong>Researcher</strong></td>
+                    <td>Hermes</td>
+                    <td>Market analysis, tech research</td>
+                    <td>Review findings</td>
+                </tr>
+                <tr>
+                    <td><strong>Business Analyst</strong></td>
+                    <td>Oracle</td>
+                    <td>Requirements, feasibility</td>
+                    <td>Validate scope</td>
+                </tr>
+                <tr>
+                    <td><strong>Designer</strong></td>
+                    <td>Aphrodite</td>
+                    <td>Mockups, design options</td>
+                    <td>Make design choices</td>
+                </tr>
+                <tr>
+                    <td><strong>Marketing</strong></td>
+                    <td>Kriti</td>
+                    <td>Positioning, launch</td>
+                    <td>Approve messaging</td>
+                </tr>
+                <tr>
+                    <td><strong>Chronicler</strong></td>
+                    <td>Itihas</td>
+                    <td>Release notes, versioning</td>
+                    <td>Approve releases</td>
+                </tr>
+            </table>
+            <p>You start with Tier 1. Scale up as your project demands. Not all projects need all 17.</p>
+        </section>
+
+        <!-- Not for Small Apps -->
+        <section class="wp-section" id="not-for-small">
+            <h2>AIDE X is Not for Small Apps</h2>
+            <table class="wp-table">
+                <tr>
+                    <th>Vibe Coding</th>
+                    <th>AIDE X</th>
+                </tr>
+                <tr>
+                    <td>Todo list</td>
+                    <td>Payment processing</td>
+                </tr>
+                <tr>
+                    <td>Blog</td>
+                    <td>Agentic marketing engine</td>
+                </tr>
+                <tr>
+                    <td>Weather widget</td>
+                    <td>DeFi protocol</td>
+                </tr>
+                <tr>
+                    <td>Calculator</td>
+                    <td>AI agent orchestration</td>
+                </tr>
+                <tr>
+                    <td>Contact form</td>
+                    <td>Enterprise CRM</td>
+                </tr>
+            </table>
+            <p>Systems with millions of records, complex integrations, compliance requirements, high traffic, and real
+                consequences when things break.</p>
+        </section>
+
+        <!-- Why Wins -->
+        <section class="wp-section" id="why-wins">
+            <h2>Why AIDE X Wins</h2>
+            <table class="wp-table">
+                <tr>
+                    <th></th>
+                    <th>Traditional Team</th>
+                    <th>Vibe Coding</th>
+                    <th>AIDE X</th>
+                </tr>
+                <tr>
+                    <td><strong>Predictability</strong></td>
+                    <td>Depends on people</td>
+                    <td>Coin flip</td>
+                    <td>Structured, controlled</td>
+                </tr>
+                <tr>
+                    <td><strong>Speed</strong></td>
+                    <td>3-6 months</td>
+                    <td>Fast but fragile</td>
+                    <td>Days, not months</td>
+                </tr>
+                <tr>
+                    <td><strong>Cost</strong></td>
+                    <td>$75K+</td>
+                    <td>Low but hidden rework</td>
+                    <td>~$400 to ship</td>
+                </tr>
+                <tr>
+                    <td><strong>Operations</strong></td>
+                    <td>$500+/mo</td>
+                    <td>Unknown until live</td>
+                    <td>$0/mo possible</td>
+                </tr>
+                <tr>
+                    <td><strong>Security</strong></td>
+                    <td>Separate engagement</td>
+                    <td>Usually skipped</td>
+                    <td>Built-in, every build</td>
+                </tr>
+                <tr>
+                    <td><strong>Compliance</strong></td>
+                    <td>Expensive audit</td>
+                    <td>None</td>
+                    <td>Automated verification</td>
+                </tr>
+                <tr>
+                    <td><strong>Changes</strong></td>
+                    <td>Expensive</td>
+                    <td>Start over</td>
+                    <td>Conversation</td>
+                </tr>
+                <tr>
+                    <td><strong>Coding Required</strong></td>
+                    <td>Yes</td>
+                    <td>Some</td>
+                    <td>No — just describe</td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- Vision -->
+        <section class="wp-section" id="vision">
+            <h2>The Vision</h2>
+            <p><strong>The problem isn't AI capability. It's AI predictability.</strong></p>
+            <ul>
+                <li><strong>Predictable results</strong> — Structured, controlled, verified.</li>
+                <li><strong>Human control</strong> — AI proposes, you decide.</li>
+                <li><strong>Cost transparency</strong> — Know costs before you build.</li>
+                <li><strong>Security from day one</strong> — Not a bolt-on.</li>
+                <li><strong>Change as a conversation</strong> — Phase 8 never ends.</li>
+                <li><strong>See it before you build it</strong> — Visual architecture at every level.</li>
+            </ul>
+            <p><strong>Describe → Decide → Deliver.</strong></p>
+        </section>
+
+        <!-- Evolution -->
+        <section class="wp-section" id="wp-evolution">
+            <h2>The Evolution: Where This Is Going</h2>
+            <p><strong>Today:</strong> Humans imagine the product and steer every major decision. AI executes.</p>
+            <p><strong>Tomorrow:</strong> AI starts steering routine decisions autonomously. Humans steer only what's
+                unique or high-stakes.</p>
+            <p><strong>The Future:</strong> Humans imagine. AI steers and delivers. The force multiplier approaches
+                infinity.</p>
+            <p>The protocol doesn't change. The "X" just keeps getting bigger.</p>
+            <blockquote
+                style="margin-top:1.5rem;padding:1.25rem 1.5rem;background:rgba(8,145,178,0.08);border-left:3px solid var(--accent-cyan);border-radius:0 8px 8px 0;color:var(--text-secondary);font-style:italic;">
+                <strong>Force multiplied by AI. Imagined and steered by humans. Until AI learns to steer too.</strong>
+            </blockquote>
+        </section>
+
+        <!-- CTA -->
+        <section class="wp-section" id="cta">
+            <h2>Call to Action</h2>
+            <p><strong>Join us.</strong></p>
+            <div style="display:flex;gap:1rem;flex-wrap:wrap;margin:1.5rem 0;">
+                <a href="https://github.com/enkay-k/aidex" class="btn btn-primary">Get Started on GitHub</a>
+                <a href="index.html" class="btn btn-secondary">← Back to Home</a>
+                <a href="dashboard.html" class="btn btn-ghost">Dashboard</a>
+            </div>
+            <p style="color:var(--text-muted);font-size:0.85rem;font-style:italic;margin-top:2rem;">Whitepaper v1.0 —
+                Describe → Decide → Deliver<br>February 2026 — Work in Progress — Contributions Invited</p>
+        </section>
+    </main>
+
+    <script>
+        (function () {
+            'use strict';
+
+            // Theme
+            const themeToggle = document.getElementById('themeToggle');
+            const html = document.documentElement;
+            function setTheme(t) {
+                html.setAttribute('data-theme', t);
+                localStorage.setItem('aidex-theme', t);
+                themeToggle.textContent = t === 'dark' ? '🌙' : '☀️';
+            }
+            setTheme(localStorage.getItem('aidex-theme') || 'dark');
+            themeToggle.addEventListener('click', () => {
+                setTheme(html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+            });
+
+            // Sidebar toggle (mobile)
+            const sidebar = document.getElementById('wpSidebar');
+            const sidebarToggle = document.getElementById('sidebarToggle');
+            sidebarToggle.addEventListener('click', () => sidebar.classList.toggle('open'));
+
+            // Close sidebar on link click (mobile)
+            sidebar.querySelectorAll('a').forEach(a => {
+                a.addEventListener('click', () => sidebar.classList.remove('open'));
+            });
+
+            // Active TOC tracking
+            const tocLinks = document.querySelectorAll('.wp-toc a');
+            const wpSections = document.querySelectorAll('.wp-section');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.id;
+                        tocLinks.forEach(l => {
+                            l.classList.toggle('active', l.getAttribute('href') === '#' + id);
+                        });
+                    }
+                });
+            }, { rootMargin: '-20% 0px -60% 0px' });
+            wpSections.forEach(s => observer.observe(s));
+        })();
+    </script>
+</body>
+
+</html>
