@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Docsmith Agent — AIDE X Reference Implementation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .agent-header {
+            padding: 6rem 0 4rem;
+            text-align: center;
+            background: radial-gradient(circle at center, rgba(168, 85, 247, 0.15) 0%, transparent 70%);
+        }
+        .agent-icon-large {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+            filter: drop-shadow(0 0 20px rgba(168, 85, 247, 0.4));
+        }
+        .agent-title {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #fff 0%, #a855f7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .agent-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        .agent-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        .content-block {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 1.5rem;
+        }
+        .capability-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+        .cap-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 1.5rem;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+        .cap-card:hover {
+            border-color: var(--accent-purple);
+            transform: translateY(-2px);
+        }
+        .cap-icon {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .cap-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+        .cap-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+        code {
+            background: rgba(255,255,255,0.1);
+            padding: 0.2em 0.4em;
+            border-radius: 4px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85em;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar" id="topBar">
+        <a href="index.html" class="logo-block">
+            <span class="logo">AIDE <span>X</span></span>
+        </a>
+        <div class="top-bar-right">
+            <div class="nav-links-inline">
+                <a href="index.html" class="nav-link-clean">Home</a>
+                <span class="nav-divider">·</span>
+                <a href="whitepaper.html" class="nav-link-clean">Whitepaper</a>
+                <span class="nav-divider">·</span>
+                <a href="https://github.com/enkay-k/aidex/releases" class="release-tag">20260219.003</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="agent-header">
+        <div class="agent-icon-large">📖</div>
+        <h1 class="agent-title">Docsmith</h1>
+        <p class="agent-subtitle">The first primitive AIDE X agent. Reference implementation for the "Calliope" (Docs) role.</p>
+        <div class="agent-meta">
+            <span>Version: 0.1.0</span>
+            <span>Type: Toolkit + Skill</span>
+            <span>Status: <span style="color:#22c55e">● Active</span></span>
+        </div>
+        <div style="margin-top:2rem;">
+            <a href="https://github.com/enkay-k/aidex/tree/main/agents/docsmith" class="btn btn-primary">View Source</a>
+        </div>
+    </div>
+
+    <div class="content-block">
+        <h2>Mission</h2>
+        <p>Docsmith ensures documentation is never an afterthought. It treats documentation as code, generates static sites for humans, and keeps markdown as the source of truth for AI.</p>
+
+        <h2>Capabilities</h2>
+        <div class="capability-grid">
+            <div class="cap-card">
+                <div class="cap-icon">🏗️</div>
+                <div class="cap-title">Site Generator</div>
+                <div class="cap-desc">Builds a full static HTML documentation site from Markdown and Mermaid files using <code>build_docs_site.py</code>.</div>
+            </div>
+            <div class="cap-card">
+                <div class="cap-icon">🧩</div>
+                <div class="cap-title">Auto-Scaffold</div>
+                <div class="cap-desc">Generates module documentation templates from source code using <code>scaffold_module_doc.py</code>.</div>
+            </div>
+            <div class="cap-card">
+                <div class="cap-icon">🧠</div>
+                <div class="cap-title">Agent Skill</div>
+                <div class="cap-desc">Includes <code>docs-md-publisher</code> skill definition for AI agents to autonomously manage docs.</div>
+            </div>
+        </div>
+
+        <h2>How it Works</h2>
+        <p>Docsmith operates on a simple philosophy:</p>
+        <ol>
+            <li><strong>Markdown First:</strong> <code>.md</code> files are the source of truth (AI-readable).</li>
+            <li><strong>HTML for Humans:</strong> A generator script compiles <code>docs/site/</code> for reading.</li>
+            <li><strong>Diagrams as Code:</strong> Mermaid <code>.mmd</code> files are first-class citizens.</li>
+        </ol>
+
+        <h3>Usage</h3>
+        <pre style="background:var(--bg-card);padding:1rem;border-radius:8px;overflow-x:auto;"><code># Generate the site
+python3 agents/docsmith/utils/docs/build_docs_site.py --clean
+
+# Scaffold a new doc
+python3 agents/docsmith/utils/docs/scaffold_module_doc.py --source src/main.py</code></pre>
+
+        <h2>Roadmap</h2>
+        <ul>
+            <li><strong>v0.1 (Now):</strong> Primitive scripts and templates.</li>
+            <li><strong>v0.2:</strong> GitHub Actions integration for auto-publishing.</li>
+            <li><strong>v0.3:</strong> Semantic search integration.</li>
+        </ul>
+    </div>
+
+</body>
+</html>
