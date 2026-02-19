@@ -60,6 +60,7 @@
 html {
     scroll-behavior: smooth;
     font-size: 16px;
+    scroll-snap-type: y mandatory;
 }
 
 body {
@@ -431,6 +432,8 @@ body {
     flex-direction: column;
     justify-content: center;
     position: relative;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
 }
 
 .section-inner {
@@ -1826,10 +1829,9 @@ body {
     margin: 0 auto;
 }
 
-/* Uniform section padding for slide-like feel */
+/* Uniform section padding */
 .section {
     padding: 6rem 2rem 6rem 5rem;
-    min-height: auto;
 }
 
 /* --- Principles --- */
