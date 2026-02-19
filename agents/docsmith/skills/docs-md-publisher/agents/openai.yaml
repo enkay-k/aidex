@@ -1,0 +1,4 @@
+interface:
+  display_name: "Docs MD Publisher"
+  short_description: "Build Markdown-first docs and HTML output"
+  default_prompt: "Use $docs-md-publisher to update docs, module pages, and regenerate docs/site from Markdown."

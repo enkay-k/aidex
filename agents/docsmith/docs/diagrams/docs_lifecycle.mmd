@@ -1,0 +1,8 @@
+%% Documentation Lifecycle
+flowchart TD
+  CHANGE["Requirement or Code Change"] --> MMD["Update .mmd Diagram Source First"]
+  MMD --> MD["Update Markdown Docs"]
+  MD --> MODULE["Update docs/modules for touched files"]
+  MODULE --> BUILD["Generate docs/site HTML"]
+  BUILD --> REVIEW["Review links, diagrams, and commands"]
+  REVIEW --> DONE["Ready to commit"]
