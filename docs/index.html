@@ -24,16 +24,27 @@
         <div class="top-bar-right">
             <div class="nav-links-inline">
                 <div class="dropdown">
-                    <button class="dropbtn nav-link-pulse">Download Agents ▾</button>
+                    <button class="dropbtn nav-link-pulse">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right: 4px;">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7 10 12 15 17 10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                        Download Agents ▾
+                    </button>
                     <div class="dropdown-content">
-                        <a href="docsmith.zip" download>Docsmith (Docs)</a>
-                        <a href="smriti.zip" download>Smriti (Memory)</a>
+                        <a href="docsmith.zip" download>
+                            <span style="display:inline-block; margin-right:8px;">👨‍💻</span> Docsmith (Docs)
+                        </a>
+                        <a href="smriti.zip" download>
+                            <span style="display:inline-block; margin-right:8px;">👵</span> Smriti (Memory)
+                        </a>
                     </div>
                 </div>
                 <span class="nav-divider">·</span>
                 <a href="whitepaper.html" class="nav-link-clean">Whitepaper</a>
                 <span class="nav-divider">·</span>
-                <a href="https://github.com/enkay-k/aidex/releases" class="release-tag">20260222.0001</a>
+                <a href="https://github.com/enkay-k/aidex/releases" class="release-tag">20260222.0002</a>
             </div>
             <button class="theme-toggle" id="themeToggle" title="Toggle theme" aria-label="Toggle dark/light mode">
                 <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -692,7 +703,7 @@
         <section class="section" id="agents">
             <div class="section-inner agents-inner">
                 <span class="section-label label-purple reveal">06 — Your AI Team</span>
-                <h2 class="section-title reveal stagger-1">17 Agents. <span class="gradient-text">One Team.</span></h2>
+                <h2 class="section-title reveal stagger-1">18 Agents. <span class="gradient-text">One Team.</span></h2>
                 <p class="section-subtitle reveal stagger-2">Start with the core 4. Scale up as your project demands.
                 </p>
 
@@ -801,19 +812,22 @@
                             <div class="agent-codename">Aphrodite</div>
                         </div>
                         <div class="agent-card" data-codename="Kriti">
+                            <div class="agent-icon">📢</div>
                             <div class="agent-name">Marketing</div>
-                            <div class="agent-codename">Kriti</div>
                             <div class="agent-desc">Positioning, launch</div>
+                            <div class="agent-codename">Kriti</div>
                         </div>
                         <div class="agent-card" data-codename="Itihas">
+                            <div class="agent-icon">📦</div>
                             <div class="agent-name">Chronicler</div>
-                            <div class="agent-codename">Itihas</div>
                             <div class="agent-desc">Release notes, changelog</div>
+                            <div class="agent-codename">Itihas</div>
                         </div>
                         <div class="agent-card" data-codename="Smriti">
+                            <div class="agent-icon">🧠</div>
                             <div class="agent-name">Memory</div>
-                            <div class="agent-codename">Smriti</div>
                             <div class="agent-desc">Versioning, History</div>
+                            <div class="agent-codename">Smriti</div>
                         </div>
                     </div>
                 </div>
