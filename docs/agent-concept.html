@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIDE X Agent — Concept</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .agent-hero { padding: 8rem 2rem 4rem; text-align: center; }
+        .agent-icon-lg { font-size: 4rem; margin-bottom: 1rem; display: inline-block; }
+        .agent-role { color: var(--text-muted); font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 0.5rem; }
+        .agent-name { font-size: 3rem; font-weight: 800; margin-bottom: 1rem; }
+        .agent-tagline { font-size: 1.25rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto 2rem; }
+        .agent-content { max-width: 800px; margin: 0 auto; padding: 0 2rem 4rem; }
+        .agent-btn { display: inline-block; background: var(--bg-subtle); color: var(--text-primary); padding: 0.8rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 500; border: 1px solid var(--border-color); cursor: default; }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <a href="index.html" class="logo-block">
+            <span class="logo">AIDE <span>X</span></span>
+        </a>
+    </div>
+
+    <section class="agent-hero">
+        <span class="agent-icon-lg" id="icon">🤖</span>
+        <div class="agent-role">Concept Agent</div>
+        <h1 class="agent-name" id="name">Agent Concept</h1>
+        <p class="agent-tagline">"This agent is currently in the conceptual design phase."</p>
+        <span class="agent-btn">Coming Soon</span>
+    </section>
+
+    <section class="agent-content">
+        <p>This specialized agent role is defined within the AIDE X protocol but has not yet been fully implemented or released as a standalone package.</p>
+        <p>Stay tuned for future updates as we expand the village.</p>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <p>© 2026 AIDE X. <a href="index.html">Back to Home</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple script to populate based on query params if needed, 
+        // but for static site we'll just let them land here generic or make copies.
+        // Actually, let's just use JS to populate based on URL hash for simplicity?
+        // e.g. agent-concept.html#Apollo
+        
+        const agentMap = {
+            'Apollo': { icon: '📋', role: 'Product Manager', desc: 'Defines vision, scope, and priorities.' },
+            'Hermes': { icon: '🔍', role: 'Researcher', desc: 'Conducts market and technical research.' },
+            'Oracle': { icon: '🔮', role: 'Business Analyst', desc: 'Translates business needs into requirements.' },
+            'Kriti': { icon: '📢', role: 'Marketing', desc: 'Crafts positioning and launch strategy.' },
+            'Daedalus': { icon: '📐', role: 'Architect', desc: 'Designs system architecture and trade-offs.' },
+            'Aphrodite': { icon: '🎨', role: 'Designer', desc: 'Creates mockups and visual identity.' },
+            'Plutus': { icon: '💰', role: 'Cost Estimator', desc: 'Estimates development and operational costs.' },
+            'Foreman': { icon: '👷', role: 'Coordinator', desc: 'Orchestrates the entire development pipeline.' },
+            'Hephaestus': { icon: '🔨', role: 'Engineer', desc: 'Writes production-grade code.' },
+            'Athena': { icon: '🔍', role: 'Reviewer', desc: 'Ensures quality and best practices.' },
+            'Ares': { icon: '🛡️', role: 'Security', desc: 'Scans for vulnerabilities (OWASP).' },
+            'Themis': { icon: '⚖️', role: 'Compliance', desc: 'Verifies regulatory compliance.' },
+            'Cassandra': { icon: '✅', role: 'Tester', desc: 'Validates functionality and coverage.' },
+            'Tosh': { icon: '⚡', role: 'Performance', desc: 'Tests load and scalability.' },
+            'Karma': { icon: '⚙️', role: 'DevOps', desc: 'Manages CI/CD and infrastructure.' },
+            'Itihas': { icon: '📦', role: 'Chronicler', desc: 'Generates release notes and changelogs.' }
+        };
+
+        const hash = window.location.hash.substring(1); // e.g. "Apollo"
+        if (hash && agentMap[hash]) {
+            document.getElementById('name').textContent = hash; // Still using codename for internal ref, but display role? No, user said "Only name docsmith/smriti" on index, but here detailed page can use codename as title if desired, or role. Let's use Role as Title to match index.
+            // Actually user said "I dont want name till I give them". So for index, remove names. For here... let's stick to Role as main title.
+            
+            // Re-reading user request: "I dont want name till I give them so only docssmoth and smriti."
+            // So on the index page: "Product Manager" (no Apollo).
+            // On this detail page: "Product Manager" (no Apollo).
+            
+            document.getElementById('name').textContent = agentMap[hash].role;
+            document.getElementById('icon').textContent = agentMap[hash].icon;
+            document.querySelector('.agent-tagline').textContent = agentMap[hash].desc;
+            document.querySelector('.agent-role').textContent = "Concept Agent";
+        }
+    </script>
+</body>
+</html>
