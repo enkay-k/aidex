@@ -210,7 +210,7 @@ GDPR, SOC 2, ISO 27001, PCI-DSS, HIPAA — verified automatically. Audit trails,
 | **Product Manager** | Apollo | Vision, scope, priorities | Approve direction |
 | **Tester** | Cassandra | Tests, validation | Approve coverage |
 | **Docs** | Docsmith (Calliope) | Current State Documentation | Review accuracy |
-| **Memory** | Smriti | The Journey, Chronicler, Versioning | Approve history |
+| **Memory** | Smriti (Chronicler) | The Journey, Versioning, History | Approve history |
 | **Security** | Ares | Vulnerability scanning, OWASP | Review findings |
 
 ### Tier 3 — Enterprise Scale
