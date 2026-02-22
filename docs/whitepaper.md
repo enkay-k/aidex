@@ -209,7 +209,8 @@ GDPR, SOC 2, ISO 27001, PCI-DSS, HIPAA — verified automatically. Audit trails,
 |-------|----------|--------------|------------|
 | **Product Manager** | Apollo | Vision, scope, priorities | Approve direction |
 | **Tester** | Cassandra | Tests, validation | Approve coverage |
-| **Docs** | Calliope | Documentation | Review accuracy |
+| **Docs** | Docsmith (Calliope) | Current State Documentation | Review accuracy |
+| **Memory** | Smriti | The Journey, Chronicler, Versioning | Approve history |
 | **Security** | Ares | Vulnerability scanning, OWASP | Review findings |
 
 ### Tier 3 — Enterprise Scale
@@ -229,7 +230,6 @@ GDPR, SOC 2, ISO 27001, PCI-DSS, HIPAA — verified automatically. Audit trails,
 | **Business Analyst** | Oracle | Requirements, feasibility | Validate scope |
 | **Designer** | Aphrodite | Mockups, design options | **Make final design choices** |
 | **Marketing** | Kriti | Positioning, launch strategy | Approve messaging |
-| **Chronicler** | Itihas | Release notes, versioning, change tracking | Approve releases |
 
 You start with Tier 1. Scale up as your project demands. Not all projects need all 17.
 
