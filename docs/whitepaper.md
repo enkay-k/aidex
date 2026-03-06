@@ -1,5 +1,6 @@
 # AIDE X - AI Driven Engineering X
 ## Whitepaper v1.0
+### Updated March 5, 2026
 
 **X = Force Multiplier**
 
@@ -155,63 +156,53 @@ After deployment, your AI team remembers everything. Bug fixes, new features, re
 
 ## What You Usually Pay Extra For (Built-In With AIDE X)
 
-### Cost Transparency — Plutus
+### Architecture + WBS Clarity — Ribhu
 
-Most teams don't know what their app will cost to run until it's running. AIDE X tells you *before you build* — with free-tier recommendations that can keep your monthly operations at $0.
+Most teams pay separately for architecture consulting and execution planning. Ribhu converts PRD/UX/design inputs into explicit architecture, trade-offs, and dependency-mapped WBS that is tracker-ready.
 
-| Component | Typical Cost | AIDE X Recommendation |
-|-----------|--------------|----------------------|
-| Hosting | $20-500/mo | Vercel, Render (free tier) |
-| Database | $0-200/mo | Supabase, Firebase (free tier) |
-| CDN | $0-50/mo | Cloudflare (free tier) |
-| Auth | $0-100/mo | Auth0, Supabase (free tier) |
-| Storage | $0-100/mo | S3, Backblaze (free tier) |
-| Monitoring | $0-100/mo | Datadog (free tier) |
+### Layered Product Specs — Kritika
 
-**Development cost:** Traditional team ($75K+) vs. AIDE X (~$300-500 in AI compute).
+Most teams lose intent between prototype and engineering handoff. Kritika transforms prototype + brief into staged, versioned product specs with explicit approval gates and anti-hallucination controls.
 
-This isn't an afterthought — it's built into the pipeline. Plutus estimates before you commit.
+### Certified Build Execution — Shilpi
 
-### Security Analysis — Ares
+Most teams struggle to prove what was implemented and validated. Shilpi executes scoped ENG tasks with acceptance checks, test evidence, and completion certificates.
 
-Most startups skip security until they get hacked. AIDE X bakes vulnerability scanning into every build. OWASP Top 10, dependency audits, secrets detection, compliance checks — automatic, not optional.
+### QA + Defect Evidence — Parikshak
 
-Not a bolt-on. A standard.
+Most teams run tests but miss verification depth. Parikshak runs baseline suites, generates tagged QA cases, and produces evidence-backed bug and quality findings with issue traceability.
 
-### Change Management — Itihas
+### Release Chronicle & Traceability — Smriti
 
-Every change is versioned and traceable. Release notes are auto-generated. Rollback is one command. You know exactly what changed, when, and why — without digging through git logs.
+Most teams update release notes late or inconsistently. Smriti reconciles code and docs, generates deterministic release notes, and maintains project chronology with traceability.
 
-When regulators ask "what changed in the last release?" — you have the answer instantly.
+### Current-State Documentation — Docsmith
 
-### Compliance & Verification — Themis
-
-GDPR, SOC 2, ISO 27001, PCI-DSS, HIPAA — verified automatically. Audit trails, compliance reports, and remediation plans generated as part of the pipeline. Not a separate engagement. Not a separate vendor.
+Most docs drift after implementation. Docsmith keeps README/API/ADR artifacts synchronized to actual behavior and maintains reproducible docs publishing workflows.
 
 ---
 
 ## The Agent Team
 
-17 specialized AI agents, organized by when they activate.
+17 specialized AI agents, organized by activation tier.
 
 ### Tier 1 — Core (Always Active)
 
 | Agent | Codename | What They Do | You Decide |
 |-------|----------|--------------|------------|
 | **Coordinator** | Foreman | Orchestrates the pipeline | Manage flow |
-| **Architect** | Daedalus | System design, trade-offs, diagrams | Approve architecture |
-| **Engineer** | Hephaestus | Write production code | Review at feature level |
-| **Reviewer** | Athena | Quality, best practices, code review | Approve changes |
+| **Architect** | Ribhu | Tech architecture, trade-offs, dependency-mapped WBS | Approve architecture and plan |
+| **Builder** | Shilpi | Scoped implementation with tests, evidence, certificates | Approve feature-level changes |
+| **Reviewer** | Athena | Quality, best practices, code review | Approve quality gates |
 
 ### Tier 2 — Standard (Activated Per Project)
 
 | Agent | Codename | What They Do | You Decide |
 |-------|----------|--------------|------------|
 | **Product Manager** | Apollo | Vision, scope, priorities | Approve direction |
-| **Tester** | Cassandra | Tests, validation | Approve coverage |
-| **Docs** | Docsmith (Calliope) | Current State Documentation | Review accuracy |
-| **Memory** | Smriti (Chronicler) | The Journey, Versioning, History | Approve history |
-| **Security** | Ares | Vulnerability scanning, OWASP | Review findings |
+| **Testing & QA** | Parikshak | Functional/non-functional testing, defect evidence | Approve coverage and findings |
+| **Docs** | Docsmith | Current-state docs, ADR alignment, publishing | Review documentation accuracy |
+| **Security** | Ares | Vulnerability scanning, OWASP, secrets checks | Review findings |
 
 ### Tier 3 — Enterprise Scale
 
@@ -228,10 +219,24 @@ GDPR, SOC 2, ISO 27001, PCI-DSS, HIPAA — verified automatically. Audit trails,
 |-------|----------|--------------|------------|
 | **Researcher** | Hermes | Market analysis, tech research | Review findings |
 | **Business Analyst** | Oracle | Requirements, feasibility | Validate scope |
-| **Designer** | Aphrodite | Mockups, design options | **Make final design choices** |
+| **Lead Creative Architect** | Kritika | Layered UX/product specs from prototype intent | Approve design direction |
 | **Marketing** | Kriti | Positioning, launch strategy | Approve messaging |
+| **Chronicler** | Smriti | Release notes, chronology, change traceability | Approve release narrative |
 
-You start with Tier 1. Scale up as your project demands. Not all projects need all 17.
+Live reusable packages currently available for six agents: Ribhu, Kritika, Shilpi, Parikshak, Smriti, and Docsmith.
+
+Download all live agent packages: [Download all live agents (clean bundle)](https://github.com/enkay-k/aidex/raw/main/agents%20of%20aidex/clean-packages/aidex-live-agents-clean.zip)
+
+Download per agent package:
+
+- [Architect — Ribhu](https://github.com/enkay-k/aidex/raw/main/agents%20of%20aidex/clean-packages/ribhu-clean.zip)
+- [Lead Creative Architect — Kritika](https://github.com/enkay-k/aidex/raw/main/agents%20of%20aidex/clean-packages/kritika-clean.zip)
+- [Builder — Shilpi](https://github.com/enkay-k/aidex/raw/main/agents%20of%20aidex/clean-packages/shilpi-clean.zip)
+- [Testing & QA — Parikshak](https://github.com/enkay-k/aidex/raw/main/agents%20of%20aidex/clean-packages/parikshak-clean.zip)
+- [Chronicler — Smriti](https://github.com/enkay-k/aidex/raw/main/agents%20of%20aidex/clean-packages/smriti-clean.zip)
+- [Docs — Docsmith](https://github.com/enkay-k/aidex/raw/main/agents%20of%20aidex/clean-packages/docsmith-clean.zip)
+
+Model behavior is contract-first: each live agent loads `agent_contract.v0.02.yaml` and follows strict scope boundaries before execution.
 
 ---
 
@@ -239,13 +244,13 @@ You start with Tier 1. Scale up as your project demands. Not all projects need a
 
 Every AIDE X project ships with these — no add-ons, no extras, no additional cost:
 
-- **User Management** — Authentication, role-based access, audit logs
-- **Logging** — Structured, searchable, centralized
-- **Alerting** — Proactive notifications, threshold monitoring
-- **Security Scanning** — Vulnerability detection on every build
-- **Cost Estimation** — Before you commit, know what it costs
-- **Change Tracking** — Every change versioned and traceable
-- **Visual Architecture** — Auto-generated diagrams at every level
+- **Contract-First Agents** — Every role runs with explicit `v0.02` contract boundaries
+- **Architecture + WBS Mapping** — Explicit dependency-aware execution plans
+- **Layered Specification Workflow** — Progressive disclosure with approval gates
+- **Execution Evidence** — Tests, command logs, and completion certificates
+- **QA Traceability** — Tagged generated tests + issue-linked findings
+- **Release Chronology** — Deterministic release notes and change timeline
+- **Current-State Docs** — README/API/ADR sync and reproducible docs build
 
 **These are standards, not features. They're always on.**
 
@@ -291,8 +296,8 @@ AIDE X gives you:
 
 - **Predictable results** — Not "surprise me," not "vibe coding." Structured, controlled, verified.
 - **Human control** — AI proposes, you decide. Every important choice is yours.
-- **Cost transparency** — Know what it costs before you build, with free-tier paths.
-- **Security from day one** — Not a bolt-on. A standard.
+- **Contracted execution** — Every agent has scope boundaries and explicit handoffs.
+- **Evidence by default** — Decisions, tests, and releases are traceable.
 - **Change as a conversation** — After AI builds it, AI maintains it. Phase 8 never ends.
 - **See it before you build it** — Visual architecture at every zoom level.
 
@@ -331,4 +336,4 @@ The protocol doesn't change. The "X" just keeps getting bigger.
 ---
 
 *Whitepaper v1.0 — Describe → Decide → Deliver*
-*February 2026 — Work in Progress — Contributions Invited*
+*Updated March 5, 2026 — Work in Progress — Contributions Invited*

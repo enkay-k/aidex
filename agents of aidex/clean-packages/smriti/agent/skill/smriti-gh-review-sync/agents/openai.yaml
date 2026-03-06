@@ -1,0 +1,3 @@
+display_name: Smriti GH Review Sync
+short_description: Marks completed ENG issues ready for review with evidence comments
+default_prompt: Sync completed ENG task certificate to GitHub issue and project status.

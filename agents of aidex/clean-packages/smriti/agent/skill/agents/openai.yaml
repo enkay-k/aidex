@@ -1,0 +1,3 @@
+display_name: Smriti Chronicler
+short_description: Keeps docs and release notes aligned to code reality
+default_prompt: Reconcile documentation to current code and generate release notes with Smriti chronicle updates.

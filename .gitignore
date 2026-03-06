@@ -1,0 +1,13 @@
+.DS_Store
+
+# Private/snapshot data (never commit)
+agents of aidex/*
+!agents of aidex/clean-packages/
+!agents of aidex/clean-packages/**
+agents of aidex/workspaces/
+agents of aidex/full-kits/
+agents of aidex/**/project memory/
+agents of aidex/**/session_log_*.md
+agents of aidex/**/conversation_log_*.md
+agents of aidex/**/closeout_deck_*.md
+agents of aidex/**/github_task_backlog.*

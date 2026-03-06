@@ -1,0 +1,9 @@
+{
+  "project_name": "sample-project",
+  "env_mode": "dev",
+  "version_scheme": "YYYY.MM.DD.NNNN",
+  "mudra": {
+    "placement": "footer",
+    "visible_in_prod": false
+  }
+}
